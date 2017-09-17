@@ -1,0 +1,106 @@
+<html>
+    <head>
+        <title>Catalogo</title>
+        <link type="text/css" rel="stylesheet" href="estiloCatalogo.css">
+        <script src="cookies.js"></script>
+    </head>
+    <body>
+        <div id="divRelleno"></div>
+        <div id="divCarrito"> </div>
+        <div id="divControles">
+            <label for="numUnidades"> unidades</label>
+            <input type="number" id="numUnidades">
+            <select id="sNombres"></select>
+            <button type="button" id="butAñadir"> Añadir producto</button>
+        </div>
+    </body>
+    <script>
+        var xmlDoc;
+        var aDatos = {};
+        var id;
+        var i = 0;
+        var precioTotal = 0;
+        var precioSinEuro;
+        document.addEventListener('onload', principal());
+
+        function principal() {
+            let xmlhttp = new XMLHttpRequest();
+            xmlhttp.open('GET', 'catalogo.xml', false);
+            xmlhttp.send();
+            xmlDoc = xmlhttp.responseXML;
+        }
+        if (docCookies.hasItem('carrito')) {
+            var aCarrito = JSON.parse(docCookies.getItem('carrito'));
+            muestraCarrito();
+        } else {
+            var aCarrito = {};
+        }
+        generateContent();
+        
+        butAñadir.onclick = function () {
+            var e = document.getElementById("sNombres");
+            var id = e.options[e.selectedIndex].id;
+            let unidades = window.document.getElementById('numUnidades').value;
+            if (unidades > 0) {
+                if (id in aCarrito) {
+                    aCarrito[id].unidades = aCarrito[id].unidades + parseInt(unidades);
+                } else {
+                    aCarrito[id] = Object.create(Object.prototype);
+                    aCarrito[id].unidades = parseFloat(unidades);
+                    aCarrito[id].precio = aDatos[id].precio;
+                    aCarrito[id].nombre = aDatos[id].nombre;
+                    aCarrito[id].color = aDatos[id].color;
+                    aCarrito[id].total = 0;
+                }
+                precioSinEuro = aCarrito[id].precio.replace('€', '');
+                precioTotal += aCarrito[id].unidades * parseFloat(precioSinEuro);
+                muestraCarrito();
+            }
+        };
+
+        function muestraCarrito() {
+            console.log(aCarrito);
+            var html = "<div class='divRow' id='divHead'><div class='divCell'>Unidades</div><div class='divCell'>Nombre</div>";
+            html += "<div class='divCell'>Precio</div></div>";
+            for (var k in aCarrito) {
+                html += "<div class='divRow'>";
+                html += "<div class='divCell'> " + aCarrito[k].unidades + " </div>";
+                html += "<div class='divCell'> " + aCarrito[k].nombre + "</div >";
+                html += "<div class='divCell'> " + aCarrito[k].precio + " </div >";
+                html += "</div>";
+            }
+            html += "<div class='divRow'>" + '<div class="divCell"></div>' + '<div class="divCell">' + "Precio Total" + ' </div>' + '<div class="divCell">' + precioTotal + '€</div>' + "</div>";
+            document.getElementById('divCarrito').innerHTML = html;
+            docCookies.setItem('carrito', JSON.stringify(aCarrito), Infinity);
+        }
+
+        function generateContent() {
+            let nodos = {};
+            var html = "";
+            let formSelect = "";
+            nodos = xmlDoc.evaluate("//producto", xmlDoc, null, XPathResult.ANY_TYPE, null);
+            let thisNode = nodos.iterateNext();
+            while (thisNode) {
+                id = thisNode.getAttribute('id');
+                aDatos[id] = Object.create(Object.prototype);
+                aDatos[id].nombre = thisNode.children[0].textContent;
+                aDatos[id].precio = thisNode.children[1].textContent;
+                aDatos[id].publico = thisNode.children[2].textContent;
+                aDatos[id].foto = thisNode.children[3].textContent;
+                aDatos[id].color = thisNode.children[4].textContent;
+                html += '<div class="div1" >';
+                html += '<div > <img src=' + aDatos[id].foto + '.jpg </img> </div>';
+                html += '<div > ' + aDatos[id].nombre + '</div>';
+                html += '<div > <strong>Precio:  ' + aDatos[id].precio + '</strong></div>';
+                html += '<div > <strong>Precio venta al público: </strong> ' + aDatos[id].publico + '</div>';
+                html += '<div > <strong>Color: </strong> ' + aDatos[id].color + '</div>';
+                html += '</div>';
+                formSelect += '<option id=' + id + '>' + aDatos[id].nombre + '</option>';
+                thisNode = nodos.iterateNext();
+            }
+            window.document.getElementById('divRelleno').innerHTML = html;
+            window.document.getElementById('sNombres').innerHTML = formSelect;
+        }
+    </script>
+
+</html>

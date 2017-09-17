@@ -1,0 +1,99 @@
+ENVIO DE OBJETOS EN OBJETOS
+
+var login  ={
+            user: valor1,
+            pass:valor2
+        };
+         var datos = JSON.stringify(login);
+        ajax({
+            type: 'POST',
+            url: 'login.php',
+            data: {
+                login: datos,
+                check: "logear"
+            },
+            parse: true
+        }).then((data) => {
+            console.log(data);
+
+        }).catch((error) => {
+            console.log(error);
+        });
+
+RECEPCION OBJETO EN PHP
+
+$array= filter_input(INPUT_POST, 'login');
+$login = json_decode($array,true);
+$user = $login["user"];
+$pass = md5($login["pass"]);
+
+ENVIO DE OBJETOS EN OBJETOS CON KEY
+
+comanda[idProducto] = Object.create(Object.prototype);
+			comanda[idProducto].cantidad = parseInt(cantidad.value);
+			comanda[idProducto].nombreProducto = nombreProducto;
+         var datos = JSON.stringify(login);
+        ajax({
+            type: 'POST',
+            url: 'login.php',
+            data: {
+                login: datos,
+                check: "logear"
+            },
+            parse: true
+        }).then((data) => {
+            console.log(data);
+
+        }).catch((error) => {
+            console.log(error);
+        });
+
+RECEPTION DE OBJETOS CON ID EN PHP
+
+$array= filter_input(INPUT_POST, 'login');
+$login = json_decode($array,true);
+foreach($login as $key => $value){
+    $array[$key]=$value["user"];
+    $array[$key]=$value["pass"];
+}
+
+IP en PHP
+
+function locateIplatlon($ip)
+    {
+        $json = file_get_contents("http://ipinfo.io/{$ip}/geo");
+        $details = json_decode($json, true);
+        $ciudad = $details['loc'];
+        return $ciudad;
+    }
+
+XML en PHP
+*Creacion de nodos PHP
+$lugar =  $this->dom->createElement('lugar');
+$prueba->appendChild($lugar);
+*Creacion de nodos en PHP dando nodeValue
+$lugar =  $this->dom->createElement('lugar',$valor);
+$prueba->appendChild($lugar);
+*Creacion de atributos o modificacion de atributos
+ $geo->setAttribute("lat",$latitud);
+ $localizacion->appendChild($geo);
+ *Borrar nodos en PHP
+ $oldchapter = $book->parentNode->removeChild($chapter);
+ *Recorrer nodos en PHP
+  foreach ( $this->xpath->query("//Lugares") as $prueba){}
+  Tenemos la opcion de =>
+  $result = $this->xpath->query("//Lugares");
+  foreach($result as $variable)
+*Saber si una estructura tiene resultado
+ $result = $this->xpath->query("//Lugares");
+$result->length==0
+Esto ver si existe y el nodo tiene algo dentro
+*Validar el XML con un dtd
+<?php
+$dom = new DOMDocument;
+$dom->Load('book.xml');
+if ($dom->validate()) {
+    echo "¡Este documento es válido!\n";
+}
+?>
+*Validar el XML por schema

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="BD">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="LABEL" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="LABEL">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="ARTIST" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:attribute name="name" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ARTIST">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="COMPONENT" maxOccurs="5">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="NAME">
+			<xs:simpleType>
+					<xs:restriction base="xs:string">
+						  <xs:pattern value="[A-Z][a-zA-Z\s]+"/>
+					</xs:restriction>
+				</xs:simpleType>							
+							</xs:element>
+							<xs:element name="COUNTRY" maxOccurs="2"/>
+						</xs:sequence>
+									<xs:attribute name="nif" use="required">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						  <xs:pattern value="[0-9]{8}[A-Z]"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="name" use="required"/>			
+			<xs:attribute name="style" use="required">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="Breakbeat"/>
+						<xs:enumeration value="DrumBass"/>
+						<xs:enumeration value="Electro-house"/>
+						<xs:enumeration value="French-house"/>
+						<xs:enumeration value="FutureGarage"/>
+						<xs:enumeration value="Hip-Hop"/>
+						<xs:enumeration value="Neurofunk"/>
+						<xs:enumeration value="Progressive-house"/>
+						<xs:enumeration value="Techno-house"/>
+						<xs:enumeration value="Techno-minimal"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

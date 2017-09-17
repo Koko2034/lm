@@ -1,0 +1,67 @@
+<html>
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+        <style>
+            body { margin-left: 25%;}
+            fieldset {
+                float:right;
+                text-align: center;
+            }
+            div {   
+                width:300px;
+                height: 60px;
+                background-color: red;
+                font-family: 'Roboto', sans-serif;
+                font-size: 3em;
+                text-align: center;
+            }
+            .divPar{
+                margin-left:0px;
+            }
+            .divImpar{
+                margin-left:500px;
+            }
+        </style>    
+    </head>
+    <body>
+        <fieldset>
+            <input type="text" id="txtVeces"><br>
+            <button id="butCrear">A&ntilde;adir</button>
+        </fieldset>
+        <div> 0 </div>
+    </body>
+    <script>
+        var cont = 1;
+        butCrear.onclick = function () {
+
+            var n = parseInt(document.getElementById('txtVeces').value);
+            if (n >= 1) {
+                for (var k = 1; k < n + 1; k++) {
+                    var newDiv = document.createElement("div");
+                    var newContent = document.createTextNode(cont);
+                    newDiv.setAttribute('style', 'background-color:' + getRandomColor());
+                    newDiv.setAttribute('id', '' + cont);
+                    newDiv.appendChild(newContent);
+                    document.body.appendChild(newDiv);
+                    if (cont % 2 === 0) {
+                        newDiv.className = 'divPar';
+                    } else {
+                        newDiv.className = 'divImpar';
+                    }
+                    cont++;
+                }
+            }
+        }
+        function getRandomColor() {
+            var letters = '0123456789ABCDEF';
+            var color = '#';
+            for (var i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+    </script>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="toogleBox.css" media="screen" />
+    </head>
+    <body>
+        <div id="divControles">
+            <input type="radio" name="radio" value="A" checked> A
+            <input type="radio" name="radio" value="B"> B
+            <br>
+            <label for="select">Seleccionar: </label>
+            <select id='select' name="select">
+                <option value="" selected="selected">- selecciona -</option>
+                <option value="margin">Margin</option>
+                <option value="padding">Padding</option>
+            </select>
+            <br>
+            <label for="txtTop">Top</label>
+            <input type="text" id="txtTop" name="txtTop" class="cambios">
+            <br>
+            <label for="txtLeft">Left</label>
+            <input type="text" id="txtLeft" name="txtLeft" class="cambios">
+            <br>
+            <label for="txtBottom">Bottom</label>
+            <input type="text" id="txtBottom" name="txtBottom" class="cambios">
+            <br>
+            <label for="txtRight">Right</label>
+            <input type="text" id="txtRight" name="txtRight" class="cambios">
+            <br>
+            <div><input type="button" value="Aplicar" onclick="cambiar()">
+                <input type="button" value="Reset" onclick="reset()"></div>
+        </div>
+        <div id="divDemo">
+            <div id="A" class="divAB"></div>
+            <br>
+            <div id="B" class="divAB"></div>
+        </div>
+    </body>
+    <script type="text/javascript">
+        function cambiar() {
+            var radio = window.document.getElementsByName("radio");
+            for (var i = 0; i < radio.length; i++) {
+                if (radio[i].checked)
+                    var resultado = radio[i].value;
+            }
+            var posicion = window.document.getElementById('select').options.selectedIndex; //posicion
+            var select = (window.document.getElementById('select').options[posicion].text);//obtenemos el valor.
+            if (select == "- selecciona -") {
+                alert('No hay opción seleccionada');
+            } else {
+                var txtTop = window.document.getElementById("txtTop").value;
+                txtTop = txtTop + "px";
+                var txtLeft = window.document.getElementById("txtLeft").value;
+                txtLeft = txtLeft + "px";
+                var bottom = window.document.getElementById("txtBottom").value;
+                bottom = bottom + "px";
+                var right = window.document.getElementById("txtRight").value;
+                right = right + "px";
+                if (select == "Margin") {
+                    window.document.getElementById(resultado).style.marginTop = txtTop;
+                    window.document.getElementById(resultado).style.marginLeft = txtLeft;
+                    window.document.getElementById(resultado).style.marginBottom = bottom;
+                    window.document.getElementById(resultado).style.marginRight = right;
+                } else {
+                    window.document.getElementById(resultado).style.paddingTop = txtTop;
+                    window.document.getElementById(resultado).style.paddingLeft = txtLeft;
+                    window.document.getElementById(resultado).style.paddingBottom = bottom;
+                    window.document.getElementById(resultado).style.paddingRight = right;
+                }
+            }
+        }
+        function reset() {
+            window.document.getElementsByName("radio")[0].checked = true;
+            window.document.getElementById('select').options.selectedIndex = 0;
+            window.document.getElementById("txtTop").value = 0;
+            window.document.getElementById("txtLeft").value = 0;
+            window.document.getElementById("txtBottom").value = 0;
+            window.document.getElementById("txtRight").value = 0;
+            var divs = window.document.getElementsByClassName('divAB');
+            for (var i = 0; i < divs.length; i++) {
+                divs[i].style.all = '';
+            }
+        }
+    </script>
+</html>

@@ -1,0 +1,15 @@
+1. Crear un DTD adecuado para validar trenes.xml.
+Realiza una prueba con Altova y el xml original y con uno con errores, que deberas entregar,
+indicando que falla y el error que esto provoca.
+
+2. Lee el xml catalogo.xml.
+Crea un array de objectos donde la key es la id y el resto de los tags son propiedades.
+
+aCata['56'].nombre='Zapatillas On-Running Cloud Blues/Yellow 2015';
+aCata['56'].precio=110.40;
+...
+
+Muestra la lista de productos en divs que se van acomplando flotanes a la derecha en un div izquierdo de 60% de ancho.
+En un div derecho un carrito de la compra sostenido en cookies con productos acumulados hasta que 
+se finalize el pedido que se envía a receptor.php.
+Los controles para comprar se sitúan debajo de éste, tal y como se muestra en el dibujo que se hace en la pizarra.

@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<Comandas>
+    <mesa numMesa="1" nomCam="Fernando">
+        <producto PrecioUnidad="18" nomProducto="T&#xE9; Dharamsala" idProducto="1">2</producto>
+    </mesa>
+    <mesa numMesa="2" nomCam="Fernando">
+        <producto PrecioUnidad="19" nomProducto="Cerveza tibetana Barley" idProducto="2">2</producto>
+        <producto PrecioUnidad="10" nomProducto="Sirope de regaliz" idProducto="3">2</producto>
+    </mesa>
+    <mesa numMesa="4" nomCam="Fernando">
+        <producto PrecioUnidad="10" nomProducto="Sirope de regaliz" idProducto="3">2</producto>
+    </mesa>
+    <mesa numMesa="15" nomCam="Fernando">
+        <producto PrecioUnidad="10" nomProducto="Sirope de regaliz" idProducto="3">2</producto>
+    </mesa>
+    <mesa numMesa="5" nomCam="Fernando">
+        <producto PrecioUnidad="18" nomProducto="T&#xE9; Dharamsala" idProducto="1">10</producto>
+    </mesa>
+</Comandas>

@@ -1,0 +1,87 @@
+
+<html>
+    <head>
+        <title>Demo HTML</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--<link rel="icon" type="image/png" href="http://example.com/myicon.png">-->
+        <style>
+            a {
+                display: block;
+            }
+            image{
+                height: 1000px;
+                width: 500px;
+            }
+        </style>
+        <script>
+            function showContent(id) {
+                id = 'contenido' + id;
+                document.getElementById(id).style = 'display:initial'
+            }
+            function hideContent(id) {
+                id = 'contenido' + id;
+                document.getElementById(id).style = 'display:none'
+            }
+        </script>
+    </head>
+    <body></body>
+    <script>
+        document.addEventListener('onload', principal());
+        var items;
+        var html = "";
+
+        function principal() {
+            var datos = [];
+            var itemsTable;
+            var pathXML = 'http://www.politecnicomalaga.com/daw/lm/xml/rss.xml'
+            items = getXML(pathXML, 'channel');
+            rellenarDatos(datos);
+            changeFavicon();
+            construirContenido(datos);
+        }
+        function getXML(pathXML, tagName) {
+            var xmlhttp = new XMLHttpRequest()
+            xmlhttp.open('GET', pathXML, false)
+            xmlhttp.send()
+            var xmlDoc = xmlhttp.responseXML
+            return xmlDoc.getElementsByTagName(tagName);
+        }
+        function changeFavicon() {
+            var enlace = document.querySelector("link[rel*='icon']") || document.createElement('link');
+            enlace.type = 'image/x-icon';
+            enlace.rel = 'shortcut icon';
+            enlace.href = 'http://www.bbc.co.uk/favicon.ico';
+            document.getElementsByTagName('head')[0].appendChild(enlace);
+        }
+        function construirContenido(datos) {
+            for (var i = 1; i < datos.length; i++) {
+                html += '<article id="articulo' + i + '"></br>';
+                html += '<section id="seccion' + i + '" style="color:navy;font: 35px arial, sans-serif;" ' +
+                        'ondblclick="showContent(' + i + ')" onclick="hideContent(' + i + ')">' + datos[i].title + '' +
+                        '</section>';
+                html += '<section id="contenido' + i + '" style="display:none;">'
+                        + datos[i].content + '<img src="' + datos[i].image + '"><a href="' + datos[i].link
+                        + '">Noticia Completa</a>' + datos[i].date + '+</section>';
+
+                html += '</section></article><hr>';
+            }
+
+            document.write(html);
+        }
+        function rellenarDatos(datos) {
+            document.title = items[0].children[1].textContent
+            html = '<div id="titulo" style="color:red;">' + '<img src="' + items[0].children[3].childNodes[1].textContent + '">' +
+                    items[0].children[6].textContent + items[0].children[5].innerHTML + '</div><a href="' + items[0].children[2].innerHTML + '">Sitio Oficial</a>';
+
+            for (var i = 10; i < items[0].children.length; i++) {
+                var title = items[0].children[i].children[0].textContent;
+                var content = items[0].children[i].children[1].textContent;
+                var link = items[0].children[i].children[2].textContent;
+                var date = items[0].children[i].children[4].textContent;
+                var image = items[0].children[i].children[5].attributes.url.value;
+                datos.push({'title': title, 'content': content, 'link': link, 'date': date, 'image': image});
+            }
+        }
+    </script>
+</html>

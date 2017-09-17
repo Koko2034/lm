@@ -1,0 +1,130 @@
+#divMostrarCarrito {
+    text-align: center;
+}
+
+div {
+    font-family: Arial;
+}
+
+.div1 {
+    text-align: center;
+    word-wrap: break-word;
+    float: left;
+    margin: 5px;
+    padding: 15px;
+    max-width: 300px;
+    height: 300px;
+    border: 1px solid black;
+}
+
+#divControles {
+    width: 33%;
+    margin-top: 5%;
+    float: left;
+    font-weight: bold;
+    line-height: 50px;
+    font: 14px/100% Arial, Helvetica, sans-serif;
+    background-color: #D4F3FF;
+    padding: 20px;
+    border-style: solid double;
+}
+
+label {
+    display: inline-block;
+    width: 5em;
+    padding-top: 2px;
+    font-family: Arial;
+    font-size: 16px;
+    text-align: center;
+}
+
+button,
+input[type=submit] {
+    margin-top: 20px;
+    border-radius: 36px;
+    color: #ffffff;
+    font: 14px/100% Arial, Helvetica, sans-serif;
+    background: #CC2F3E;
+    padding: .5em 2em .55em;
+    border: solid #1f628d 2px;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+}
+
+input[type=submit] {
+    margin: 0 auto;
+}
+
+input[type=text] {
+    color: #325BB4;
+    height: 28px;
+    padding-left: 10px;
+    margin-top: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    background-image: url('Input-BG.png');
+    background-repeat: repeat-x;
+    border: 0;
+}
+
+select {
+    margin-top: 20px;
+    border: 1px solid #ccc;
+    font-size: 12px;
+    color: #ffffff;
+    background-color: #CC2F3E;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+}
+
+img {
+    margin-top: 10px;
+    width: 30%;
+    border-style: solid;
+}
+
+#divRelleno {
+    position: relative;
+    float: left;
+    left: 0.50%;
+    width: 60.00%;
+}
+
+#divCarrito {
+    position: relative;
+    float: left;
+    left: 1.50%;
+    width: 40.00%;
+}
+
+.divTable {
+    display: table;
+    width: 70%;
+    margin: 0px auto;
+    text-shadow: 0px 0px 15px 10px black;
+}
+
+.divRow {
+    display: table-row;
+}
+
+.divCell {
+    display: table-cell;
+    width: 42%;
+}
+
+#divHead {
+    font-size: 1em;
+    font-weight: bold;
+    background-color: #387bff;
+}
+
+body {
+    border-width: 0px;
+    padding: 0px;
+    margin: 0px;
+    font-size: 90%;
+    background-color: #e7e7de
+}

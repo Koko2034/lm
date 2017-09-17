@@ -1,0 +1,131 @@
+CARGA DE XML
+let xmlhttp = new XMLHttpRequest();
+		xmlhttp.open('GET', 'bebidas.xml', false)
+		xmlhttp.send();
+		xmlDoc = xmlhttp.responseXML;
+		let nodos = {};
+		nodos = xmlDoc.evaluate("//producto", xmlDoc, null, XPathResult.ANY_TYPE, null);
+LECTURA DE XML
+let thisNode = nodos.iterateNext();
+		while (thisNode) {
+			
+			thisNode = nodos.iterateNext();
+		}
+OBJETOS DE JAVASCRIPT
+comanda[idProducto] = Object.create(Object.prototype);
+			comanda[idProducto].cantidad = parseInt(cantidad.value);
+			comanda[idProducto].nombreProducto = nombreProducto;
+
+Crear objetos dinamicos de XML
+
+for (var i = 0; i < shortNode.children.length; i++) {
+                aPlayas[id][shortNode.children[i].nodeName] = shortNode.children[i].textContent;
+            }
+
+METODO DE NO REPETIR
+if (!(categoria in categorias)) {
+                categorias[categoria] = 1;
+            }
+
+MAPA
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCGWIAtZX78ZskQP9brXKIcm6ukkFP5aqU"></script>
+
+  var dMapa = document.getElementById('divMapa');
+        var LatLon = new google.maps.LatLng(36.721274, -4.421399);
+        var objConfig = {
+            zoom: 8,
+            center: LatLon,
+            disableDefaultUI: true
+        };
+        var contentString = {};
+        var gMapa = new google.maps.Map(dMapa, objConfig);
+        for (k in aPlayas) {
+            var LatLon = new google.maps.LatLng(aPlayas[k].lat, aPlayas[k].lon);
+            var objConfigMarker = {
+                position: LatLon,
+                map: gMapa
+            };
+            var gMarker = new google.maps.Marker(objConfigMarker);
+
+            contentString[gMarker.position] = '<div class="row" >';
+            contentString[gMarker.position] += '<h4 class="text-center">' + aPlayas[k].lugar + '</h4>';
+            contentString[gMarker.position] += '<div class="col-sm-3"><img style="width:50px;height:50px" src="' +
+                aPlayas[k].foto + '"></div>';
+            contentString[gMarker.position] += '<div class="col-sm-6"><div>Dirección: ' + aPlayas[k]
+                .direccion + '</div>';
+            contentString[gMarker.position] += '<div>Ciudad: ' + aPlayas[k].ciudad + '</div>';
+            contentString[gMarker.position] += '<div>País: ' + aPlayas[k].pais +
+                '</div>';
+            if (aPlayas[k].pos) {
+                contentString[gMarker.position] += '<div>Posicion Mundial: ' + aPlayas[k].pos + '</div>';
+            }
+            contentString[gMarker.position] += '</div>';
+            contentString[gMarker.position] +=
+                '<div class="col-sm-3"><button class="btn-primary btn-lg" type="button" id="' + k +
+                '" onclick="generateVotation(this.id)">Votar</button></div></div>';
+            var infowindow = new google.maps.InfoWindow();
+            gMarker.addListener('click', function () {
+                infowindow.setContent(contentString[this.position]);
+                infowindow.open(gMapa, this);
+            });
+
+        }
+
+OBJETO DE GOOGLE DE RESPUESTA DE MAPA
+
+  geocoder = new google.maps.Geocoder();
+        var control = Object.keys(datos).length;
+       var latitudlongitud= auxLat[contador].split(",");
+        var latlng = new google.maps.LatLng(latitudlongitud[0],latitudlongitud[1]);
+            geocoder.geocode({
+                'latLng': latlng
+            }, function (results, status) {
+               if (status == google.maps.GeocoderStatus.OK) { 
+                        nombre = results[0].address_components[2].long_name;
+                        if(votaciones[nombre]==null){
+                            votaciones[nombre]= Object.create(Object.prototype);
+                            votaciones[nombre].puntuacion=parseInt(datos[aux[contador]].votos);
+                            votaciones[nombre].votantes=parseInt(datos[aux[contador]].votantes);
+                        }else{
+                             
+                            votaciones[nombre].puntuacion+=parseInt(datos[codigoPostal].votos);
+                            votaciones[nombre].votantes+=parseInt(datos[codigoPostal].votantes);
+                           votaciones[nombre].puntuacion+=parseInt(datos[aux[contador]].votos);
+                            votaciones[nombre].votantes+=parseInt(datos[aux[contador]].votantes);
+                        }
+                        contador++;
+                        if(control>parseInt(contador)){
+                           localizacionPrecisa(datos,contador);
+                        }else{
+                            rellenar(votaciones);
+                        }
+                } else {
+                    alert('Geocode no tuvo éxito por la siguiente razón: ' + status)
+                }
+            });
+        
+GRAFICOS DE SECTORES
+google.charts.setOnLoadCallback(drawChart);
+ function drawChart(datos) {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Ciudades');
+        data.addColumn('number', 'Votos');
+        for (k in datos) {
+            data.addRows([
+                [k, parseInt(datos[k].votantes)],
+            ]);
+        }
+        var options = {
+            title: 'Resultado de las votaciones',
+            is3D: true,
+            width: 600,
+            height: 400,
+
+        };
+        var chart = new google.visualization.PieChart(document.getElementById('divGrafico'));
+        chart.draw(data, options);
+    }
+
+MOVIMIENTO ENTRE PAGINAS
+
+ window.open("prueba.html", "_self");

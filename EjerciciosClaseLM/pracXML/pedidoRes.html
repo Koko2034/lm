@@ -1,0 +1,297 @@
+<html>
+    <head>
+        <title>pedidoRes</title>
+        <meta charset="UTF-8">
+        <script src="cookies.js"></script>
+        <style>
+            #divProductos{
+                width: 65%;
+                float: left;
+                display: inline-block;
+            }
+
+            #divCarrito{
+                width: 400px;
+                border: 1px solid black;
+                float: left;
+                display: inline-block;
+            }
+
+            .categoria{
+                width: 400px;
+                border: 1px solid black;
+                float: left;
+                display: inline-block;
+                min-height: 450px;
+            }
+
+            .nombreCategoria{
+                text-align: center;
+                padding-top: 10px;
+                padding-bottom: 15px;
+                background-color: #bed7f1;
+            }
+
+            .divNombre{
+                float: left;
+                display: inline-block;
+                width: 90%;
+                text-align: left; 
+                padding-top: 10px;
+                padding-bottom: 10px;
+                background-color: #bef1f1;
+                border-bottom: 1px solid black;
+            }
+
+            .divPrecio{
+                float: left;
+                display: inline-block;
+                width: 10%;
+                text-align: center; 
+                padding-top: 10px;
+                padding-bottom: 10px;
+                background-color: #bef1f1;
+                border-bottom: 1px solid black;
+            }
+
+            .nombreProducto{
+                float: left;
+                display: inline-block;
+                min-width: 88%;
+                padding-left: 5px;
+                border-bottom: 1px solid black;
+            }
+
+            #txtCarritoNombre{
+                float: left;
+                display: inline-block;
+                min-width: 50%;
+                padding-left: 5px;
+                border-bottom: 1px solid black;
+            }
+
+
+            #txtCarritoUnidades{
+                float: right;
+                display: inline-block;
+                min-width: 20%;
+                padding-left: 5px;
+                border-bottom: 1px solid black;
+            }
+
+            #txtCarritoPrecio{
+                float: left;
+                display: inline-block;
+                min-width: 25.5%;
+                padding-left: 5px;
+                border-bottom: 1px solid black;
+                text-align: right;
+            }
+
+            .cabecera{
+                padding-top: 10px;
+                padding-bottom: 10px;
+                background-color: #bef1f1;
+                border-bottom: 1px solid black;
+            }
+
+            #txtCarrito{
+                padding-top: 10px;
+                padding-bottom: 15px;
+                background-color: #bed7f1;
+                text-align: center;
+            }
+
+            .precioProducto{
+                float: left;
+                display: inline-block;
+                min-width: 8%;
+                text-align: right;
+                border-bottom: 1px solid black;
+            }
+
+            .productoCarritoNombre{
+                float: left;
+                display: inline-block;
+                min-width: 50%;
+                padding-left: 5px;
+            }
+
+            .productoCarritoUnidades{
+                float: right;
+                display: inline-block;
+                min-width: 10%;
+                padding-left: 5px;
+                text-align: center;
+            }
+
+            .productoCarritoPrecio{
+                float: right;
+                display: inline-block;
+                min-width: 25%;
+                padding-left: 5px;   
+                text-align: center;
+            }
+
+            #divControles{
+                min-width: 39%;
+                border: 1px solid black;
+                align-content: center;
+            }
+
+            #enviar{
+                margin: 20px;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div id="divProductos"></div>
+        <div id="divCarrito">
+            <div id="cabecera">
+                <div id="txtCarrito">CARRITO</div>
+                <div id="txtCarritoNombre" class="cabecera">NOMBRE</div>
+                <div id="txtCarritoUnidades" class="cabecera">UNIDADES</div>
+                <div id="txtCarritoPrecio" class="cabecera">PVP</div>
+            </div>
+            <div id="contenidoCarrito">
+            </div>
+        </div>
+    </body>
+    <script>
+        var xmlDoc;
+        var aCarrito = {};
+        var aProductos = {};
+        var categorias = [];
+
+        if (docCookies.hasItem('carrito')) {
+            aCarrito = JSON.parse(docCookies.getItem('carrito'));
+            muestraCarrito();
+        }
+
+        window.onload = function () {
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.open('GET', 'productos.xml', false);
+            xmlhttp.send();
+            xmlDoc = xmlhttp.responseXML;
+            generarProductos();
+            detectarCategorias();
+            aniadirProductos();
+        }
+
+        function aniadirProductoACarrito(id) {
+            if (id in aCarrito) {
+                aCarrito[id].unidades = aCarrito[id].unidades + 1;
+            } else {
+                aCarrito[id] = Object.create(Object.prototype);
+                aCarrito[id].unidades = 1;
+                aCarrito[id].precio = aProductos[id].precioUnidad;
+                aCarrito[id].nombre = aProductos[id].nombre;
+            }
+            muestraCarrito();
+
+        }
+
+        function aniadirProductos() {
+            for (k in aProductos) {
+                var div = document.createElement('div');
+                div.setAttribute("id", k);
+                div.setAttribute("class", "producto");
+                var divProducto = document.createElement('div');
+                var txtProducto = document.createTextNode(aProductos[k].nombre);
+                divProducto.setAttribute("class", "nombreProducto");
+                divProducto.setAttribute("id", k);
+                divProducto.setAttribute("ondblclick", "aniadirProductoACarrito(this.id)");
+                divProducto.appendChild(txtProducto);
+                div.appendChild(divProducto);
+                var divPrecio = document.createElement('div');
+                var txtPrecio = document.createTextNode(aProductos[k].precioUnidad + "€");
+                divPrecio.setAttribute("class", "precioProducto");
+                divPrecio.appendChild(txtPrecio);
+                div.appendChild(divPrecio);
+                document.getElementById(aProductos[k].categoria + "").appendChild(div);
+            }
+        }
+
+        function limpiar() {
+            document.getElementById('contenidoCarrito').innerHTML = "";
+            docCookies.removeItem('carrito');
+        }
+
+        function muestraCarrito() {
+            document.getElementById('contenidoCarrito').innerHTML = "";
+            for (k in aCarrito) {
+                var div = document.createElement('div');
+                var divNombre = document.createElement('div');
+                var txtNombre = document.createTextNode(aCarrito[k].nombre);
+                divNombre.setAttribute("class", "productoCarritoNombre");
+                divNombre.appendChild(txtNombre);
+                var divUnidades = document.createElement('div');
+                var txtUnidades = document.createTextNode(aCarrito[k].unidades);
+                divUnidades.setAttribute("class", "productoCarritoUnidades");
+                divUnidades.appendChild(txtUnidades);
+                var divPrecio = document.createElement('div');
+                var txtPrecio = document.createTextNode((aCarrito[k].precio * aCarrito[k].unidades) + "€");
+                divPrecio.setAttribute("class", "productoCarritoPrecio");
+                divPrecio.appendChild(txtPrecio);
+                div.appendChild(divNombre);
+                div.appendChild(divUnidades);
+                div.appendChild(divPrecio);
+                document.getElementById('contenidoCarrito').appendChild(div);
+            }
+            var boton = document.createElement('input');
+            boton.setAttribute("type", "button");
+            boton.setAttribute("value", "LIMPIAR");
+            boton.setAttribute("id", "enviar");
+            boton.setAttribute("onclick", "limpiar()");
+            document.getElementById('contenidoCarrito').appendChild(boton);
+            docCookies.setItem('carrito', JSON.stringify(aCarrito), Infinity);
+
+        }
+
+        function generarProductos() {
+            var id;
+            var nodos = xmlDoc.evaluate("//producto", xmlDoc, null, XPathResult.ANY_TYPE, null);
+            var thisNode = nodos.iterateNext();
+            while (thisNode) {
+                id = thisNode.getAttribute('idProducto');
+                aProductos[id] = Object.create(Object.prototype);
+                aProductos[id].nombre = thisNode.getAttribute('NombreProducto');
+                aProductos[id].categoria = thisNode.getAttribute('Categoría');
+                aProductos[id].cantidadPorUnidad = thisNode.getAttribute('CantidadPorUnidad');
+                aProductos[id].precioUnidad = parseFloat(thisNode.getAttribute('PrecioUnidad'));
+                thisNode = nodos.iterateNext();
+            }
+        }
+
+        function detectarCategorias() {
+            var aCatUni={};
+            for (k in aProductos) {
+                var categoria = aProductos[k].categoria;
+                if (!(categoria in aCatUni)) {                   
+                    var div = document.createElement('div');
+                    div.setAttribute("id", categoria);
+                    div.setAttribute("class", "categoria");
+                    var divCategoria = document.createElement("div");
+                    divCategoria.setAttribute("class", "nombreCategoria");
+                    var txt = document.createTextNode(categoria.toUpperCase());
+                    divCategoria.appendChild(txt);
+                    div.appendChild(divCategoria);
+                    var divNombre = document.createElement('div');
+                    var txtNombre = document.createTextNode("PRODUCTO");
+                    divNombre.appendChild(txtNombre);
+                    divNombre.setAttribute("class", "divNombre");
+                    var divPrecio = document.createElement('div');
+                    var txtPrecio = document.createTextNode("PVP");
+                    divPrecio.appendChild(txtPrecio);
+                    divPrecio.setAttribute("class", "divPrecio");
+                    div.appendChild(divNombre);
+                    div.appendChild(divPrecio);
+                    document.getElementById('divProductos').appendChild(div);
+                    aCatUni[categoria]=1;
+                }
+            }
+        }
+
+    </script>
+</html>

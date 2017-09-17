@@ -1,0 +1,35 @@
+    body{
+        background-color: #83A9D9;
+    }
+    #divMain {
+        position: absolute;
+        top: 10%;
+        left: 30%;
+    }
+    
+  button {
+  border-radius: 36px;
+  color: #ffffff;
+  font: 14px/100% Arial, Helvetica, sans-serif;
+  background: #CC2F3E;
+  padding: .5em 2em .55em;
+  border: solid #1f628d 2px;
+  cursor: pointer;
+  text-decoration: none;
+}
+    
+    input[type=text] {
+        color: #325BB4;
+        height: 28px;
+        padding-left: 10px;
+        text-decoration: none;
+        font-weight: bold;
+        background-image: url('Input-BG.png');
+        background-repeat: repeat-x;
+        border: 0;
+    }
+    
+    img {
+        padding: 1px;
+        border: 1px solid #021a40;
+    }

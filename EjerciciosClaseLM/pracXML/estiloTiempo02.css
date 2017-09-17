@@ -1,0 +1,82 @@
+.colmask{
+    position: relative;
+    overflow: hidden;
+    margin: 0px auto;
+    width: 100%;
+    background-color: #D8FEFF
+}
+#header{
+    float: left;
+    width: 100%;
+    background-color: #f4f4f4;
+    font-size: 10px;
+}
+#header p{
+    color:red;
+}
+.colmid{
+    position: relative;
+    width: 100%;
+    right: 34%;
+    background-color: #b4d2f7
+}
+.colleft{
+    position: relative;
+    width: 100%;
+    right: 34%;
+    background-color: #b4d2f7;
+
+}
+
+#col3{
+    position: relative;
+    overflow: hidden;
+    float: left;
+    width: 32.2%;
+    left: 101%;
+    color: black;
+
+}
+#col2{
+
+    position: relative;
+    overflow: hidden;
+    float: left;
+    width: 30%;
+    left: 37%;
+
+}
+#col4{
+
+    position: relative;
+    overflow: hidden;
+    float: left;
+    width: 32.2%;
+    left: 73%;
+
+}
+#col2, #col3, #col4 {
+    background-image: url("https://s-media-cache-ak0.pinimg.com/originals/70/77/0d/70770de2b5eaa5280c0ce0b2167bd0dd.jpg"); 
+    background-attachment: fixed ;
+
+}
+body {
+    padding: 0px;
+    margin: 0px;
+    font-size: 90%;
+    background-color: #e7e7de
+}
+.hora_estado {
+    color:blue;
+    font-weight: bold;
+}
+.divDia {
+
+    background-color: #001A7D;
+    color:white;
+    text-align: center;
+}
+
+
+
+

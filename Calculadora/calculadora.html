@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Calculadora</title>
+    <style>
+        header{
+            color:blue;
+            text-align: center;
+            margin: 0 auto;
+            font-size: 45px;
+            margin-top: 15px;
+        }
+        body{
+            background-color: #C4C4C4;
+
+        }
+        #butTransformar,#butCalculador{
+            width: 100px;
+            height: 30px;
+            border-radius: 10px;
+            cursor:pointer;
+        }
+        #butTransformar{
+            display: none;
+        }
+        label{
+            font-size: 20px;
+        }
+        #divDatos{
+            margin: 0 auto;
+            width: 70%;
+        }
+        #divDatosNum2,#divButCalcu{
+            display: none;
+        }
+        #divLeft{
+            width: 60%;
+            float: left;
+        }
+        #divRight{
+            width: 40%;
+            float:left;
+            margin: 0 auto;
+        }
+        </style>
+</head>
+<body>
+    <header>Transformador<header>
+        <div id="divLeft">
+            <div id="divDatosNum1">
+                <label>Numero</label>
+                <input type="text" id="num1"><br>
+             </div>
+             <div id="divDatosNum2">
+                <label>Numero</label>
+                <input type="text" id="num2"><br>
+             </div>
+             <div id="divButTrans">
+                 <button type="button" id="butBinario">Binario</button>
+                 <button type="button" id="butOctal">Octal</button>
+                 <button type="button" id="butHexadecimal">Hexadecimal</button>
+             </div>
+             <div id="divButCalcu">
+           <button type="button" id="butSumar">+</button>
+           <button type="button" id="butRestar">-</button>
+           <button type="button" id="butMultiplicar">*</button>
+           <button type="button" id="butDividir">/</button>
+           </div>
+             <button type="button" id="butTransformar">Transformar</button>
+        <button type="button" id="butCalculador">Calculadora</button>
+        </div>
+       
+        <div id="divRight">
+             <label>Real: </label>
+            <input type="text" id="numReal" readonly="readonly"><br>
+            <label>Binario: </label>
+            <input type="text" id="numBinario" readonly="readonly"><br>
+             <label>Octal: </label>
+            <input type="text" id="numOctal" readonly="readonly"><br>
+             <label>Hexadecimal: </label>
+            <input type="text" id="numHexadecimal" readonly="readonly"><br>
+
+        </div>
+</body>
+<script>
+    butCalculador.onclick = () => {
+        window.document.getElementById('butTransformar').style.display="block";
+        window.document.getElementById('butCalculador').style.display="none";
+        window.document.getElementById('divDatosNum2').style.display="block";
+         window.document.getElementById('divButTrans').style.display="none";
+         window.document.getElementById('divButCalcu').style.display="block";
+      }
+    butTransformar.onclick = () => {
+        window.document.getElementById('butTransformar').style.display="none";
+        window.document.getElementById('butCalculador').style.display="block";
+         window.document.getElementById('divDatosNum2').style.display="none";
+          window.document.getElementById('divButCalcu').style.display="none";
+           window.document.getElementById('divButTrans').style.display="block";
+    }
+     
+    </script>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>zero11</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>
+            <form>
+                <input type="text" id="txtN" name="txtN"/>
+                <button type="button" onclick="multPorDos()">x2</button>
+                <input type="text" id="txtR" name="txtR"/>
+            </form>
+        </div>
+    </body>
+    <script>
+        function multPorDos() {
+            var num = parseInt(document.getElementById("txtN").value);
+            if (isNaN(num)) {
+                document.getElementById("txtR").value = 'Indica un número, porfa';
+            } else {
+                var aux = num * 2;
+                document.getElementById("txtR").value = aux;
+            }
+        }
+    </script>
+</html>

@@ -1,0 +1,50 @@
+#divAgudeza {
+    position: absolute;
+    color: #D7CF0D;
+    font-weight: bold;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 90px;
+    font-size: 20px;
+    left: 50%;
+    top: 50%;
+    width: 100px;
+    height: 100px;
+}
+#contenido {
+    position:fixed;
+    font-size: 150%;
+}
+#contenido2 {
+    position:fixed;
+    font-size: 150%;
+}
+button {
+    border-radius: 36px;
+    color: #ffffff;
+    font: 14px/100% Arial, Helvetica, sans-serif;
+    background: #CC2F3E;
+    padding: .5em 2em .55em;
+    border: solid #1f628d 2px;
+    cursor: pointer;
+    text-decoration: none;
+}
+input[type=text] {
+    color: #325BB4;
+    height: 28px;
+    padding-left: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    background-image: url('Input-BG.png');
+    background-repeat: repeat-x;
+    border: 0;
+}
+img {
+    padding: 1px;
+    border: 1px solid #021a40;
+}
+#divInicializar, #divFinal{
+    position: absolute;
+    top: 10%;
+    left: 40%;
+}

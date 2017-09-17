@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<productos>
+<producto idProducto="1" NombreProducto="Té Dharamsala" Categoría="Bebidas" CantidadPorUnidad="10 cajas x 20 bolsas" PrecioUnidad="18.00"></producto>
+<producto idProducto="2" NombreProducto="Cerveza tibetana Barley" Categoría="Bebidas" CantidadPorUnidad="24 - bot. 12 l" PrecioUnidad="19.00"></producto>
+<producto idProducto="3" NombreProducto="Sirope de regaliz" Categoría="Condimentos" CantidadPorUnidad="12 - bot. 550 ml" PrecioUnidad="10.00"></producto>
+<producto idProducto="4" NombreProducto="Especias Cajun del chef Anton" Categoría="Condimentos" CantidadPorUnidad="48 - frascos 6 l" PrecioUnidad="22.00"></producto>
+<producto idProducto="5" NombreProducto="Mezcla Gumbo del chef Anton" Categoría="Condimentos" CantidadPorUnidad="36 cajas" PrecioUnidad="21.35"></producto>
+<producto idProducto="6" NombreProducto="Mermelada de grosellas de la abuela" Categoría="Condimentos" CantidadPorUnidad="12 - frascos 8 l" PrecioUnidad="25.00 "></producto>
+<producto idProducto="7" NombreProducto="Peras secas orgánicas del tío Bob" Categoría="Frutas/Verduras" CantidadPorUnidad="12 - paq. 1 kg" PrecioUnidad="30.00 "></producto>
+<producto idProducto="8" NombreProducto="Salsa de arándanos Northwoods" Categoría="Condimentos" CantidadPorUnidad="12 - frascos 12 l" PrecioUnidad="40.00 "></producto>
+<producto idProducto="9" NombreProducto="Buey Mishi Kobe" Categoría="Carnes" CantidadPorUnidad="18 - paq. 500 g" PrecioUnidad="97.00 "></producto>
+<producto idProducto="10" NombreProducto="Pez espada" Categoría="Pescado/Marisco" CantidadPorUnidad="12 - frascos 200 ml" PrecioUnidad="31.00"></producto>
+<producto idProducto="11" NombreProducto="Queso Cabrales" Categoría="Lácteos" CantidadPorUnidad="paq. 1 kg" PrecioUnidad="21.00"></producto>
+<producto idProducto="12" NombreProducto="Queso Manchego La Pastora" Categoría="Lácteos" CantidadPorUnidad="10 - paq. 500 g" PrecioUnidad="38.00"></producto>
+<producto idProducto="13" NombreProducto="Algas Konbu" Categoría="Pescado/Marisco" CantidadPorUnidad="caja 2 kg" PrecioUnidad="6.00"></producto>
+<producto idProducto="14" NombreProducto="Cuajada de judías" Categoría="Frutas/Verduras" CantidadPorUnidad="40 - paq. 100 g" PrecioUnidad="23.25"></producto>
+<producto idProducto="15" NombreProducto="Salsa de soja baja en sodio" Categoría="Condimentos" CantidadPorUnidad="24 - bot. 250 ml" PrecioUnidad="15.50"></producto>
+<producto idProducto="16" NombreProducto="Postre de merengue Pavlova" Categoría="Repostería" CantidadPorUnidad="32 - cajas 500 g" PrecioUnidad="17.45"></producto>
+<producto idProducto="17" NombreProducto="Cordero Alice Springs" Categoría="Carnes" CantidadPorUnidad="20 - latas 1 kg" PrecioUnidad="39.00"></producto>
+<producto idProducto="18" NombreProducto="Langostinos tigre Carnarvon" Categoría="Pescado/Marisco" CantidadPorUnidad="paq. 16 kg" PrecioUnidad="62.50"></producto>
+<producto idProducto="19" NombreProducto="Pastas de té de chocolate" Categoría="Repostería" CantidadPorUnidad="10 cajas x 12 piezas" PrecioUnidad="9.20"></producto>
+<producto idProducto="20" NombreProducto="Mermelada de Sir RodneyAndApos's" Categoría="Repostería" CantidadPorUnidad="30 cajas regalo" PrecioUnidad="81.00"></producto>
+<producto idProducto="21" NombreProducto="Bollos de Sir RodneyAndApos's" Categoría="Repostería" CantidadPorUnidad="24 paq. x 4 piezas" PrecioUnidad="10.00"></producto>
+<producto idProducto="22" NombreProducto="Pan de centeno crujiente" Categoría="Granos/Cereales" CantidadPorUnidad="24 - paq. 500 g" PrecioUnidad="21.00"></producto>
+<producto idProducto="23" NombreProducto="Pan fino" Categoría="Granos/Cereales" CantidadPorUnidad="12 - paq. 250 g" PrecioUnidad="9.00"></producto>
+<producto idProducto="24" NombreProducto="Refresco Guaraná Fantástica" Categoría="Bebidas" CantidadPorUnidad="12 - latas 355 ml" PrecioUnidad="4.50"></producto>
+<producto idProducto="25" NombreProducto="Crema de chocolate y nueces NuNuCa" Categoría="Repostería" CantidadPorUnidad="20 - vasos  450 g" PrecioUnidad="14.00"></producto>
+<producto idProducto="26" NombreProducto="Ositos de goma Gumbér" Categoría="Repostería" CantidadPorUnidad="100 - bolsas 250 g" PrecioUnidad="31.23"></producto>
+<producto idProducto="27" NombreProducto="Chocolate Schoggi" Categoría="Repostería" CantidadPorUnidad="100 - piezas 100 g" PrecioUnidad="43.90"></producto>
+<producto idProducto="28" NombreProducto="Col fermentada Róssle" Categoría="Frutas/Verduras" CantidadPorUnidad="25 - latas 825 g" PrecioUnidad="45.60"></producto>
+<producto idProducto="29" NombreProducto="Salchicha Théringer" Categoría="Carnes" CantidadPorUnidad="50 bolsas x 30 salch" PrecioUnidad="123.79"></producto>
+<producto idProducto="30" NombreProducto="Arenque blanco del noroeste" Categoría="Pescado/Marisco" CantidadPorUnidad="10 - vasos 200 g" PrecioUnidad="25.89"></producto>
+<producto idProducto="31" NombreProducto="Queso gorgonzola Telino" Categoría="Lácteos" CantidadPorUnidad="12 - paq. 100 g" PrecioUnidad="12.50"></producto>
+<producto idProducto="32" NombreProducto="Queso Mascarpone Fabioli" Categoría="Lácteos" CantidadPorUnidad="24 - paq. 200 g" PrecioUnidad="32.00"></producto>
+<producto idProducto="33" NombreProducto="Queso de cabra" Categoría="Lácteos" CantidadPorUnidad="500 g" PrecioUnidad="2.50"></producto>
+<producto idProducto="34" NombreProducto="Cerveza Sasquatch" Categoría="Bebidas" CantidadPorUnidad="24 - bot. 12 l" PrecioUnidad="14.00"></producto>
+<producto idProducto="35" NombreProducto="Cerveza negra Steeleye" Categoría="Bebidas" CantidadPorUnidad="24 - bot. 12 l" PrecioUnidad="18.00"></producto>
+<producto idProducto="36" NombreProducto="Escabeche de arenque" Categoría="Pescado/Marisco" CantidadPorUnidad="24 - frascos 250 g" PrecioUnidad="19.00"></producto>
+<producto idProducto="37" NombreProducto="Salmón ahumado Gravad" Categoría="Pescado/Marisco" CantidadPorUnidad="12 - paq. 500 g" PrecioUnidad="26.00"></producto>
+<producto idProducto="38" NombreProducto="Vino Cóte de Blaye" Categoría="Bebidas" CantidadPorUnidad="12 - bot. 75 cl" PrecioUnidad="263.50"></producto>
+<producto idProducto="39" NombreProducto="Licor verde Chartreuse" Categoría="Bebidas" CantidadPorUnidad="750 cc por bot." PrecioUnidad="18.00"></producto>
+</productos>

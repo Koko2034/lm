@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            label {display:inline-block;
+                   width:80px}
+            </style>
+        </head>
+        <body>
+            <div>
+                <form name="frmDemo" id="frmDemo" 
+                  method="POST"
+                  action="http://www.politecnicomalaga.com/daw/lm/receptor.php"
+                  enctype="multipart/form-data">
+                <label for="txtNombre">Nombre:</label>
+                <input type="text" name="txtNombre" id="txtNombre"/>
+                <br>
+                <label for="txtEdad">Edad:</label>
+                <input type="text" name="txtEdad" id="txtEdad"/>
+                <br>
+                <label for="selHobby">Hobby:</label>
+                <select name="selHobby" id="selHobby" title="Selecciona tu ocupación preferida">
+                    <option value="">selecciona...</option>
+                    <option value="dep">Deportes</option>
+                    <option value="tv">Televisión</option>
+                    <option value="amigos">Salir con amigos</option>
+                </select>
+                <br>
+                <label for="rdaSexo">Sexo:</label>
+                <input type="radio" name="rdaSexo" id="rdaS1" value="V">V
+                <input type="radio" name="rdaSexo" id="rdaS2" value="M">M
+                <input type="radio" name="rdaSexo" id="rdaS3" value="N">NS/NC
+                <br>
+                <label for="chkAcepta">Acepta:</label>
+                <input type="checkbox" name="chkAcepta" id="chkAcepta" value="A">Acepta
+                <br>
+                <label for="txtNotas">Notas:</label>
+                <textarea name="txtNotas" id="txtNotas"></textarea>
+                <br>
+                <input type="file" name="ficFoto" id="ficFoto">
+                <br>
+                <!-- Envío de formulario -->
+                <input type="submit" name="butEnviar" id="butEnviar" value="Enviar"/>
+                <!-- Evento del usuario -->
+                <input type="button" name="butDemo" id="butDemo" value="Demo" onclick="javascript:Saludo()"/>
+                <!-- Envío de formulario -->
+                <button name="butBoton1" id="butBoton1">Botón1</button>
+                <!-- Envento del usuario -->
+                <button type="button" onclick="javascript:Saludo()" name="butBoton2" id="butBoton2">Botón2</button>
+            </form>
+        </div>
+    </body>
+    <script>
+        function Saludo() {
+            alert("Hola grupo!!!");
+        }
+    </script>
+</html>

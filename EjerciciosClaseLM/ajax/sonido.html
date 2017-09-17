@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div><input type="text" id="txtPalabra">
+            <button type="button" id="butEnviar">IR</button>
+            <div><label>soundex: <span id="s"></span></label></div>
+            <div><label>metaphone: <span id="m"></span></label></div>
+        </div>
+    </body>
+    <script>
+        document.getElementById("butEnviar").onclick = function () {
+            var palabra = document.getElementById('txtPalabra').value;
+            var http = new XMLHttpRequest();
+            http.open('GET', 'sonido.php?palabra=' + palabra, true);
+            http.onreadystatechange = function () {
+                if (http.readyState == 4 && http.status == 200) {
+                    var respuesta = JSON.parse(http.responseText);
+                    if (respuesta.status == 'ok') {
+                        document.getElementById("s").innerHTML = respuesta.s;
+                        document.getElementById("m").innerHTML = respuesta.m;
+                    } else {
+                        document.getElementById("s").innerHTML = '';
+                        document.getElementById("m").innerHTML = '';
+                    }
+                }
+            }
+            http.send(null);
+
+        }
+    </script>
+</html>

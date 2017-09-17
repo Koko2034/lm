@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ELEMENT trenes ((getInformacionTrenesReturn))>
+	<!ELEMENT getInformacionTrenesReturn ((infoTrenIda+, infoTrenVuelta+))>
+
+	<!ELEMENT infoTrenIda ((tren, tipoTren, horaSalida, horaLlegada, origen, destino, clases+, infoAdicionales?))>
+	<!ELEMENT infoTrenVuelta ((tren, tipoTren, horaSalida, horaLlegada, origen, destino, clases+, infoAdicionale?))>
+		
+		<!ELEMENT tren (#PCDATA)>
+		<!ELEMENT tipoTren ((cdgoTipoTren, descTipoTren))>
+			<!ELEMENT cdgoTipoTren (#PCDATA) REQUIRED>
+			<!ELEMENT descTipoTren (#PCDATA) REQUIRED>
+		<!ELEMENT horaSalida (#PCDATA)>
+		<!ELEMENT horaLlegada (#PCDATA)>
+		<!ELEMENT origen ((cdgoEstacion, descEstacion))>
+		<!ELEMENT destino ((cdgoEstacion, descEstacion))>
+			<!ELEMENT cdgoEstacion (#PCDATA) REQUIRED>
+			<!ELEMENT descEstacion (#PCDATA) REQUIRED>
+		<!ELEMENT clases ((cdgoClase, descClase, ocupaciones))+>
+			<!ELEMENT cdgoClase (#PCDATA)>
+			<!ELEMENT descClase (#PCDATA)>
+			<!ELEMENT ocupaciones ((cdgoOcupacion, descOcupacion, tarifas*))>
+				<!ELEMENT cdgoOcupacion (#PCDATA)>
+				<!ELEMENT descOcupacion (#PCDATA)>
+					<!ELEMENT tarifas ((cdgoTarifa, descTarifa, disponibilidad, precio, claseComercial))>
+						<!ELEMENT cdgoTarifa (#PCDATA)>
+						<!ELEMENT descTarifa (#PCDATA)>
+						<!ELEMENT disponibilidad (#PCDATA)>
+						<!ELEMENT precio (#PCDATA)>
+						<!ELEMENT claseComercial EMPTY>
+		<!ELEMENT infoAdicionales ((cdgoInformacion, txtoInformacion))*>
+			<!ELEMENT cdgoInformacion (#PCDATA)>			
+			<!ELEMENT txtoInformacion (#PCDATA)>			
+	
+
+

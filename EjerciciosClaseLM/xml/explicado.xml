@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Alumnos>
+	<alumno id="01">
+		<nombre>Francisco José</nombre>
+		<edad>21</edad>
+		<telefono>
+			<movil>607552299</movil>
+			<fijo>952112233</fijo>
+		</telefono>
+		<html_preferido><![CDATA[<h1>]]></html_preferido>
+	</alumno>
+	<alumno id="05">
+		<nombre>Luis</nombre>
+		<edad>24</edad>
+	</alumno>
+	<alumno id="12">
+		<nombre>弗朗西斯科·何塞</nombre>
+		<edad>22</edad>
+		<telefono>
+			<movil>607552299</movil>
+			<fijo>952112233</fijo>
+		</telefono>
+	</alumno>
+</Alumnos>

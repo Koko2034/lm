@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Zero14</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            img {
+                width: 300px;
+                height: 300px;
+                margin-top: -150px;
+                margin-left: -150px;
+                left: 50%;
+                top: 50%;
+                position: absolute;
+            }
+            input.comprobar{
+                left: 50%;
+                top: 77%;
+                position: absolute;
+            }  
+            form {visibility: hidden}
+        </style>
+    </head>
+    <body>
+    <center>
+        <div id="divPregunta">
+            <img id="fotocambia" src="reto.jpg" />
+        </div>
+        <form id="frmPregunta"><h2>Ponga aquí el nombre del objeto oculto</h2>\n\
+            <input id='respuesta' type='text'>
+            <button onclick='enviar(respuesta.value)'>Comprobar</button>
+        </form>        
+    </center>
+</body>
+<script>
+    inicio();
+    function inicio() {
+        setTimeout(function () {
+            document.getElementById("fotocambia").src = "retox.jpg";
+        }, 3000);
+        setTimeout(function () {
+            document.getElementById("frmPregunta").setAttribute('style', 'visibility:visible');
+            document.getElementById("divPregunta").setAttribute('style', 'visibility:hidden');
+        }, 6000);
+    }
+    function enviar(respuesta) {
+        if (respuesta == 'puro') {
+            alert("Enhorabuena, has acertado");
+        } else {
+            alert("Has fallado, vuelve a intertarlo");
+        }
+    }
+</script>
+
+</html>

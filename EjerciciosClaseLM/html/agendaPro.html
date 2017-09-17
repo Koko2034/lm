@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="../stylesheets/bootstrap.min.css " rel="stylesheet">
+    <link href="../stylesheets/bootstrap-theme.min.css " rel="stylesheet">
+    <style>
+        .contenedor {
+            margin: 10px;
+            float: left;
+            width: 100%;
+        }
+
+        .formulario {
+            margin: 2%;
+            width: 30%;
+            display: inline-table;
+        }
+
+        .btn {
+            margin-top: 10px;
+        }
+
+        #tabla {
+            display: table;
+            width: 100%;
+            text-align: center;
+            margin: 0 auto;
+            float: right;
+        }
+
+        .agenda {
+            margin: 1%;
+            width: 60%;
+            float: right;
+            margin-right: 5%;
+            margin-top: 2%;
+        }
+
+        .fila {
+            display: table-row;
+        }
+
+        .columna {
+            height: 34px;
+            padding: 6px 12px;
+            font-size: 14px;
+            line-height: 1.42857143;
+            color: #555;
+            background-color: #fff;
+            background-image: none;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            display: table-cell;
+            border: 1px solid #555;
+            vertical-align: middle;
+            padding: 10px;
+            width: 25%;
+        }
+
+        .cabezera {
+            font-size: 20px;
+            line-height: 1.42857143;
+            color: #337ab7;
+            background-color: #fff;
+            background-image: none;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            display: table-cell;
+            border: 1px solid #555;
+            vertical-align: middle;
+            padding: 10px;
+        }
+
+        .titulo {
+            width: 69%;
+            text-align: center;
+            float: right;
+        }
+
+        .tituloFormulario {
+            width: 30%;
+            float: left;
+            margin-left: 1%;
+            text-align: center;
+        }
+
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+
+            -webkit-appearance: none;
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="contenedor" name="contenedor" class="contenedor">
+        <div id="titulo" name="titulo" class="titulo">
+            <h1>Agenda</h1>
+        </div>
+        <div id="tituloFormulario" class="tituloFormulario">
+            <h1>Datos</h1>
+        </div>
+        <div id="formulario" name="formulario" class="form-group formulario">
+            <span>ID</span>
+            <input type="text" id="txtId" name="id" value="" class="form-control ">
+            <span>Nombre</span>
+            <input type="text" name="nombre" value="" class="form-control">
+            <span>Correo</span>
+            <input type="email" name="correo" value="" class="form-control">
+            <span>Tel</span>
+            <input type="number" name="tel" value="" class="form-control">
+            <a href="#" class="btn enabled btn-primary btn-block btn-lg" type="button" id="añadir" onclick="addPerson()">Añadir</a>
+        </div>
+
+        <table id="tableAgend" class="table agenda table-striped">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Nombre</th>
+                    <th>Correo</th>
+                    <th>Telefono</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+    </div>
+
+</body>
+<script>
+    let agenda = {};
+    window.onload = function () {
+        //TODO 
+        if (localStorage.getItem('agenda') != null) {
+            agenda = JSON.parse(localStorage.getItem("agenda", JSON.stringify(agenda), Infinity));
+        } else {
+            agenda = {
+                0: {
+                    nombre: "Jonh Doe",
+                    correo: "jonh@doemail.com",
+                    tel: "623456789"
+                }
+            }
+        }
+
+
+        Object.keys(agenda).forEach(id => drawAgend(id));
+
+    }
+
+    const validForm = (persona) => {
+        let {
+            id,
+            nombre,
+            correo,
+            tel
+        } = persona;
+        //TODO COMPROBAR MEJOR CADA CAMPO CON SUS FUNCIONES isValid(type, control);
+        let meBool = correo.includes("@") && tel.length === 9 && Number.isInteger(parseInt(id)) ? true : false;
+        return meBool;
+    }
+    /*const isValid = () => {
+
+    }*/
+
+    const addPerson = () => {
+        let persona = getInfo();
+        if (!persona) {
+
+        } else {
+            let id = persona.id;
+            existId(id) ? idInUse() : insertPerson(persona) ? drawAgend(id) : "";
+        }
+    }
+    const insertPerson = (persona) => {
+        let id = persona.id;
+        delete persona.id;
+        agenda[id] = persona;
+        localStorage.setItem("agenda", JSON.stringify(agenda), Infinity);
+        return true;
+    }
+
+    const existId = (id) => {
+        return typeof agenda[id] != "undefined" ? true : false
+    }
+
+    const idInUse = () => {
+        window.document.getElementById("txtId").value = "ID en uso prueba con otra"
+    }
+
+    const getInfo = () => {
+        let persona = {};
+        let form = window.document.getElementById("formulario");
+        for (let i = 1; i < form.children.length; i++) {
+            let key = form.children[i - 1].textContent.toLowerCase();
+            let value = form.children[i].value;
+            persona[key] = value;
+            i++;
+        }
+        return validForm(persona) ? persona : false;
+    }
+
+    const drawAgend = (id) => {
+        let persona = agenda[id]
+        let {
+            nombre,
+            correo,
+            tel
+        } = persona;
+        let tableAgend = window.document.getElementById("tableAgend").children[1];
+        tableAgend.innerHTML +=
+            "<tr>" +
+            "<td>" + id + "</td>" +
+            "<td>" + nombre + "</td>" +
+            "<td>" + correo + "</td>" +
+            "<td>" + tel + "</td>"
+        "</tr>";
+    }
+</script>
+
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Agudeza</title>
+        <link rel="stylesheet" href="agudeza03.css">
+    </head>
+    <body> 
+        <div id="divInicializar"></div>
+        <div id="divAgudeza"></div>
+        <div id="divAgudeza2"></div>
+        <div id="divQuestion"></div>
+        <div id="divComprobar"></div>
+        <div id="divRepeat"></div>
+        <div id="divFinal"></div>
+    </body>
+    <script type="text/javascript">
+        var words = ["Perro", "Gato", "Oso", "Panda", "Avispa", "Agudeza", "Dios", "Animal", "Verbo", "Palabra", "Coche"];
+        var word1, word2;
+        var palabra = "";
+        var aleatorio = 0;
+        var fallos = 3;
+        var cont = words.length;
+        var correctas = 0;
+        var divComp = "";
+        var wordRandom = [];
+        var w = window,
+                d = document,
+                e = d.documentElement,
+                g = d.getElementsByTagName('body')[0],
+                anchoMax = w.innerWidth || e.clientWidth || g.clientWidth,
+                altoMax = w.innerHeight || e.clientHeight || g.clientHeight;
+        var angle = 0;
+        var x = 0;
+        var y = 0;
+        var w = (anchoMax) / 2;
+        var h = (altoMax - 80) / 2;
+        var signo = 50;
+        var crono, crono2;
+        window.onload = function () {
+            document.getElementById('divInicializar').innerHTML = "<button onclick='getRandomWords();inicio()'>Comenzar el juego</button>";;
+        };
+        function getRandomWords() {
+            limpiar();
+            palabra = "";
+            var random = [];
+            var salir = false;
+            for (var i = 0; i < 2; i++) {
+                do {
+                    random[i] = parseInt(Math.random() * words.length);
+                    if (!wordRandom[random[i]]) {
+                        wordRandom[random[i]] = 1;
+                        salir = true;
+                    }
+                } while (!salir);
+            }
+            while (words[random[0]] == words[random[1]]) {
+                words[random[1]] = parseInt(Math.random() * words.length);
+
+            }
+            word1 = words[random[0]];
+            word2 = words[random[1]];
+            palabra += "<div id='contenido'>" + words[random[0]] + "</div>";
+            palabra += "<div id='contenido2'>" + words[random[1]] + "</div>";
+            document.getElementById('divAgudeza').style = "backgroud-color:red";
+            document.getElementById('divAgudeza').innerHTML = palabra;
+        }
+
+        function inicio() {
+            giros();
+            crono = setInterval(giros, 10);
+        }
+        function giros() {
+            if (window.document.getElementById('contenido')) {
+                var c = window.document.getElementById('contenido');
+                var p = window.document.getElementById('contenido2');
+                var t = window.document.getElementById('divAgudeza');
+                x = w + w * Math.cos(angle * Math.PI / 180);
+                y = h + h * Math.sin(angle * Math.PI / 180);
+                p.style.left = (x / 1.5) + 'px';
+                p.style.top = (y / 3) + 'px';
+                c.style.left = x + 'px';
+                c.style.top = y + 'px';
+                angle++;
+                if (angle < 180) {
+                    t.style.fontSize = signo + "%";
+                    signo++;
+                } else {
+                    t.style.fontSize = signo + "%";
+                    signo--;
+                }
+                if (angle > 360) {
+                    angle = 0;
+                    clearInterval(crono);
+                    Question();
+                    p.innerHTML = "";
+                }
+            }
+        }
+        function Question() {
+            var html = "";
+            html += "<h2>Ponga aquí la palabras que has visto</h2><input id='comprobar' type='text'>&nbsp<input id='comprobar2' type='text'><button id='button' onclick='checkQuestion(comprobar.value,comprobar2.value)'>Comprobar</button>";
+            document.getElementById("divQuestion").innerHTML = html;
+        }
+        function correcto() {
+            cont -= 2;
+            divComp = "<h1>Correcto</h1>";
+            disabledButtonAndInput();
+            document.getElementById('divComprobar').style = "color:green";
+            correctas += 2;
+        }
+        function checkQuestion(comprobar, comprobar2) {
+            divComp = "";
+            if (word1.toLowerCase() == comprobar.toLowerCase() && word2.toLowerCase() == comprobar2.toLowerCase()) {
+                correcto();
+            } else if (word2.toLowerCase() == comprobar.toLowerCase() && word1.toLowerCase() == comprobar2.toLowerCase()) {
+                correcto();
+            } else {
+                fallos--;
+                cont -= 2;
+                divComp = "<h1>Fallaste, te quedan " + fallos + " intentos</h1>";
+                disabledButtonAndInput();
+                document.getElementById('divComprobar').style = "color:red";
+            }
+            repeat();
+            document.getElementById('divComprobar').innerHTML = divComp;
+            comprobarJuego();
+        }
+        function disabledButtonAndInput() {
+            document.getElementById('button').disabled = true;
+            document.getElementById('button').style = "cursor:not-allowed;opacity:0.6";
+            document.getElementById('comprobar').readOnly = true;
+            document.getElementById('comprobar2').readOnly = true;
+        }
+        function comprobarJuego() {
+            if (fallos == 0)
+                final();
+            if (cont == 0)
+                final();
+        }
+        function repeat() {
+            var repeat = "";
+            repeat += '<h2>¿Quieres repetir el juego?</h2><button type="button" onclick="getRandomWords();inicio()">Sí</button><button type="button" onclick="noSeguir()">No</button>';
+            document.getElementById('divRepeat').innerHTML = repeat;
+        }
+        function limpiar() {
+            document.getElementById('divInicializar').innerHTML = "";
+            document.getElementById('divQuestion').innerHTML = "";
+            document.getElementById('divComprobar').innerHTML = "";
+            document.getElementById('divRepeat').innerHTML = "";
+        }
+        function final() {
+            limpiar();
+            var palabras = words.length;
+            if (cont == 0) {
+                document.getElementById('divFinal').style = "color:Green";
+                document.getElementById('divFinal').innerHTML = "<h1>Juego finalizado, Has completado correctamente " + correctas + " de " + palabras + " palabras</h1>";
+            }
+            if (fallos == 0) {
+                document.getElementById('divFinal').style = "color:red";
+                document.getElementById('divFinal').innerHTML = '<h1>Perdiste</h1>';
+            }
+        }
+        function noSeguir() {
+            limpiar();
+            document.getElementById('divFinal').innerHTML = "<h1> Juego finalizado </h1>"
+        }
+    </script>
+</html>

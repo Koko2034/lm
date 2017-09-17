@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../css/estilosdivs.css?v=2">
+        <style>
+            .divRow:nth-child(odd) {
+                background-color: #8bf2ff;
+            }
+            .divRow:nth-child(even) {
+                background-color: #bef8ff;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="divDatos"></div>
+    </body>
+    <script>
+        window.onload = function () {
+            var html = "<div class='divTable'>";
+            var html = "<div class='divHead'><div class='divCell'>Jugador</div><div class='divCell'>Nacionalidad</div></div>";
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.open("GET", "http://www.politecnicomalaga.com/daw/lm/xml/PlantillaCF.xml", false);
+            xmlhttp.send();
+            var xmlDoc = xmlhttp.responseXML;
+            var datos = xmlDoc.getElementsByTagName("Jugador");
+            for (var i = 0; i < datos.length; i++) {
+                var dorsal = datos[i].getAttribute('dorsal');
+                var nombre = datos[i].getElementsByTagName('Nombre')[0].childNodes[0].nodeValue;
+                if (datos[i].getElementsByTagName('Nacionalidad').length > 0) {
+                    var nacionalidad = datos[i].getElementsByTagName('Nacionalidad')[0].childNodes[0].nodeValue;
+                } else {
+                    var nacionalidad = '';
+                }
+                html += '<div class="divRow">';
+                html += '<div class="divCell">(' + dorsal + ') ' + nombre + '</div>';
+                html += '<div class="divCell">' + nacionalidad + '</div>';
+                html += '</div>';
+            }
+            html += '</div>';
+            document.getElementById('divDatos').innerHTML = html;
+        }
+    </script>
+</html>

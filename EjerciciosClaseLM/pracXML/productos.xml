@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<productos>
+<producto idProducto="1" NombreProducto="Té Dharamsala" Categoría="Bebidas" CantidadPorUnidad="10 cajas x 20 bolsas" PrecioUnidad="18,00 €"></producto>
+<producto idProducto="2" NombreProducto="Cerveza tibetana Barley" Categoría="Bebidas" CantidadPorUnidad="24 - bot. 12 l" PrecioUnidad="19,00 €"></producto>
+<producto idProducto="3" NombreProducto="Sirope de regaliz" Categoría="Condimentos" CantidadPorUnidad="12 - bot. 550 ml" PrecioUnidad="10,00 €"></producto>
+<producto idProducto="4" NombreProducto="Especias Cajun del chef Anton" Categoría="Condimentos" CantidadPorUnidad="48 - frascos 6 l" PrecioUnidad="22,00 €"></producto>
+<producto idProducto="5" NombreProducto="Mezcla Gumbo del chef Anton" Categoría="Condimentos" CantidadPorUnidad="36 cajas" PrecioUnidad="21,35 €"></producto>
+<producto idProducto="6" NombreProducto="Mermelada de grosellas de la abuela" Categoría="Condimentos" CantidadPorUnidad="12 - frascos 8 l" PrecioUnidad="25,00 €"></producto>
+<producto idProducto="7" NombreProducto="Peras secas orgánicas del tío Bob" Categoría="Frutas/Verduras" CantidadPorUnidad="12 - paq. 1 kg" PrecioUnidad="30,00 €"></producto>
+<producto idProducto="8" NombreProducto="Salsa de arándanos Northwoods" Categoría="Condimentos" CantidadPorUnidad="12 - frascos 12 l" PrecioUnidad="40,00 €"></producto>
+<producto idProducto="9" NombreProducto="Buey Mishi Kobe" Categoría="Carnes" CantidadPorUnidad="18 - paq. 500 g" PrecioUnidad="97,00 €"></producto>
+<producto idProducto="10" NombreProducto="Pez espada" Categoría="Pescado/Marisco" CantidadPorUnidad="12 - frascos 200 ml" PrecioUnidad="31,00 €"></producto>
+<producto idProducto="11" NombreProducto="Queso Cabrales" Categoría="Lácteos" CantidadPorUnidad="paq. 1 kg" PrecioUnidad="21,00 €"></producto>
+<producto idProducto="12" NombreProducto="Queso Manchego La Pastora" Categoría="Lácteos" CantidadPorUnidad="10 - paq. 500 g" PrecioUnidad="38,00 €"></producto>
+<producto idProducto="13" NombreProducto="Algas Konbu" Categoría="Pescado/Marisco" CantidadPorUnidad="caja 2 kg" PrecioUnidad="6,00 €"></producto>
+<producto idProducto="14" NombreProducto="Cuajada de judías" Categoría="Frutas/Verduras" CantidadPorUnidad="40 - paq. 100 g" PrecioUnidad="23,25 €"></producto>
+<producto idProducto="15" NombreProducto="Salsa de soja baja en sodio" Categoría="Condimentos" CantidadPorUnidad="24 - bot. 250 ml" PrecioUnidad="15,50 €"></producto>
+<producto idProducto="16" NombreProducto="Postre de merengue Pavlova" Categoría="Repostería" CantidadPorUnidad="32 - cajas 500 g" PrecioUnidad="17,45 €"></producto>
+<producto idProducto="17" NombreProducto="Cordero Alice Springs" Categoría="Carnes" CantidadPorUnidad="20 - latas 1 kg" PrecioUnidad="39,00 €"></producto>
+<producto idProducto="18" NombreProducto="Langostinos tigre Carnarvon" Categoría="Pescado/Marisco" CantidadPorUnidad="paq. 16 kg" PrecioUnidad="62,50 €"></producto>
+<producto idProducto="19" NombreProducto="Pastas de té de chocolate" Categoría="Repostería" CantidadPorUnidad="10 cajas x 12 piezas" PrecioUnidad="9,20 €"></producto>
+<producto idProducto="20" NombreProducto="Mermelada de Sir RodneyAndApos's" Categoría="Repostería" CantidadPorUnidad="30 cajas regalo" PrecioUnidad="81,00 €"></producto>
+<producto idProducto="21" NombreProducto="Bollos de Sir RodneyAndApos's" Categoría="Repostería" CantidadPorUnidad="24 paq. x 4 piezas" PrecioUnidad="10,00 €"></producto>
+<producto idProducto="22" NombreProducto="Pan de centeno crujiente" Categoría="Granos/Cereales" CantidadPorUnidad="24 - paq. 500 g" PrecioUnidad="21,00 €"></producto>
+<producto idProducto="23" NombreProducto="Pan fino" Categoría="Granos/Cereales" CantidadPorUnidad="12 - paq. 250 g" PrecioUnidad="9,00 €"></producto>
+<producto idProducto="24" NombreProducto="Refresco Guaraná Fantástica" Categoría="Bebidas" CantidadPorUnidad="12 - latas 355 ml" PrecioUnidad="4,50 €"></producto>
+<producto idProducto="25" NombreProducto="Crema de chocolate y nueces NuNuCa" Categoría="Repostería" CantidadPorUnidad="20 - vasos  450 g" PrecioUnidad="14,00 €"></producto>
+<producto idProducto="26" NombreProducto="Ositos de goma Gumbér" Categoría="Repostería" CantidadPorUnidad="100 - bolsas 250 g" PrecioUnidad="31,23 €"></producto>
+<producto idProducto="27" NombreProducto="Chocolate Schoggi" Categoría="Repostería" CantidadPorUnidad="100 - piezas 100 g" PrecioUnidad="43,90 €"></producto>
+<producto idProducto="28" NombreProducto="Col fermentada Róssle" Categoría="Frutas/Verduras" CantidadPorUnidad="25 - latas 825 g" PrecioUnidad="45,60 €"></producto>
+<producto idProducto="29" NombreProducto="Salchicha Théringer" Categoría="Carnes" CantidadPorUnidad="50 bolsas x 30 salch" PrecioUnidad="123,79 €"></producto>
+<producto idProducto="30" NombreProducto="Arenque blanco del noroeste" Categoría="Pescado/Marisco" CantidadPorUnidad="10 - vasos 200 g" PrecioUnidad="25,89 €"></producto>
+<producto idProducto="31" NombreProducto="Queso gorgonzola Telino" Categoría="Lácteos" CantidadPorUnidad="12 - paq. 100 g" PrecioUnidad="12,50 €"></producto>
+<producto idProducto="32" NombreProducto="Queso Mascarpone Fabioli" Categoría="Lácteos" CantidadPorUnidad="24 - paq. 200 g" PrecioUnidad="32,00 €"></producto>
+<producto idProducto="33" NombreProducto="Queso de cabra" Categoría="Lácteos" CantidadPorUnidad="500 g" PrecioUnidad="2,50 €"></producto>
+<producto idProducto="34" NombreProducto="Cerveza Sasquatch" Categoría="Bebidas" CantidadPorUnidad="24 - bot. 12 l" PrecioUnidad="14,00 €"></producto>
+<producto idProducto="35" NombreProducto="Cerveza negra Steeleye" Categoría="Bebidas" CantidadPorUnidad="24 - bot. 12 l" PrecioUnidad="18,00 €"></producto>
+<producto idProducto="36" NombreProducto="Escabeche de arenque" Categoría="Pescado/Marisco" CantidadPorUnidad="24 - frascos 250 g" PrecioUnidad="19,00 €"></producto>
+<producto idProducto="37" NombreProducto="Salmón ahumado Gravad" Categoría="Pescado/Marisco" CantidadPorUnidad="12 - paq. 500 g" PrecioUnidad="26,00 €"></producto>
+<producto idProducto="38" NombreProducto="Vino Cóte de Blaye" Categoría="Bebidas" CantidadPorUnidad="12 - bot. 75 cl" PrecioUnidad="263,50 €"></producto>
+<producto idProducto="39" NombreProducto="Licor verde Chartreuse" Categoría="Bebidas" CantidadPorUnidad="750 cc por bot." PrecioUnidad="18,00 €"></producto>
+<producto idProducto="40" NombreProducto="Carne de cangrejo de Boston" Categoría="Pescado/Marisco" CantidadPorUnidad="24 - latas 4 l" PrecioUnidad="18,40 €"></producto>
+<producto idProducto="41" NombreProducto="Crema de almejas estilo Nueva Inglaterra" Categoría="Pescado/Marisco" CantidadPorUnidad="12 - latas 12 l" PrecioUnidad="9,65 €"></producto>
+<producto idProducto="42" NombreProducto="Tallarines de Singapur" Categoría="Granos/Cereales" CantidadPorUnidad="32 - 1 kg paq." PrecioUnidad="14,00 €"></producto>
+<producto idProducto="43" NombreProducto="Café de Malasia" Categoría="Bebidas" CantidadPorUnidad="16 - latas 500 g" PrecioUnidad="46,00 €"></producto>
+<producto idProducto="44" NombreProducto="Azúcar negra Malacca" Categoría="Condimentos" CantidadPorUnidad="20 - bolsas 2 kg" PrecioUnidad="19,45 €"></producto>
+<producto idProducto="45" NombreProducto="Arenque ahumado" Categoría="Pescado/Marisco" CantidadPorUnidad="paq. 1k" PrecioUnidad="9,50 €"></producto>
+<producto idProducto="46" NombreProducto="Arenque salado" Categoría="Pescado/Marisco" CantidadPorUnidad="4 - vasos 450 g" PrecioUnidad="12,00 €"></producto>
+<producto idProducto="47" NombreProducto="Galletas Zaanse" Categoría="Repostería" CantidadPorUnidad="10 - cajas 4 l" PrecioUnidad="9,50 €"></producto>
+<producto idProducto="48" NombreProducto="Chocolate holandés" Categoría="Repostería" CantidadPorUnidad="10 paq." PrecioUnidad="12,75 €"></producto>
+<producto idProducto="49" NombreProducto="Regaliz" Categoría="Repostería" CantidadPorUnidad="24 - paq. 50 g" PrecioUnidad="20,00 €"></producto>
+<producto idProducto="50" NombreProducto="Chocolate blanco" Categoría="Repostería" CantidadPorUnidad="12 - barras 100 g" PrecioUnidad="16,25 €"></producto>
+<producto idProducto="51" NombreProducto="Manzanas secas Manjimup" Categoría="Frutas/Verduras" CantidadPorUnidad="50 - paq. 300 g" PrecioUnidad="53,00 €"></producto>
+<producto idProducto="52" NombreProducto="Cereales para Filo" Categoría="Granos/Cereales" CantidadPorUnidad="16 - cajas 2 kg" PrecioUnidad="7,00 €"></producto>
+<producto idProducto="53" NombreProducto="Empanada de carne" Categoría="Carnes" CantidadPorUnidad="48 porc." PrecioUnidad="32,80 €"></producto>
+<producto idProducto="54" NombreProducto="Empanada de cerdo" Categoría="Carnes" CantidadPorUnidad="16 tartas" PrecioUnidad="7,45 €"></producto>
+<producto idProducto="55" NombreProducto="Paté chino" Categoría="Carnes" CantidadPorUnidad="24 cajas x 2 tartas" PrecioUnidad="24,00 €"></producto>
+<producto idProducto="56" NombreProducto="Gnocchi de la abuela Alicia" Categoría="Granos/Cereales" CantidadPorUnidad="24 - paq. 250 g" PrecioUnidad="38,00 €"></producto>
+<producto idProducto="57" NombreProducto="Raviolis Angelo" Categoría="Granos/Cereales" CantidadPorUnidad="24 - paq. 250 g" PrecioUnidad="19,50 €"></producto>
+<producto idProducto="58" NombreProducto="Caracoles de Borgoña" Categoría="Pescado/Marisco" CantidadPorUnidad="24 porc." PrecioUnidad="13,25 €"></producto>
+<producto idProducto="59" NombreProducto="Raclet de queso Courdavault" Categoría="Lácteos" CantidadPorUnidad="paq. 5 kg" PrecioUnidad="55,00 €"></producto>
+<producto idProducto="60" NombreProducto="Camembert Pierrot" Categoría="Lácteos" CantidadPorUnidad="15 - paq. 300 g" PrecioUnidad="34,00 €"></producto>
+<producto idProducto="61" NombreProducto="Sirope de arce" Categoría="Condimentos" CantidadPorUnidad="24 - bot. 500 ml" PrecioUnidad="28,50 €"></producto>
+<producto idProducto="62" NombreProducto="Tarta de azúcar" Categoría="Repostería" CantidadPorUnidad="48 tartas" PrecioUnidad="49,30 €"></producto>
+<producto idProducto="63" NombreProducto="Sandwich de vegetales" Categoría="Condimentos" CantidadPorUnidad="15 - frascos 625 g" PrecioUnidad="43,90 €"></producto>
+<producto idProducto="64" NombreProducto="Bollos de pan de Wimmer" Categoría="Granos/Cereales" CantidadPorUnidad="20 bolsas x 4 porc." PrecioUnidad="33,25 €"></producto>
+<producto idProducto="65" NombreProducto="Salsa de pimiento picante de Luisiana" Categoría="Condimentos" CantidadPorUnidad="32 - bot. 8 l" PrecioUnidad="21,05 €"></producto>
+<producto idProducto="66" NombreProducto="Especias picantes de Luisiana" Categoría="Condimentos" CantidadPorUnidad="24 - frascos 8 l" PrecioUnidad="17,00 €"></producto>
+<producto idProducto="67" NombreProducto="Cerveza Laughing Lumberjack" Categoría="Bebidas" CantidadPorUnidad="24 - bot. 12 l" PrecioUnidad="14,00 €"></producto>
+<producto idProducto="68" NombreProducto="Barras de pan de Escocia" Categoría="Repostería" CantidadPorUnidad="10 cajas x 8 porc." PrecioUnidad="12,50 €"></producto>
+<producto idProducto="69" NombreProducto="Queso Gudbrandsdals" Categoría="Lácteos" CantidadPorUnidad="paq. 10 kg" PrecioUnidad="36,00 €"></producto>
+<producto idProducto="70" NombreProducto="Cerveza Outback" Categoría="Bebidas" CantidadPorUnidad="24 - bot. 355 ml" PrecioUnidad="15,00 €"></producto>
+<producto idProducto="71" NombreProducto="Crema de queso Flátemys" Categoría="Lácteos" CantidadPorUnidad="10 - paq. 500 g" PrecioUnidad="21,50 €"></producto>
+<producto idProducto="72" NombreProducto="Queso Mozzarella Giovanni" Categoría="Lácteos" CantidadPorUnidad="24 - paq. 200 g" PrecioUnidad="34,80 €"></producto>
+<producto idProducto="73" NombreProducto="Caviar rojo" Categoría="Pescado/Marisco" CantidadPorUnidad="24 - frascos150 g" PrecioUnidad="15,00 €"></producto>
+<producto idProducto="74" NombreProducto="Queso de soja Longlife" Categoría="Frutas/Verduras" CantidadPorUnidad="paq. 5 kg" PrecioUnidad="10,00 €"></producto>
+<producto idProducto="75" NombreProducto="Cerveza Klosterbier Rhónbréu" Categoría="Bebidas" CantidadPorUnidad="24 - bot. 0,5 l" PrecioUnidad="7,75 €"></producto>
+<producto idProducto="76" NombreProducto="Licor Cloudberry" Categoría="Bebidas" CantidadPorUnidad="500 ml" PrecioUnidad="18,00 €"></producto>
+<producto idProducto="77" NombreProducto="Salsa verde original Frankfurter" Categoría="Condimentos" CantidadPorUnidad="12 cajas" PrecioUnidad="13,00 €"></producto>
+</productos>

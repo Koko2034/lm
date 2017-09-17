@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>zero11</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>
+            <form>
+                <input type="text" id="txtN1" name="txtN1"/>
+                <input type="text" id="txtN2" name="txtN2"/>
+                <button type="button" onclick="sumar()">+</button>
+                <button type="button" onclick="restar()">-</button>
+                <button type="button" onclick="multiplicar()">x</button>
+                <button type="button" onclick="dividir()">/</button>
+                <input type="text" id="txtR" name="txtR"/>
+            </form>
+        </div>
+    </body>
+    <script>
+        function sumar() {
+            var num1 = parseInt(document.getElementById("txtN1").value);
+            var num2 = parseInt(document.getElementById("txtN2").value);
+            if (isNaN(num1) || isNaN(num2) ) {
+                document.getElementById("txtR").value='Indica un número, porfa';
+            } else {
+                var aux = num1 + num2;
+                document.getElementById("txtR").value = aux;
+            }
+        }
+    </script>
+</html>

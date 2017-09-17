@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Menú</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../css/estilosdivs.css?v=3">
+        <style>
+            .divRow:nth-child(odd) {
+                background-color: #8bf2ff;
+
+            }
+            .divRow:nth-child(even) {
+                background-color: #bef8ff;
+            }
+        </style>
+
+    </head>
+    <body>
+        <div id="divDatos"></div>
+        <div>
+            <input type="button" value="Generar" onClick="generarMenu()">
+        </div>
+    </body>
+    <script>
+        var aComida = {}, cont = 0;
+        window.onload = function () {
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.open("GET", "http://www.politecnicomalaga.com/daw/lm/xml/menu.xml", false);
+            xmlhttp.send(); //envia a nuestra página
+            var xmlDoc = xmlhttp.responseXML; //va guardando los datos que va sacasndo del xml de forma dinamica
+            var comida = xmlDoc.getElementsByTagName("comida"); //nos traemos el tag comida
+            for (var i = 0; i < comida.length; i++) {
+                aComida[i] = Object.create(Object.prototype);
+                aComida[i].nombre = comida[i].getElementsByTagName('nombre')[0].childNodes[0].nodeValue;
+                aComida[i].precio = comida[i].getElementsByTagName('precio')[0].childNodes[0].nodeValue;
+                aComida[i].descripcion = comida[i].getElementsByTagName('descripcion')[0].childNodes[0].nodeValue;
+                aComida[i].calorias = comida[i].getElementsByTagName('calorias')[0].childNodes[0].nodeValue;
+            }
+            cont = comida.length;
+            generarMenu();
+        }
+        function generarMenu() {
+            var html = "<div class='divHead'><div class='divCell'>Nombre</div><div class='divCell'>Precio</div>";
+            html += "<div class='divCell'>descripcion</div><div class='divCell'>Calorias</div></div>"
+            var precioTotal = 0;
+            var caloriaTotal = 0;
+            var aId = []; //Para generar los 3 platos aleatorios...
+            var i = 0;
+            while (i < 3) {
+                var aleatorio = parseInt(Math.random() * cont);
+                if (!aId[aleatorio]) {
+                    aId[aleatorio] = 1;
+                    i++;
+                }
+            }
+            for (var k in aId) {
+                html += '<div class="divRow">';
+                html += '<div class="divCell">' + aComida[k].nombre + '</div>';
+                html += '<div class="divCell">' + aComida[k].precio + '€</div>';
+                html += '<div class="divCell">' + aComida[k].descripcion + '</div>';
+                html += '<div class="divCell">' + aComida[k].calorias + '</div>';
+                html += '</div>';
+                precioTotal += parseFloat(aComida[k].precio);
+                caloriaTotal += parseFloat(aComida[k].calorias);
+            }
+            html += "<div class='divRow'>" + "Precio Total" + '<div class="divCell">' + precioTotal + '€ </div>' + '<div class="divCell"></div>' + '<div class="divCell"></div>' + "</div>";
+            html += "<div class='divRow'>" + "Calorias totales" + '<div class="divCell">' + caloriaTotal + ' kcal</div>' + '<div class="divCell"></div>' + '<div class="divCell"></div>' + "</div>";
+            document.getElementById('divDatos').innerHTML = html;
+
+        }
+    </script>
+</html>

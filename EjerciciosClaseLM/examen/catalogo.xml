@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<productos>
+	<producto id="56">
+		<nombre>Zapatillas On-Running Cloud Blues/Yellow 2015</nombre>
+		<precio>110,40 €</precio>
+		<publico>125 €</publico>
+		<foto>on-cloud-by</foto>
+		<color>azul</color>
+	</producto>
+	<producto id="59">
+		<nombre>Zapatillas On-Running Cloud Black/Slate 2015</nombre>
+		<precio>110,40 €</precio>
+		<publico>120,40 €</publico>
+		<foto>on-000009-3908-6</foto>
+		<color>negro</color>
+	</producto>
+	<producto id="63">
+		<nombre>Zapatillas On-Running Cloud Red/Flash 2015</nombre>
+		<precio>110,40 €</precio>
+		<publico>150 €</publico>
+		<foto>on-cloud-rf</foto>
+		<color>rojo</color>
+	</producto>
+	<producto id="65">
+		<nombre>Zapatillas Brooks Aduro 2 Black/Anthracite/Sulphur Spring 2014/2015</nombre>
+		<precio>76,90 €</precio>
+		<publico>80,90 €</publico>
+		<foto>110169_097_a_copia</foto>
+		<color>negro</color>
+	</producto>
+	<producto id="66">
+		<nombre>Zapatillas Mizuno Wave Ultima 6 Chinese Red/Silver/Diva Blue 2015</nombre>
+		<precio>89,90 €</precio>
+		<publico>200</publico>
+		<foto>1096526_2_copia</foto>
+		<color>rojo</color>
+	</producto>
+	<producto id="67">
+		<nombre>Zapatillas Mizuno Wave Impetus 2 Bolt/Turkish Sea 2015</nombre>
+		<precio>59,40 €</precio>
+		<publico>59,40 €</publico>
+		<foto>1ge141325_0_copia</foto>
+		<color>amarillo</color>
+	</producto>
+	<producto id="68">
+		<nombre>Zapatillas Mizuno Wave Inspire 10 SulphurSpring/Silver/White 2014/2015</nombre>
+		<precio>84,80 €</precio>
+		<publico>84,80 €</publico>
+		<foto>1gc144403_1</foto>
+		<color>amarillo</color>
+	</producto>
+	<producto id="70">
+		<nombre>Zapatillas On-Running Cloudrunner Anthracite / Methyl 2014</nombre>
+		<precio>172,20 €</precio>
+		<publico>172,20 €</publico>
+		<foto>07-zoom-03</foto>
+		<color>gris</color>
+	</producto>
+	<producto id="75">
+		<nombre>Zapatillas Zoot Ultra Race 4.0 Safety Yellow/Green Flash Side</nombre>
+		<precio>98,90 €</precio>
+		<publico>98,90 €</publico>
+		<foto>file_76_34</foto>
+		<color>amarillo</color>
+	</producto>
+</productos>

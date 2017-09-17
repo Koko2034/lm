@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:contactos="http://www.example.com/contactos" targetNamespace="http://www.example.com/contactos" elementFormDefault="qualified">
+	<element name="contactos">
+		<complexType>
+			<sequence>
+				<element name="contacto" minOccurs="0" maxOccurs="unbounded">
+					<complexType>
+						<sequence>
+							<element name="persona" type="contactos:TipoPersona"/>
+							<element name="localización" type="contactos:TipoLocalización"/>
+							<element name="teléfono" type="string"/>
+							<element name="descripción" type="contactos:TipoDescripción"/>
+						</sequence>
+					</complexType>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+	<complexType name="TipoPersona">
+		<group ref="contactos:GrupoPersona"/>
+		<attribute name="idioma" default="ES"/>
+		<attribute name="edad" use="required">
+			<simpleType>
+				<restriction base="integer">
+					<minInclusive value="1"/>
+					<maxInclusive value="140"/>
+				</restriction>
+			</simpleType>
+		</attribute>
+	</complexType>
+	<group name="GrupoPersona">
+		<sequence>
+			<element name="nombre" type="string" minOccurs="1" maxOccurs="unbounded"/>
+			<element name="apellido1" type="string" minOccurs="1" maxOccurs="1"/>
+			<element name="apellido2" type="string" minOccurs="0" maxOccurs="1"/>
+		</sequence>
+	</group>
+	<complexType name="TipoLocalización">
+		<choice minOccurs="0" maxOccurs="unbounded">
+			<element name="dirección" type="string"/>
+			<sequence>
+				<element name="latitud" type="string" minOccurs="0" maxOccurs="1"/>
+				<element name="longitud" type="string" minOccurs="0" maxOccurs="1"/>
+			</sequence>
+		</choice>
+	</complexType>
+	<complexType name="TipoDescripción" mixed="true">
+		<choice minOccurs="0" maxOccurs="unbounded">
+			<element name="em" type="string"/>
+			<element name="strong" type="string"/>
+			<element name="br" type="string"/>
+		</choice>
+	</complexType>
+</schema>

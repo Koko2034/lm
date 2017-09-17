@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Agenda</title>
+    </head>
+    <style>
+        * {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        fieldset {
+            font-family: sans-serif;
+            border: 5px solid #1F497D;
+            background: #f4f4f4;
+            border-radius: 5px;
+            padding: 15px;
+            width: 30%;
+            margin: 0 auto;
+        }
+
+        fieldset legend {
+            background: #1F497D;
+            color: #fff;
+            padding: 5px 10px;
+            font-size: 15px;
+            border-radius: 5px;
+            box-shadow: 0 0 0 5px #ddd;
+            margin-left: 20px;
+        }
+
+        label {
+            width: 30%;
+            float: left;
+        }
+
+        .divFormAgenda div {
+            margin-top: 10px;
+        }
+
+        header {
+            background: #1F497D;
+            color: white;
+            text-align: center;
+            font-size: 1.5em;
+            height: 20px;
+            padding: 15px;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        button {
+            margin: 10px 0 10px 0;
+            padding: 10px;
+            background: #1F497D;
+            cursor: pointer;
+            color: white;
+        }
+
+        button:hover {
+            color: #1F497D;
+            background: white;
+        }
+
+        #message {
+            display: inline-block;
+            padding-left: 30px;
+        }
+    </style>
+
+    <body>
+        <header>Formulario de Agenda</header>
+        <form action="" name="formAgenda">
+            <fieldset>
+                <legend>Agenda</legend>
+                <div class="divFormAgenda">
+                    <div>
+                        <label for="txtID">ID</label>
+                        <!-- readonly="readonly" -->
+                        <input type="text" placeholder="Escriba una ID..." id="txtID">
+                    </div>
+                    <div>
+                        <label for="txtName">Nombre</label>
+                        <input type="text" placeholder="Escriba un nombre..." id="txtName">
+                    </div>
+                    <div>
+                        <label for="txtMail">Correo</label>
+                        <input type="text" placeholder="Escriba un correo..." id="txtMail">
+                    </div>
+                    <div>
+                        <label for="txtTlf">Teléfono</label>
+                        <input type="text" placeholder="Escriba un telefono..." id="txtTlf">
+                    </div>
+                    <button id="butSave" type="button">Guardar contacto</button>
+                    <div id="message"></div>
+                </div>
+            </fieldset>
+        </form>
+    </body>
+    <script>
+        
+        //Object.keys(agenda).length
+        
+        let agenda = {};
+
+        window.onload = () => {
+            if (localStorage.getItem('agenda') != null) {
+                agenda = JSON.parse(localStorage.getItem("agenda", JSON.stringify(agenda), Infinity));
+            }
+        }
+        butSave.onclick = () => {
+            if (!(txtID.value in agenda)) {
+                agenda[txtID.value] = Object.create(Object.prototype);
+                agenda[txtID.value].Nombre = txtName.value;
+                agenda[txtID.value].Correo = txtMail.value;
+                agenda[txtID.value].Tlf = txtTlf.value;
+                console.log(agenda);
+                console.log(JSON.stringify(agenda));
+                localStorage.setItem("agenda", JSON.stringify(agenda), Infinity);
+                message.innerHTML = "";
+            } else {
+                message.innerHTML = "Ya existe un contacto con esa ID";
+            }
+        }
+    </script>
+
+</html>

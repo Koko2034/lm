@@ -1,0 +1,374 @@
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title> Ahorcado </title>
+        <style type="text/css">
+            body {
+                background-image: url("fondo.png");
+                background-repeat: no-repeat;
+                background-size: cover;
+                color: #000;
+                font-family: helvetica, arial;
+                font-size: 13px;
+                display: inline;
+            }
+
+            label {
+                font-size: 1.2em;
+                width: 80px;
+                display: inline-block;
+            }
+
+            #juego {
+                background-color: #efefef;
+                width: 80%;
+                border: 20px solid #000;
+                border-right: 50px solid #000;
+                -webkit-border-radius: 20px/20px;
+                -moz-border-radius: 20px/20px;
+                min-height: 500px;
+                margin: 0px auto;
+                margin-top: 20px;
+                font-family: helvetica, arial;
+                font-size: 13px;
+            }
+
+            #datos {
+                width: 20%;
+                float: left;
+                padding: 20px;
+                margin-top: 10px;
+                font-size: 13px;
+            }
+
+            #resultado {
+                width: 50%;
+                float: left;
+                padding: 20px;
+                margin-top: 10px;
+                margin-left: 50px;
+                font-size: 13px;
+                font-family: helvetica, arial;
+                display: block;
+            }
+
+            #resultado span {
+                text-transform: uppercase;
+            }
+
+            #dibujo {
+                margin-left: 20%;
+                width: 20%;
+                height: 200px;
+                float: left;
+            }
+
+            #informacion {
+                padding: 10px 20px;
+            }
+
+            .buttonReset {
+                width: 40px;
+                height: 40px;
+                position: relative;
+                float: right;
+                top: 232px;
+                margin-right: -45px;
+            }
+
+            .buttonReset:hover {
+                cursor: progress !important;
+            }
+
+            #letra {
+                text-transform: uppercase;
+            }
+
+            .me input {
+                margin: 5px;
+            }
+
+            input[type=text] {
+                padding: 5px;
+                border: 2px solid #ccc;
+                -webkit-border-radius: 5px;
+                border-radius: 5px;
+            }
+
+            input[type=text]:focus {
+                border-color: #333;
+            }
+
+            .btn {
+                margin-top: 10px;
+                margin-left: 10px;
+                background-color: #588691;
+                /* Green */
+                border: 1px double;
+                color: white;
+                border-radius: 10px;
+                padding: 15px 32px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+                cursor: pointer;
+                float: left;
+                min-width: 160px;
+                max-width: 170px;
+            }
+
+            .btn:hover {
+                background-color: #3e6e7a;
+            }
+
+            .formulario {
+                min-width: 300px;
+                max-width: 300px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id="juego">
+            <img class="buttonReset" src="button.png" alt="reset" onclick="comenzarJuego()">
+            <div id="datos">
+                <form>
+                    <div class="formulario">
+                        <label for="txtName">Nombre Jugador: </label>
+                        <input type="text" id="txtName">
+                        <label for="letra">Letra: </label>
+                        <input type="text" id="letra">
+                        <label for="txtPattern">Patrón: </label>
+                        <input type="text" id="txtPattern">
+                        <label for="txtLength">Longitud: </label>
+                        <input type="text" id="txtLength">
+                        <input type="button" id="butValidar" class="btn" name="enviar" value="Validar" onclick="validarPalabra(form.letra.value)" />
+                        <input type="button" id="butJugar" class="btn" name="empezarJuego" value="Jugar" onclick="comenzarJuego()" />
+                        <input type="button" id="butHistorial" class="btn" name="empezarJuego" value="Historial" onclick="verHistorial()" />
+                        <input type="button" id="butHistorial" class="btn" name="empezarJuego" value="Limpiar" onclick="limpiarStorage()" />
+                    </div>
+                </form>
+            </div>
+            <div id='dibujo'></div>
+            <div id="resultado"></div>
+        </div>
+    </body>
+    <script language="javascript">
+        let letrasUtilizadas = "";
+        let vidas = 7;
+        let game = 0;
+        let intentos = 0;
+        let palabraOculta = "";
+        let palabraActual = "";
+        let letra = "";
+        let aPlayer = {};
+
+        window.onload = function () {
+            let xmlhttp = new XMLHttpRequest();
+            xmlhttp.open('GET', '../xml/PALABRAS.xml', false)
+            xmlhttp.send();
+            xmlDoc = xmlhttp.responseXML;
+        }
+
+        function getWord() {
+            let juegoPalabras = [];
+            let nodos = {};
+            nodos = xmlDoc.evaluate("//ROW[contains(@PALABRA,'" + txtPattern.value + "') and string-length(@PALABRA ) = " +
+                    txtLength.value + "]", xmlDoc, null, XPathResult.ANY_TYPE, null);
+            let thisNode = nodos.iterateNext();
+            while (thisNode) {
+                juegoPalabras.push({
+                    "word": thisNode.getAttribute('PALABRA')
+                });
+                thisNode = nodos.iterateNext();
+            }
+            return juegoPalabras[parseInt(Math.random() * juegoPalabras.length)].word;
+        }
+
+
+
+        function getDate() {
+            let today = new Date();
+            let date = today.getFullYear() + '-' + today.getMonth() + 1 + '-' + today.getDate() + ' ' + today.getHours() +
+                    ':' + today.getMinutes() + ':' + today.getSeconds();
+            return date;
+        }
+
+        function comenzarJuego() {
+            butValidar.disabled = false;
+            butValidar.style = "";
+            dibujo.innerHTML =
+                    '<svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="300.000000pt" height="300.000000pt" viewBox="0 0 300.000000 300.000000" preserveAspectRatio="xMidYMid meet"><g transform = "translate(0.000000,300.000000) scale(0.100000,-0.100000)" fill = "#000000" stroke = "none" > <path id="monigote" xmlns="http://www.w3.org/2000/svg"/>  </g>  </svg>';
+
+            palabraOculta = getWord().toUpperCase();
+
+            if (localStorage.getItem("ahorcado") != null) {
+                aPlayer = JSON.parse(localStorage.getItem("ahorcado"));
+            }
+
+            if (typeof aPlayer[txtName.value] == "undefined") {
+                aPlayer[txtName.value] = Object.create(Object.prototype);
+                aPlayer[txtName.value].victorias = 0;
+                aPlayer[txtName.value].derrotas = 0;
+                aPlayer[txtName.value].partidas = 0;
+            }
+            game = aPlayer[txtName.value].partidas;
+
+            aPlayer[txtName.value]["Match" + game] = Object.create(Object.prototype);
+            aPlayer[txtName.value]["Match" + game].word = palabraOculta;
+            aPlayer[txtName.value]["Match" + game].date = getDate();
+            aPlayer[txtName.value].partidas++;
+
+            palabraActual = new Array(palabraOculta.length);
+            letrasUtilizadas = "";
+            intentos = 0;
+
+            for (let i = 0; i < palabraActual.length; i++) {
+                palabraActual[i] = false;
+            }
+            let aPattern = txtPattern.value.split("");
+
+            for (let i = 0; i < txtPattern.value.length; i++) {
+                validarPalabra(aPattern[i]);
+            }
+            mostrarInformacion();
+        }
+
+        function verHistorial() {
+
+            let ventanaInformacion = window.open(URL, "ventana1", "scrollbars=yes width=400,height=600");
+            for (i in aPlayer) {
+                ventanaInformacion.document.write("<h3>Jugador: " + i + "</h3>");
+                ventanaInformacion.document.write('<div> Victorias ' + aPlayer[i].victorias + '</div>');
+                ventanaInformacion.document.write('<div> Derrotas ' + aPlayer[i].derrotas + '</div>');
+                ventanaInformacion.document.write('<div> Partidas ' + aPlayer[i].partidas + '</div>');
+                ventanaInformacion.document.write('<hr>)');
+
+                for (let k = 0; k < aPlayer[i].partidas; k++) {
+                    let match = "Match" + k;
+                    ventanaInformacion.document.write('<div> Fecha ' + aPlayer[i][match].date + '</div>');
+                    ventanaInformacion.document.write('<div> Palabra ' + aPlayer[i][match].word + '</div>');
+                    ventanaInformacion.document.write('<div> Resultado ' + aPlayer[i][match].resultado + '</div>');
+                    ventanaInformacion.document.write('<hr>');
+                }
+            }
+
+        }
+
+        function limpiarStorage() {
+            localStorage.removeItem("ahorcado");
+        }
+
+        function validarPalabra(letra) {
+            letra = letra.charAt(0).toUpperCase();
+            let encontroPalabra = false;
+            let coincidencias = 0;
+            if (!letrasUtilizadas.includes(letra)) {
+                letrasUtilizadas += letra.toUpperCase() + " ";
+                for (let i = 0; i < palabraActual.length; i++) {
+                    if (letra == palabraOculta.charAt(i)) {
+                        palabraActual[i] = true;
+                        encontroPalabra = true;
+                    }
+                }
+                if (!encontroPalabra) {
+                    intentos++;
+                    hangedMan(intentos.toString());
+                }
+                mostrarInformacion();
+                for (let i = 0; i < palabraActual.length; i++) {
+                    if (palabraActual[i] == 1) {
+                        coincidencias++;
+                    }
+                }
+                if (coincidencias == palabraOculta.length) {
+                    ganarJuego();
+                }
+                if (intentos == vidas) {
+                    palabraActual = palabraOculta;
+                    mostrarInformacion();
+                    gameOver();
+
+                }
+                document.forms[0].elements['letra'].focus();
+                document.forms[0].elements['letra'].value = "";
+
+
+                function hangedMan(lifes) {
+                    let hangMan = new Map();
+                    hangMan.set('1','M675 2605 l-25 -24 0 -1135 0 -1135 24 -24 c18 -18 33 -24 57 -21 41 5 56 18 65 57 5 26 9 303 3 325 -1 4 0 11 1 17 2 12 2 286 -1 300 -1 6 0 14 1 20 1 5 1 59 1 120 -1 60 -1 118 -1 128 0 39 0 108 -1 120 0 6 0 86 0 177 0 91 1 172 0 180 0 8 1 35 2 60 0 25 0 50 -1 55 -1 6 -2 14 -1 19 1 5 2 82 1 170 0 89 0 169 0 179 0 58 0 109 -1 120 0 6 1 47 2 89 l2 76 456 -1 456 -2 2 -100 c1 -55 2 -114 2 -131 1 -36 26 -68 60 -77 28 -7 76 15 85 38 3 9 6 74 6 145 l0 128 184 0 c102 0 194 3 205 7 46 14 60 84 23 120 l-25 25 -779 0 -779 0 -24 -25z');
+                    hangMan.set('2','M675 2605 l-25 -24 0 -1135 0 -1135 24 -24 c48 -49 125 -12 126 61 1 25 0 202 -1 305 0 6 0 77 0 157 0 80 0 152 0 160 0 22 0 242 1 263 0 32 0 107 -1 120 0 9 0 215 1 360 0 52 0 109 -1 120 0 9 0 221 1 360 0 53 0 109 -1 120 0 6 1 47 2 89 l2 76 456 -1 456 -2 2 -101 1 -101 -52 -22 c-103 -42 -187 -152 -204 -263 -40 -268 238 -475 481 -359 213 102 264 365 105 543 -32 36 -137 98 -165 98 -10 0 -13 25 -13 104 l0 104 184 0 c102 0 194 3 205 7 46 14 60 84 23 120 l-25 25 -779 0 -779 0 -24 -25z m1177 -486 c101 -27 161 -140 126 -240 -28 -82 -96 -129 -184 -129 -158 0 -243 195 -135 314 49 54 121 75 193 55z');
+                    hangMan.set('3','M675 2605 l-25 -24 0 -1135 0 -1135 25 -25 c24 -24 48 -27 93 -11 30 11 35 71 31 375 0 8 0 80 0 160 0 80 0 153 0 163 0 37 0 248 1 262 0 27 0 105 -1 118 0 9 0 202 1 360 0 53 0 109 -1 120 0 9 0 215 1 360 0 49 0 108 -1 120 0 6 1 47 2 89 l2 76 456 -1 456 -2 1 -101 2 -101 -52 -22 c-139 -58 -231 -225 -203 -371 21 -112 120 -234 213 -261 l43 -13 -1 -326 c-1 -354 0 -361 55 -379 32 -12 55 -5 80 22 15 18 17 50 17 349 0 304 1 329 18 334 47 14 122 59 154 92 162 168 118 437 -87 542 -32 17 -65 30 -72 30 -10 0 -13 25 -13 104 l0 104 184 0 c102 0 194 3 206 7 21 7 48 50 44 73 -1 6 -2 16 -3 22 0 5 -11 18 -23 30 -22 20 -31 20 -800 20 l-779 0 -24 -25z m1177 -486 c101 -27 161 -140 126 -240 -28 -84 -94 -129 -186 -129 -156 0 -240 196 -133 314 49 54 121 75 193 55z');
+                    hangMan.set('4','M675 2605 l-25 -24 0 -1135 0 -1135 25 -25 c24 -24 48 -27 93 -11 30 11 35 71 31 375 0 8 0 80 0 160 0 80 0 153 0 163 0 37 0 248 1 262 0 27 0 105 -1 118 0 6 1 86 2 177 0 91 0 170 -1 175 -1 6 -1 15 0 20 1 8 1 44 -1 110 0 8 0 238 1 358 0 49 0 108 -1 120 0 6 1 47 2 89 l2 76 456 -1 456 -2 1 -101 2 -101 -52 -22 c-139 -58 -231 -225 -203 -371 21 -112 120 -234 213 -261 l43 -13 -1 -326 c0 -354 0 -361 55 -379 32 -12 55 -5 80 22 15 18 17 45 17 245 0 209 1 224 18 217 9 -4 60 -23 112 -42 52 -20 99 -39 105 -44 5 -5 19 -9 31 -9 13 0 25 -4 28 -9 10 -15 83 -23 104 -12 29 16 45 62 33 95 -9 23 -55 53 -88 57 -5 1 -25 10 -45 20 -21 11 -38 17 -38 13 0 -4 -6 -2 -12 3 -7 6 -66 29 -130 53 -106 38 -118 46 -118 67 0 14 7 26 18 29 47 14 122 59 154 92 162 168 118 437 -87 542 -32 17 -65 30 -72 30 -10 0 -13 25 -13 104 l0 104 184 0 c102 0 194 3 206 7 21 7 48 50 44 73 -1 6 -2 16 -3 22 0 5 -11 18 -23 30 -22 20 -31 20 -800 20 l-779 0 -24 -25z m1177 -486 c101 -27 161 -140 126 -240 -28 -84 -94 -129 -186 -129 -156 0 -240 196 -133 314 49 54 121 75 193 55z');
+                    hangMan.set('5','M675 2605 l-25 -24 0 -1135 0 -1135 25 -25 c24 -24 48 -27 93 -11 30 11 35 71 31 375 0 8 0 80 0 160 0 80 0 153 0 163 0 37 0 248 1 262 0 27 0 105 -1 118 0 6 1 86 2 177 0 91 0 170 -1 175 -1 6 -1 15 0 20 1 8 1 44 -1 110 0 8 0 238 1 358 0 49 0 108 -1 120 0 6 1 47 2 89 l2 76 456 -1 456 -2 1 -101 2 -101 -52 -22 c-139 -58 -231 -225 -203 -371 21 -113 120 -234 213 -261 38 -11 44 -17 44 -40 0 -25 -9 -30 -167 -89 -93 -34 -189 -71 -216 -83 -58 -24 -66 -46 -43 -114 9 -26 66 -41 99 -25 60 28 318 119 322 113 2 -4 3 -102 3 -217 0 -229 3 -245 55 -263 32 -12 55 -5 80 22 15 18 17 45 17 245 0 209 1 224 18 217 9 -4 60 -23 112 -42 52 -20 99 -39 105 -44 5 -5 19 -9 31 -9 13 0 25 -4 28 -9 10 -15 83 -23 104 -12 29 16 45 62 33 95 -9 23 -55 53 -88 57 -5 1 -25 10 -45 20 -21 11 -38 17 -38 13 0 -4 -6 -2 -12 3 -7 6 -66 29 -130 53 -106 38 -118 46 -118 67 0 14 7 26 18 29 47 14 122 59 154 92 162 168 118 437 -87 542 -32 17 -65 30 -72 30 -10 0 -13 25 -13 104 l0 104 184 0 c102 0 194 3 206 7 21 7 48 50 44 73 -1 6 -2 16 -3 22 0 5 -11 18 -23 30 -22 20 -31 20 -800 20 l-779 0 -24 -25z m1177 -486 c101 -27 161 -140 126 -240 -28 -84 -94 -129 -186 -129 -156 0 -240 196 -133 314 49 54 121 75 193 55z');
+                    hangMan.set('6','M675 2605 l-25 -24 0 -1130 c0 -621 3 -1137 6 -1146 4 -8 19 -22 34 -30 33 -17 84 -4 100 25 6 12 10 414 10 1099 l0 1081 460 0 460 0 0 -103 0 -103 -55 -23 c-68 -28 -135 -92 -171 -162 -39 -77 -45 -190 -13 -274 30 -79 114 -165 187 -191 45 -16 52 -22 52 -45 0 -25 -9 -30 -197 -100 -109 -40 -208 -82 -220 -93 -33 -28 -31 -78 3 -105 15 -12 35 -21 45 -21 9 0 95 29 191 64 l173 64 5 -229 5 -229 26 -23 c14 -12 83 -84 154 -159 115 -124 131 -138 161 -138 44 0 74 30 74 73 0 28 -19 53 -135 177 l-134 145 -1 193 c0 105 1 192 3 192 1 0 79 -29 172 -65 94 -36 180 -65 191 -65 37 0 68 33 68 73 0 19 -6 42 -12 50 -7 8 -105 50 -218 93 -193 73 -205 79 -202 102 2 19 14 28 55 44 29 10 74 39 102 64 187 169 126 488 -111 572 l-48 17 0 102 0 103 189 0 c104 0 197 3 206 6 45 18 48 111 5 134 -12 6 -308 10 -795 10 l-776 0 -24 -25z m1200 -494 c145 -65 152 -272 13 -340 -98 -47 -212 -11 -257 81 -77 161 84 332 244 259z');
+                    hangMan.set('7','M675 2605 l-25 -24 0 -1130 c0 -621 3 -1137 6 -1146 4 -8 19 -22 34 -30 33 -17 84 -4 100 25 6 12 10 414 10 1099 l0 1081 460 0 460 0 0 -103 0 -103 -55 -23 c-68 -28 -135 -92 -171 -162 -39 -77 -45 -190 -13 -274 30 -79 114 -165 187 -191 45 -16 52 -22 52 -45 0 -25 -9 -30 -197 -100 -109 -40 -208 -82 -220 -93 -33 -28 -31 -78 3 -105 15 -12 35 -21 45 -21 10 0 73 21 141 46 68 25 147 54 176 65 l52 18 0 -194 0 -195 -130 -142 c-118 -129 -130 -146 -130 -179 0 -45 27 -69 76 -69 28 0 46 15 145 125 l114 125 120 -125 c106 -111 124 -126 152 -125 43 0 73 30 73 73 0 28 -19 53 -135 177 l-134 145 -1 193 c0 105 1 192 3 192 1 0 79 -29 172 -65 94 -36 180 -65 191 -65 37 0 68 33 68 73 0 19 -6 42 -12 50 -7 8 -105 50 -218 93 -193 73 -205 79 -202 102 2 19 14 28 55 44 29 10 74 39 102 64 187 169 126 488 -111 572 l-48 17 0 102 0 103 189 0 c104 0 197 3 206 6 45 18 48 111 5 134 -12 6 -308 10 -795 10 l-776 0 -24 -25z m1200 -494 c145 -65 152 -272 13 -340 -98 -47 -212 -11 -257 81 -77 161 84 332 244 259z');
+                    monigote.setAttribute("d", hangMan.get(lifes));
+                }
+            }
+        }
+
+
+        function gameOver() {
+            aPlayer[txtName.value]["Match" + game].resultado = false;
+
+            butValidar.disabled = true;
+            butValidar.style = "cursor:not-allowed;opacity:0.6";
+            aPlayer[txtName.value].derrotas++;
+            localStorage.setItem('ahorcado', JSON.stringify(aPlayer));
+            dibujo.innerHTML += "<h1>HAS PERDIDO TORPE</h1>";
+        }
+
+
+        function ganarJuego() {
+            aPlayer[txtName.value]["Match" + game].resultado = true;
+            butValidar.disabled = true;
+            butValidar.style = "cursor:not-allowed;opacity:0.6";
+            aPlayer[txtName.value].victorias++;
+            localStorage.setItem('ahorcado', JSON.stringify(aPlayer));
+            dibujo.innerHTML += "<h1>HAS GANADO</h1>";
+        }
+
+
+        function mostrarInformacion() {
+
+
+            let palabraVisible = "";
+            for (let i = 0; i < palabraActual.length; i++) {
+                if (palabraActual[i] != 0) {
+                    palabraVisible += "<span> " + palabraOculta.charAt(i) +
+                            " </span>";
+                } else {
+                    palabraVisible += "<span> __ </span>";
+                }
+            }
+
+            let informacionJuego = "<div id='informacionJuego'> ";
+            informacionJuego += "<div>";
+            informacionJuego += "   <div>";
+            informacionJuego += "      <div> Vidas </div>";
+            informacionJuego += "      <div><strong>" + vidas + "</strong></div>";
+            informacionJuego += "   </div>";
+            informacionJuego += "   <div>";
+            informacionJuego += "      <div> Intentos </div>";
+            informacionJuego += "      <div><strong>" + intentos + "</strong></div>";
+            informacionJuego += "   </div>";
+            informacionJuego += "   <div>";
+            informacionJuego += "      <div> Palabra Secreta </div>";
+            informacionJuego += "      <div>" + palabraVisible + "</div>";
+            informacionJuego += "   </div>";
+            informacionJuego += "   <div>";
+            informacionJuego += "      <div> Letras usadas </div>";
+            informacionJuego += "      <div><span>" + letrasUtilizadas +
+                    "</span></div>";
+            informacionJuego += "   </div>";
+            informacionJuego += "</div>";
+            informacionJuego += "</div>";
+
+            resultado.innerHTML = informacionJuego;
+        }
+    </script>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+ <head>
+  <title>Index of /dev</title>
+ </head>
+ <body>
+<h1>Index of /dev</h1>
+  <table>
+   <tr><th valign="top"><img src="/icons/blank.gif" alt="[ICO]"></th><th><a href="?C=N;O=A">Name</a></th><th><a href="?C=M;O=A">Last modified</a></th><th><a href="?C=S;O=A">Size</a></th><th><a href="?C=D;O=D">Description</a></th></tr>
+   <tr><th colspan="5"><hr></th></tr>
+<tr><td valign="top"><img src="/icons/back.gif" alt="[PARENTDIR]"></td><td><a href="/">Parent Directory</a></td><td>&nbsp;</td><td align="right">  - </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="CiudadesAtributos.xml">CiudadesAtributos.xml</a></td><td align="right">2017-08-24 13:24  </td><td align="right">919 </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="calendario.php">calendario.php</a></td><td align="right">2017-03-26 13:34  </td><td align="right">287 </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="creaAttNodos.php">creaAttNodos.php</a></td><td align="right">2017-03-26 13:34  </td><td align="right">518 </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="datos.xml">datos.xml</a></td><td align="right">2017-08-24 13:24  </td><td align="right">3.2K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/text.gif" alt="[TXT]"></td><td><a href="demo.html">demo.html</a></td><td align="right">2017-03-26 13:34  </td><td align="right">533 </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="demo.xml">demo.xml</a></td><td align="right">2017-08-24 13:24  </td><td align="right"> 56K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/text.gif" alt="[TXT]"></td><td><a href="demoObj.html">demoObj.html</a></td><td align="right">2017-03-26 13:34  </td><td align="right">2.7K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="demoTiempo.php">demoTiempo.php</a></td><td align="right">2017-03-26 13:34  </td><td align="right">231 </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/compressed.gif" alt="[   ]"></td><td><a href="dev.zip">dev.zip</a></td><td align="right">2017-03-26 13:34  </td><td align="right">8.9K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="genAttPalabras.php">genAttPalabras.php</a></td><td align="right">2017-03-28 21:38  </td><td align="right">619 </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="generarCiudadesCortas.php">generarCiudadesCortas.php</a></td><td align="right">2017-03-29 09:20  </td><td align="right">800 </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="generarCiudadesCortas2.php">generarCiudadesCortas2.php</a></td><td align="right">2017-03-29 09:34  </td><td align="right">965 </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="generarCiudadesCortas3.php">generarCiudadesCortas3.php</a></td><td align="right">2017-03-29 09:43  </td><td align="right">1.1K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="getAttCiudades.php">getAttCiudades.php</a></td><td align="right">2017-03-26 13:34  </td><td align="right">616 </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="getAttPalabras.php">getAttPalabras.php</a></td><td align="right">2017-03-26 13:34  </td><td align="right">619 </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="manipulaDatos.php">manipulaDatos.php</a></td><td align="right">2017-03-27 11:56  </td><td align="right">773 </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="muestraDatos.php">muestraDatos.php</a></td><td align="right">2017-03-26 13:34  </td><td align="right">644 </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="ofertasHoy.php">ofertasHoy.php</a></td><td align="right">2017-03-30 00:30  </td><td align="right">4.6K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="ofertasHoyCarga.php">ofertasHoyCarga.php</a></td><td align="right">2017-03-29 21:52  </td><td align="right">1.0K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="package.xml">package.xml</a></td><td align="right">2016-03-03 10:17  </td><td align="right"> 89K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/text.gif" alt="[TXT]"></td><td><a href="peticion.html">peticion.html</a></td><td align="right">2017-03-26 13:34  </td><td align="right">1.1K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="peticion.php">peticion.php</a></td><td align="right">2017-03-26 13:34  </td><td align="right">726 </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="probando.php">probando.php</a></td><td align="right">2017-03-25 09:49  </td><td align="right"> 25 </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="prueba.php">prueba.php</a></td><td align="right">2017-03-28 19:31  </td><td align="right">805 </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="prueba2.php">prueba2.php</a></td><td align="right">2017-03-28 13:46  </td><td align="right">736 </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="prueba3.php">prueba3.php</a></td><td align="right">2017-03-28 13:45  </td><td align="right">662 </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="pruebaciudades.php">pruebaciudades.php</a></td><td align="right">2017-04-04 11:59  </td><td align="right"> 92 </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="pruebapeticion.php">pruebapeticion.php</a></td><td align="right">2017-03-28 17:18  </td><td align="right">210 </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="testXML.php">testXML.php</a></td><td align="right">2017-03-26 13:34  </td><td align="right">588 </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/image2.gif" alt="[IMG]"></td><td><a href="warning.png">warning.png</a></td><td align="right">2017-03-26 13:34  </td><td align="right">2.6K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/compressed.gif" alt="[   ]"></td><td><a href="xdebug-2.4.0.tgz">xdebug-2.4.0.tgz</a></td><td align="right">2016-03-03 23:32  </td><td align="right">259K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/folder.gif" alt="[DIR]"></td><td><a href="xdebug-2.4.0/">xdebug-2.4.0/</a></td><td align="right">2017-03-28 20:03  </td><td align="right">  - </td><td>&nbsp;</td></tr>
+   <tr><th colspan="5"><hr></th></tr>
+</table>
+<address>Apache/2.4.18 (Ubuntu) Server at 213.32.71.33 Port 80</address>
+</body></html>

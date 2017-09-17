@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Zero19</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--<script src="cookies.js"></script>-->
+        <!-- https://developer.mozilla.org/en-US/docs/Web/API/Document/cookie/Simple_document.cookie_framework -->
+        <style>
+            #divCarrito {position: absolute;
+                         width:100%; 
+                         text-align: center; 
+                         margin-left: 300px
+
+                     }
+            .fotosVinos {border: 1px solid;
+                         border-color:navy}
+            span {display:inline-block; width: 25%}
+        </style>
+    </head>
+    <body>
+        <div id="divCarrito" name="Carrito"></div>
+        <div>
+            <img class="fotosVinos" src="../imagenes/vino1.jpg" id="vino1" alt="Habla de la tierra" width="100" ondblclick="carrito(this.id)">
+        </div>
+        <div>
+            <img class="fotosVinos" src="../imagenes/vino2.jpg" id="vino2" alt="Finca la estacada" width="100" ondblclick="carrito(this.id)">
+        </div>
+        <div>
+            <img class="fotosVinos" src="../imagenes/vino3.jpg" id="vino3" alt="Peñascal" width="100" ondblclick="carrito(this.id)">
+        </div>
+        <div>
+            <img class="fotosVinos" src="../imagenes/vino4.jpg" id="vino4" alt="Hello world" width="100" ondblclick="carrito(this.id)">
+        </div>
+        <div>
+            <img class="fotosVinos" src="../imagenes/vino5.jpg" id="vino5" alt="Juan Gil" width="100" ondblclick="carrito(this.id)">
+        </div>
+    </body>
+    <script>
+        var aVinos = {};
+        var aCarrito = {};
+        rellenaDatos();
+        function carrito(id) {
+            if (id in aCarrito) {
+                aCarrito[id].unidades = aCarrito[id].unidades + 1;
+            } else {
+               aCarrito[id] = Object.create(Object.prototype);
+                aCarrito[id].unidades = 1;
+                aCarrito[id].precio = aVinos[id].precio;
+                aCarrito[id].nombre = aVinos[id].nombre;
+                 aCarrito[id].stock = aVinos[id].stock;
+            }
+            aCarrito[id].total = aCarrito[id].unidades * aCarrito[id].precio;
+            muestraCarrito();
+        }
+
+        function muestraCarrito() {
+            var html="Carrito";
+            for (k in aCarrito) {
+                if(aCarrito[k].unidades <= aCarrito[k].stock){
+                html += "<div><span>" + aCarrito[k].unidades + "</span><span>" + aCarrito[k].nombre + "</span><span>"+ aCarrito[k].precio + "</span></div>";
+                
+            }
+            else{
+                alert("Has superado el stock,por favor vuelva a intentarlo");
+               aCarrito[k].unidades=0;
+            }
+            document.getElementById('divCarrito').innerHTML = html;
+            }
+        }
+        function rellenaDatos() {
+            aVinos['vino1'] = Object.create(Object.prototype);
+            aVinos['vino1'].nombre = "Señorío de los robles";
+            aVinos['vino1'].precio = 14;
+            aVinos['vino1'].stock = 4;
+            aVinos['vino2'] = Object.create(Object.prototype);
+            aVinos['vino2'].nombre = "asdfg";
+            aVinos['vino2'].precio = 12;
+            aVinos['vino2'].stock = 3;
+            aVinos['vino3'] = Object.create(Object.prototype);
+            aVinos['vino3'].nombre = "qwerty";
+            aVinos['vino3'].precio = 11;
+            aVinos['vino3'].stock = 6;
+            aVinos['vino4'] = Object.create(Object.prototype);
+            aVinos['vino4'].nombre = "qwerty";
+            aVinos['vino4'].precio = 11;
+            aVinos['vino4'].stock = 6;
+            aVinos['vino5'] = Object.create(Object.prototype);
+            aVinos['vino5'].nombre = "zxcvb";
+            aVinos['vino5'].precio = 10;
+            aVinos['vino5'].stock = 8;
+        }
+   
+    </script>
+</html>

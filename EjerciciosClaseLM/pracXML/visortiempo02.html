@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <title>El Tiempo</title>
+        <link type="text/css" rel="stylesheet" href="estiloTiempo02.css">
+    </head>
+
+    <body>
+        <div class="colmask">
+            <div id="header">
+            </div>
+            <div class="colmid">
+                <div class="colleft">
+                    <div id="col3"></div>
+                    <div id="col2"></div>
+                    <div id="col4"></div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script>
+        window.onload = function () {
+            let xmlDoc;
+            let xmlhttp = new XMLHttpRequest();
+            let html = "";
+            let nodos = {};
+
+            xmlhttp.open('GET', 'tiempo02.xml', false);
+            xmlhttp.send();
+            xmlDoc = xmlhttp.responseXML;
+
+            for (let i = 2; i < 5; i++) {
+                html = "";
+                nodos = xmlDoc.evaluate("//dia[@fecha='2016-11-0" + i + "']", xmlDoc, null, XPathResult.ANY_TYPE, null);
+                let thisNode = nodos.iterateNext();
+                let dia = thisNode.getAttribute('fecha');
+                html += "<div class='divDia'><strong>" + dia + "</strong></div>";
+                while (thisNode) {
+                    let estado = thisNode.getElementsByTagName('estado_cielo').length;
+                    for (let k = 0; k < estado; k++) {
+                        let periodo = thisNode.children[k].getAttribute('periodo');
+                        let descripcion = thisNode.children[k].getAttribute('descripcion');
+                        html += "<div>periodo:<span class='hora_estado'>" + periodo + "</span> descripcion <span class='hora_estado'>" + descripcion + "</span></div>";
+                        document.getElementById('col' + i).innerHTML = html;
+                    }
+                    thisNode = nodos.iterateNext();
+                }
+            }
+        }
+    </script>
+
+</html>

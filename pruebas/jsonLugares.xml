@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<markers>
+    <marker>
+        <point lat="40.266044" long="-74.718479"/>
+        <homeTeam>Lawrence Library</homeTeam>
+        <awayTeam>LUGip</awayTeam>
+        <markerImage>images/red.png</markerImage>
+        <information>Linux users group meets second Wednesday of each month.</information>
+        <fixture>Wednesday 7pm</fixture>
+        <capacity/>
+        <previousScore/>
+    </marker>
+    <marker>
+        <point lat="40.211600" long="-74.695702"/>
+        <homeTeam>Hamilton Library</homeTeam>
+        <awayTeam>LUGip HW SIG</awayTeam>
+        <markerImage>images/white.png</markerImage>
+        <information>Linux users can meet the first Tuesday of the month to work out harward and configuration issues.</information>
+        <fixture>Tuesday 7pm</fixture>
+        <capacity/>
+        <tv/>
+    </marker>
+    <marker>
+        <point lat="40.294535" long="-74.682012"/>
+        <homeTeam>Applebees</homeTeam>
+        <awayTeam>After LUPip Mtg Spot</awayTeam>
+        <markerImage>images/newcastle.png</markerImage>
+        <information>Some of us go there after the main LUGip meeting, drink brews, and talk.</information>
+        <fixture>Wednesday whenever</fixture>
+        <capacity>2 to 4 pints</capacity>
+        <tv/>
+    </marker>
+</markers>

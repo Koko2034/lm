@@ -1,0 +1,114 @@
+ body {
+     background-color: #D0AFAF;
+ }
+ 
+ #divControles {
+     width: 25%;
+     float: left;
+     font-weight: bold;
+     line-height: 50px;
+     font: 14px/100% Arial, Helvetica, sans-serif;
+     background-color: #D4F3FF;
+     padding: 20px;
+     border-style: solid double;
+ }
+
+ #divControles div {
+     text-align: center;
+     margin: 2 auto;
+     padding: 5px;
+ }
+ 
+ #divDemo {
+     width: 70%;
+     float: right;
+     background: #D0AFAF;
+ }
+ 
+ .cambios {
+     margin-right: 25%;
+ }
+ 
+ #A {
+     background-color: red;
+     border: 2px solid black;
+     padding: 12%;
+     margin: 0 auto;
+     width: 60%;
+ }
+ 
+ #B {
+     background-color: greenyellow;
+     border: 2px solid black;
+     padding: 12%;
+     margin: 0 auto;
+     width: 60%;
+ }
+ .divProperties{
+     text-align: center;
+     font: 18px/100% Arial, Helvetica, sans-serif;
+ }
+ 
+ label {
+     display: inline-block;
+     width: 5em;
+     padding-top: 2px;
+     font-family: Arial;
+     font-size: 16px;
+     text-align: center;
+ }
+ 
+ .divAB {}
+ 
+ button {
+     border-radius: 36px;
+     color: #ffffff;
+     font: 14px/100% Arial, Helvetica, sans-serif;
+     background: #CC2F3E;
+     padding: .5em 2em .55em;
+     border: solid #1f628d 2px;
+     cursor: pointer;
+     text-decoration: none;
+ }
+ 
+ input[type=text] {
+     color: #325BB4;
+     height: 28px;
+     padding-left: 10px;
+     margin-top: 10px;
+     text-decoration: none;
+     font-weight: bold;
+     background-image: url('Input-BG.png');
+     background-repeat: repeat-x;
+     border: 0;
+ }
+ 
+ select {
+     margin-top: 10px;
+     border: 1px solid #ccc;
+     font-size: 16px;
+     color: #ffffff;
+     background-color: #CC2F3E;
+     -webkit-border-radius: 20px;
+     -moz-border-radius: 20px;
+     border-radius: 20px;
+ }
+ 
+ input[type="radio"] {
+     display: none;
+     padding: 4px 11px;
+     font-family: Arial;
+     font-size: 16px;
+     background-color: #ddd;
+     width: 50px;
+     width: 100px;
+ }
+ 
+ input[type="radio"]:checked + label {
+     background-color: #bbb;
+     border: 2px solid black;
+ }
+ 
+ input[type="radio"]+label {
+     cursor: pointer;
+ }

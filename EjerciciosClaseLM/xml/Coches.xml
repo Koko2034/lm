@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coches xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="Schema-coches.xsd">
+	<coche matricula="MA-98685">
+		<marca>Seat</marca>
+		<nombremodelo>Supermirafiori</nombremodelo>
+		<precio>12165.50</precio>
+		<imagen/>
+	</coche>
+	<coche matricula="MA-2345-AS">
+		<marca>Seat</marca>
+		<nombremodelo>Seat Ibiza</nombremodelo>
+		<precio>8557.9</precio>
+		<imagen/>
+	</coche>
+	<coche matricula="1200-BSF">
+		<marca>Ferrari</marca>
+		<nombremodelo>TestaRossa</nombremodelo>
+		<precio>330000</precio>
+		<imagen/>
+	</coche>
+</coches>

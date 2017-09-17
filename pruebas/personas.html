@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Estadistica votos</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville|Sansita" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBC44DVf-uNgDfVK4UdRd97qLojU2AWfj4&libraries=places&callback=initMap"
+        async defer></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Press+Start+2P');
+    </style>
+    <style>
+        .panel-heading {
+            text-align: center;
+        }
+
+        .container {
+            min-width: 1000px;
+            /* padding-right: 15px; */
+            /* padding-left: 15px; */
+        }
+
+        .divTable {
+            display: table;
+            width: 60%;
+            margin: auto;
+            text-align: center;
+            margin-bottom: 1%;
+            margin-top: 10px;
+        }
+
+        .divTableRow {
+            display: table-row;
+        }
+
+        .divTableCell,
+        .divTableHead {
+            border: 1px solid #999999;
+            display: table-cell;
+            padding: 3px 10px;
+        }
+
+        .divTableHeading {
+            background-color: #EEE;
+            display: table-header-group;
+            font-weight: bold;
+        }
+
+        .divTableFoot {
+            background-color: #EEE;
+            display: table-footer-group;
+            font-weight: bold;
+        }
+
+        .divTableBody {
+            display: table-row-group;
+        }
+
+        #divContenedorGrafico {
+            text-align: center;
+            width: 100%;
+            visibility: hidden;
+        }
+
+        #divGrafico {
+            display: inline-block;
+        }
+
+        #divComprobar,#divMostrar {
+            text-align: center;
+        }
+
+        #butComprobar,#butMostrar {
+            margin: 0 auto;
+        }
+    </style>
+    <script src="../js/ajaxCG.js"></script>
+</head>
+
+<body>
+    <div class="container-fluid container">
+
+
+        <div class="panel panel-primary ">
+
+
+            <div class="panel-heading">INFORMACION VOTANTES </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div id="chart_div">
+                            </div>
+                        </div>
+                        <div id="containerTable" class="col-md-12">
+                            <div class="divTable">
+                                <div class="divTableHeading">
+                                    <div class="divTableHead">PROVINCIA</div>
+                                    <div class="divTableHead">NUMERO VOTANTES</div>
+                                    <div class="divTableHead">TOTAL VOTOS</div>
+                                </div>
+                                <div id="tablebody" class="divTableBody">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="divMostrar">
+        <button type="button"  class="btn-primary btn-lg" id="butMostrar" onclick="rellenar()">Mostrar</button>
+        <button class="btn-primary btn-lg" id="butComprobar" type="button" onclick="verVotacion()">Volver a votar</button>
+    </div>
+    <div id="divContenedorGrafico">
+        <div id="divGrafico">
+
+        </div>
+    </div>
+</body>
+<script>
+    var votaciones={};
+    var votos={};
+    google.charts.load("current", {
+        packages: ["corechart"]
+    });
+    google.charts.setOnLoadCallback(drawChart);
+    window.onload = () => {
+        ajax({
+            type: 'POST',
+            url: 'personas.php',
+            data: {
+                check: "votacion"
+            },
+            parse: true
+        }).then((data) => {
+            console.log(data);
+            //rellenar(data.datos);
+            votos=data.datos;
+            prueba(votos);
+
+        }).catch((error) => {
+            console.log(error);
+        });
+    }
+
+
+
+    function rellenar() {
+       window.document.getElementById('divContenedorGrafico').style.visibility="visible";
+       
+        var html = "";
+        
+        for (k in votaciones) {
+    
+            html += '<div class="divTableRow">';
+            html += '<div class="divTableCell">' + k + '</div>';   
+            html += '<div class="divTableCell">' + votaciones[k].votantes + '</div>';
+            html += '<div class="divTableCell">' + votaciones[k].puntuacion + '</div></div>';
+        }
+        
+        window.document.getElementById('tablebody').innerHTML= html;
+
+        drawChart(votaciones);
+    }
+
+    function drawChart(datos) {
+        console.log("raul");
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Ciudades');
+        data.addColumn('number', 'Votos');
+
+        for (k in datos) {
+            console.log("pep");
+            data.addRows([
+                [k, parseInt(datos[k].puntuacion)],
+            ]);
+        }
+        var options = {
+            title: 'Resultado de las votaciones',
+            is3D: true,
+            width: 600,
+            height: 400,
+
+        };
+
+
+        var chart = new google.visualization.PieChart(document.getElementById('divGrafico'));
+        chart.draw(data, options);
+    }
+
+    function prueba(datos) {
+
+        for (k in datos) {
+            var nombre;
+          /*  new Promise(function () {*/
+                geocoder = new google.maps.Geocoder();
+                //var direccion = k + "España";
+                console.log(k)
+                geocoder.geocode({
+                    'address': k
+                    
+                }, function (results, status) {
+                    if (status == google.maps.GeocoderStatus.OK) {
+                        nombre = results[0].address_components[2].long_name;
+                       
+                        
+                        if(votaciones[nombre]==null){
+                           
+                            votaciones[nombre]= Object.create(Object.prototype);
+                            votaciones[nombre].puntuacion=datos[k].votos;
+                            votaciones[nombre].votantes=datos[k].votantes;
+                        }else{
+                           
+                            votaciones[nombre].puntuacion+=parseInt(datos[k].votos);
+                            votaciones[nombre].votantes+=parseInt(datos[k].votantes);
+                        }
+                    }
+                    // Se detallan los diferentes tipos de error
+                    else {
+                        alert('Geocode no tuvo éxito por la siguiente razón: ' + status)
+                    }
+                });
+
+
+         /*   }).then(function () {
+                console.log(k);
+            }).catch((error) => {
+            console.info(error);
+        });*/
+
+        }
+        
+    }
+</script>
+
+
+
+</html>

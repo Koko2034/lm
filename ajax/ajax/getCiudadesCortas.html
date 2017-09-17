@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Generar Ciudades</title>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBTfrjlwEZXvjqyb2KqkUUq32b0bAO_fno"></script>
+    <script src="../js/ajaxCG.js"></script>
+</head>
+<body>
+    <select id="txtID" name="txtID">
+        <option value="Append">Append</option>
+        <option value="CreateA">CreateA</option>
+        <option value="reateB">CreateB</option>
+        
+    </select>
+</body>
+<script>
+    var Ciudades={};
+    var geocoder = new google.maps.Geocoder();
+    window.onload = function(){
+        let xmlhttp = new XMLHttpRequest();
+                    xmlhttp.open('GET', "../xml/CIUDADESSPCORTAS.xml", false)
+                    xmlhttp.send();
+                    xmlDoc = xmlhttp.responseXML;
+                    let nodos = {};
+                    nodos = xmlDoc.evaluate("//LUGAR", xmlDoc, null, XPathResult.ANY_TYPE, null);
+                    let thisNode = nodos.iterateNext();
+                    while (thisNode) {
+                        let id = thisNode.getAttribute('ID');
+                        Ciudades[id]=Object.create(Object.prototype);
+                        Ciudades[id].ciudad=thisNode.getAttribute('CIUDAD');
+                        Ciudades[id].ciudadct=thisNode.getAttribute('CIUDADCT');
+                        Ciudades[id].latitud=parseInt(thisNode.getAttribute('LATITUD'));
+                        Ciudades[id].longitud=parseInt(thisNode.getAttribute('LONGITUD'));
+                        var latlng = new google.maps.LatLng(Ciudades[id].latitud, Ciudades[id].longitud);
+                        Ciudades[id].latlng = latlng;
+                                 thisNode = nodos.iterateNext();
+                    }
+        calculoGeocodo();
+    }
+    function calculoGeocodo(){
+        
+        for(k in Ciudades){
+             geocoder.geocode({
+            'latLng': Ciudades[k].latlng
+                },
+                function(results, status) {
+        if (status == google.maps.GeocoderStatus.OK) {
+            
+            
+            }
+
+    })
+        }
+        peticion();
+    }
+        function peticion(){
+            ajax({
+            type: 'POST',
+            url: '../dev/generarCiudadesCortas.php',
+            data: {ciudades: Ciudades,opcion:txtID.value},
+            parse: true
+        }).then((data) => {
+          console.log(data);
+        }).catch((error) => {
+            console.log("error");
+        });
+        }
+    
+    function mostrar(){
+        
+    }
+</script>
+</html>

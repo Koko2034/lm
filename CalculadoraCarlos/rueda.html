@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Rueda Reconocimiento</title>
+    <style>
+        header{
+            width: 100%;
+            height: 30px;
+            text-align: center;
+
+        }
+        #divRueda{
+            width: 1000px;
+            height: 600px;
+            margin: 0 auto;
+            
+        }
+        #divBotonera{
+            width: 100%;
+            height: 15%;
+            margin: 0 auto;
+           text-align: center;
+        }
+        #divSiguiente{
+            width: 100%;
+            height: 15%;
+            margin: 0 auto;
+          text-align: center;
+        }
+        #divImagen{
+            width: 60%;
+            height: 70%;
+            float:left;
+           
+        }
+        #divDatos{
+            width: 40%;
+            height: 70%;
+            float:left;
+            
+        }
+
+        </style>
+</head>
+<body>
+    <header>Ruedra de Reconocimiento</header>
+    <div id="divRueda">
+        <div id="divBotonera">
+            <button type="button" id="butEstado" >Estado</button>
+            <button type="button" id="butDelito" >Delito</button>
+        </div>
+        <div id="divImagen"></div><div id="divDatos"></div>
+        <div id="divSiguiente">
+            <button type="button" id="butSiguiente" onclick="siguiente()"> >> </button>
+        </div>
+    </div>
+</body>
+<script>
+    var aSospechosos={};
+    var aEstado=[];
+    var aDelito=[];
+    var aRepetirEstado=[];
+    var aRepetirDelito=[];
+    var aSospechosoPorEstado=[];
+    var aSospechososPorDelito=[];
+    var data=[];
+    var cont = 0;
+    window.onload = () => {
+		let xmlhttp = new XMLHttpRequest();
+		xmlhttp.open('GET', 'buscados.xml', false)
+		xmlhttp.send();
+		xmlDoc = xmlhttp.responseXML;
+		let nodos = {};
+		nodos = xmlDoc.evaluate("//Sospechosos", xmlDoc, null, XPathResult.ANY_TYPE, null);
+		let thisNode = nodos.iterateNext();
+		while (thisNode) {
+			let ficha = thisNode.getAttribute('ficha');
+            let estado = thisNode.getAttribute('estado');
+			aSospechosos[ficha]=Object.create(Object.prototype);
+            aSospechosos[ficha].estado=estado;
+              if (!(estado in aRepetirEstado)) {
+                aRepetirEstado[estado] = 1;
+                aEstado.push(estado);
+            }
+            for(let i=0; i<thisNode.children.length;i++){
+              aSospechosos[ficha][thisNode.children[i].nodeName] = thisNode.children[i].textContent;
+              if(thisNode.children[i].nodeName=="Delito" && !(thisNode.children[i].textContent in aRepetirDelito)){
+                aRepetirDelito[thisNode.children[i].textContent]=1;
+                aDelito.push(thisNode.children[i].textContent);
+              }
+            }
+			thisNode = nodos.iterateNext();
+		}
+        aEstado.sort();
+        aDelito.sort();
+       ordenarEstado();
+       mostrar(aSospechosos,aSospechosoPorEstado);
+	}
+    function ordenarDelito(){
+        for(let i=0;i<aDelito.length;i++){
+            for(k in aSospechosos){
+                if(aSospechosos[k].Delito == aDelito[i]){
+                    aSospechososPorDelito.push(k);
+                   
+                }
+            }
+        }
+        aSospechosoPorEstado=[];
+       
+    }
+    function ordenarEstado(){
+        for(let i =0;i<aEstado.length;i++){
+            for(k in aSospechosos){
+                if(aSospechosos[k].estado == aEstado[i]){
+                    aSospechosoPorEstado.push(k);
+                }
+            }
+        }
+      aSospechososPorDelito=[];
+    }
+    function mostrar(data,aSospechoso){
+        let html="";
+        let i=aSospechoso[cont];
+        html+='<div>Nombre: '+data[i].Nombre+'</div>';
+        html+='<div>Sexo: '+data[i].Sexo+'</div>';
+        html+='<div>Altura: '+data[i].Altura+'</div>';
+        html+='<div>Peso: '+data[i].Peso+'</div>';
+        html+='<div>Fecha Nacimiento: '+data[i].FechaNacimiento+'</div>';
+        html+='<div>Delito: '+data[i].Delito+'</div>';
+        html+='<div>Observaciones: '+data[i].Observaciones+'</div>';
+        let src = "fotos/"+data[i].Foto+".png";
+        let html2='<img src="'+src+'" width=250px heigth=300px></img>';
+        window.document.getElementById('divDatos').innerHTML=html;
+        window.document.getElementById('divImagen').innerHTML = html2;
+        cont++;
+
+    }
+     butEstado.onclick = function(){
+        ordenarEstado();
+        cont=0;
+         mostrar(aSospechosos,aSospechosoPorEstado);
+     }
+     butDelito.onclick =  function(){
+         ordenarDelito();
+         cont=0;
+         mostrar(aSospechosos,aSospechososPorDelito);
+     }
+     butSiguiente.onclick = function(){
+        if(aSospechosoPorEstado.length>0){
+            mostrar(aSospechosos,aSospechosoPorEstado);
+        }else{
+            mostrar(aSospechosos,aSospechososPorDelito);
+        }
+     }
+
+    </script>
+
+</html>

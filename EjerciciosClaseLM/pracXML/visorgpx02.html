@@ -1,0 +1,114 @@
+<html>
+    <head>
+        <title>VISOR GPX02</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            .header{
+                position: relative;
+                float: left;
+                left: 13.00%;
+                width: 74.00%;
+                background-color: #f4f4f4
+            }
+            .divTitles{
+                position: fixed;
+                font-weight: bold;
+                background: #9797FB;
+                font-size: 1.3em;
+            }
+            div{
+                text-align: center;
+            }
+            #divLongitud{
+                position: relative;
+                float: left;
+                left: 0.50%;
+                width: 33.00%;
+                background-color: #ccccff
+            }
+            #divLatitud{
+                position: relative;
+                float: left;
+                left: 1.50%;
+                width: 36.00%;
+                background-color: #ccccff
+            }
+            #divFrecuenciaC{
+                position: relative;
+                float: right;
+                right: 0.50%;
+                width: 28.00%;
+                background-color: #ccccff
+            }
+
+            body {
+                border-width: 0px;
+                padding: 0px;
+                margin: 0px;
+                font-size: 90%;
+                background-color: #e7e7de
+            }            
+        </style>
+    </head>
+    <body>
+        <header id="header">
+        </header>
+        <div id="divLongitud"></div>
+        <div id="divLatitud"></div>
+        <div id="divFrecuenciaC"></div>        
+    </body>
+    <script>
+        /*  //trkpt[position() mod 5=0] cada 5 nodos*/
+        var xmlDoc, ruta,
+                aDatos = [],
+                aHeader = [];
+
+        window.onload = function () {
+            let pathXML = '../xml/19.11.2016 08-37.gpx';
+            let xmlhttp = new XMLHttpRequest();
+            xmlhttp.open('GET', pathXML, false);
+            xmlhttp.send();
+            xmlDoc = xmlhttp.responseXML;
+            getContent();
+            showContent();
+        }
+        function getContent() {
+            var nodos = xmlDoc.evaluate('//trkpt[position() mod 5=0]', xmlDoc, null, XPathResult.ANY_TYPE, null);
+            try {
+                var thisNode = nodos.iterateNext();
+                while (thisNode) {
+                    let n = thisNode.childNodes.length; //5 o 7 que tiene hr
+                    let hr = null;
+                    if (n == 7) {
+                        hr = thisNode.getElementsByTagName('hr')[0].firstChild.nodeValue;
+                    }
+                    aDatos.push({"lat": thisNode.getAttribute('lat'),
+                        "lon": thisNode.getAttribute('lon'),
+                        "ele": thisNode.children[0].innerHTML,
+                        "time": thisNode.children[1].innerHTML,
+                        "hr": hr});
+                    thisNode = nodos.iterateNext();
+                }
+            } catch (e) {
+                console.log('Error: ' + e);
+            }
+        }
+        function showContent() {
+            let divLon = "<div class='divTitles'>Longitud</div>",
+                    divLat = "<div class='divTitles'>Latitud</div>",
+                    divFre = "<div class='divTitles'>Frecuencia Cardíaca</div>";
+
+            for (var i = 0; i < aDatos.length; i++) {
+                divLon += aDatos[i].lat + "<br><hr />";
+                divLat += aDatos[i].lon + "<br><hr />";
+                divFre += aDatos[i].hr + "<br><hr />";
+            }
+
+            document.getElementById("divLongitud").innerHTML = divLon;
+            document.getElementById("divLatitud").innerHTML = divLat;
+            document.getElementById("divFrecuenciaC").innerHTML = divFre;
+
+        }
+    </script>
+</html>

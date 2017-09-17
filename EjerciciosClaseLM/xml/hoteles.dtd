@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ELEMENT hoteles (hotel+)>
+<!ELEMENT hotel (nombre, (clasificacion | clasificacionHotelstars), direccion, telefono?, sitioWeb?, tipoHotel+, descripcion?, actividadDeportiva*)>
+<!ATTLIST hotel estrellas (5|4|3) #IMPLIED>
+<!ELEMENT nombre (#CDATA)>
+<!ELEMENT clasificacion (#PCDATA)>
+<!ELEMENT clasificacionHotelstars (#PCDATA)>
+<!ELEMENT direccion (#PCDATA)>
+<!ELEMENT telefono (#PCDATA)>
+<!ELEMENT sitioWeb (#PCDATA)>
+<!ELEMENT tipoHotel (#PCDATA)>
+<!ELEMENT descripcion (#PCDATA)>
+<!ELEMENT actividadDeportiva (#PCDATA)>

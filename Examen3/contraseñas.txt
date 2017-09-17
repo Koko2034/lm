@@ -1,0 +1,33 @@
+Usuario= ramses Contraseña=gimnasio
+Usuario= prueba Contraseña=prueba
+Usuario= ismael Contraseña=basket
+Usuario= javier Contraseña=andujar
+Usuario= raul Contraseña=gimnasio
+
+<?php
+
+ini_set('error_reporting', E_ALL ^ E_NOTICE);
+define(RUTA, __DIR__ . DIRECTORY_SEPARATOR);
+define(FICHERO, __DIR__ . DIRECTORY_SEPARATOR . 'usuarios.xml');
+
+session_start();
+
+require_once RUTA . 'login.class.php';
+
+$accion = filter_input(INPUT_POST, 'check');
+$array= filter_input(INPUT_POST, 'login');
+$login = json_decode($array,true);
+$user = $login["user"];
+$pass = md5($login["pass"]);
+$log = new login();
+if ($accion == "logear") {
+    $result = $log->loginUser($user, $pass);
+    $control = json_decode($result, true);
+    if ($control["status"] == 'ok') {
+        $_SESSION['user'] = $user;
+    } else {
+        session_destroy();
+    }
+   
+   echo $result;
+}

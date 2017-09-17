@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ficha Policial</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.0/themes/smoothness/jquery-ui.css">
+    <script src="../js/ajaxCG.js"></script>
+     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <style>
+        header{
+            width: 100%;
+            height: 30px;
+            text-align: center;
+            margin: 0 auto;
+        }
+        #divDatos{
+            width: 100%;
+            
+        }
+        </style>
+</head>
+<body>
+    <div class="container">
+		<div class="page-header">
+			<h1>Ficha Policial</h1>
+		</div>
+		<div class="form-horizontal pull-left" style="width:60%;">
+			<form>
+				<div class="form-group">
+					<label class="control-label col-sm-2" for="number">Ficha:</label>
+                    <div class="col-sm-10">
+						<input type="text" class="form-control" id="idFicha">
+					</div>
+				</div>
+                <div class="form-group">
+					<label class="control-label col-sm-2" for="number">Estado:</label>
+                    <div class="col-sm-10">
+						<select class="form-control" class="form-control" id="selEstado"></select>
+                            <div class="col-sm-10">
+                        <label class="control-label col-sm-2" for="number">Abreviatura:</label>
+                        <input type="text" id="idNewEstado"/>
+                            </div>
+                            <div class="col-sm-10">
+                        <label class="control-label col-sm-2" for="number">Nombre:</label>
+                        <input type="text" id="idNewEstadoNombre"/>
+                        <button type="button" id="butEstado">Añadir Estado</button>
+                            </div>
+                        
+            
+					</div>
+				</div>
+                <div class="form-group">
+					<label class="control-label col-sm-2" for="number">Nombre:</label>
+                    <div class="col-sm-10">
+						<input type="text" class="form-control" id="idNombre">
+					</div>
+				</div>
+                <div class="form-group">
+					<label class="control-label col-sm-2" for="number">Fecha Nacimiento:</label>
+                    <div class="col-sm-10">
+						<input type="text" id="datepicker">
+					</div>
+				</div>
+                <div class="form-group">
+					<label class="control-label col-sm-2" for="number">Sexo:</label>
+                    <div class="col-sm-10">
+						<input type="text" class="form-control" id="idSexo">
+					</div>
+				</div>
+                <div class="form-group">
+					<label class="control-label col-sm-2" for="number">Altura:</label>
+                    <div class="col-sm-10">
+						<input type="number" class="form-control" id="idAltura">
+					</div>
+				</div>
+                <div class="form-group">
+					<label class="control-label col-sm-2" for="number">Peso:</label>
+                    <div class="col-sm-10">
+						<input type="number" class="form-control" id="idPeso">
+					</div>
+				</div>
+                <div class="form-group">
+					<label class="control-label col-sm-2" for="number">Delito:</label>
+                    <div class="col-sm-10">
+						<input type="text" class="form-control" id="idDelito">
+					</div>
+				</div>
+                <div class="form-group">
+					<label class="control-label col-sm-2" for="number">Observaciones:</label>
+                    <div class="col-sm-10">
+						<input type="text" class="form-control" id="idObservaciones">
+					</div>
+				</div>
+                
+                <div class="form-group">
+					<label class="control-label col-sm-2" for="number">Foto:</label>
+                    <div class="col-sm-10">
+						<input type="file" id="idFoto" accept=".png">
+					</div>
+				</div>
+			</form>
+            <button type="button" id="butSospe">Añadir</button>
+			
+		</div>
+		
+	</div>
+</body>
+<script>
+    var aEstado=[];
+    var aRepetirEstado=[];
+    var aFicha=[];
+    var aRepetirFicha=[];
+    var fichaActual="";
+    var aEstadoNuevo={};
+    var nombreEstado="";
+    var abreviaturaEstado="";
+    window.onload = () => {
+		let xmlhttp = new XMLHttpRequest();
+		xmlhttp.open('GET', 'estados.xml', false)
+		xmlhttp.send();
+		xmlDoc = xmlhttp.responseXML;
+		let nodos = {};
+		nodos = xmlDoc.evaluate("//ESTADO", xmlDoc, null, XPathResult.ANY_TYPE, null);
+		let thisNode = nodos.iterateNext();
+		while (thisNode) {
+            let estado = thisNode.textContent;
+              if (!(estado in aRepetirEstado)) {
+                aRepetirEstado[estado] = 1;
+                aEstado.push(estado);
+            }
+			thisNode = nodos.iterateNext();
+		}
+    
+		xmlhttp.open('GET', 'buscados.xml', false)
+		xmlhttp.send();
+		xmlDoc = xmlhttp.responseXML;
+		nodos = {};
+		nodos = xmlDoc.evaluate("//Sospechosos", xmlDoc, null, XPathResult.ANY_TYPE, null);
+		thisNode = nodos.iterateNext();
+		while (thisNode) {
+            let ficha = thisNode.getAttribute('ficha');
+            aFicha.push(ficha);
+            aRepetirFicha[ficha]=1;      
+			thisNode = nodos.iterateNext();
+		}
+        crearFicha();
+        cargaEstados();
+	}
+    function cargaEstados(){
+         let selectEstados = window.document.getElementById("selEstado");
+        for(let i=0;i<aEstado.length;i++){
+            selectEstados.options[i] = new Option(aEstado[i], aEstado[i], "defaultSelected");
+            
+        }
+
+    }
+    function crearFicha(){
+       let html="";
+        for(let i=0;i<3;i++){
+            let numero = parseInt(Math.random()*25+65);
+            html+=String.fromCharCode(numero);
+        }
+        for(let i=0;i<3;i++){
+            let numero = (parseInt(Math.random()*9+0));
+            html+=numero;
+        }
+        if (!(html in aRepetirFicha)) {
+                aRepetirFicha[html] = 1;
+                aFicha.push(html);
+                fichaActual=html;
+                window.document.getElementById('idFicha').value = fichaActual;
+            }else{
+                crearFicha();
+            }
+    }
+    butEstado.onclick = function () {
+       let estado = window.document.getElementById('idNewEstado').value;
+       let valorEstado =  window.document.getElementById('idNewEstadoNombre').value;
+    if (!(estado in aRepetirEstado) && valorEstado != null) {
+                aRepetirEstado[estado] = 1;
+                aEstado.push(estado);
+               nombreEstado=valorEstado;
+               abreviaturaEstado=estado;
+
+                cargaEstados();
+                window.document.getElementById('idNewEstado').value="";
+            }
+    }
+    $( function() {
+    $( "#datepicker" ).datepicker();
+  } );
+  butSospe.onclick = function(){
+      let sospechoso =Object.create(Object.prototype);
+      sospechoso.ficha=window.document.getElementById('idFicha').value;
+      sospechoso.estado=window.document.getElementById('selEstado').value;
+      sospechoso.nombre=window.document.getElementById('idNombre').value;
+      sospechoso.fecha=window.document.getElementById('datepicker').value;
+      sospechoso.sexo=window.document.getElementById('idSexo').value;
+      sospechoso.altura=window.document.getElementById('idAltura').value;
+      sospechoso.peso=window.document.getElementById('idPeso').value;
+      sospechoso.delito=window.document.getElementById('idDelito').value;
+      sospechoso.observaciones=window.document.getElementById('idObservaciones').value;
+      let arrayFoto = sospechoso.nombre.split(" ");
+      let foto = arrayFoto[0]+"-"+arrayFoto[1]+".png";
+      sospechoso.foto=foto;
+    var datos = JSON.stringify(sospechoso);
+       
+		ajax({
+			type: 'POST',
+			url: 'crud.php',
+			data: {
+				check: "sumar",
+				datos: datos,
+                nombreEstado: nombreEstado,
+                abreviaturaEstado: abreviaturaEstado
+                
+			},
+			parse: true
+		}).then((data) => {
+			console.log(data);
+			
+
+		}).catch((error) => {
+            
+			console.log(error);
+		});
+      
+  }
+  
+    </script>
+</html>

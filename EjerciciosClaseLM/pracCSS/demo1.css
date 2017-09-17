@@ -1,0 +1,111 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 09-nov-2016, 10:42:04
+    Author     : Fcabrera
+*/
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 02-nov-2016, 18:42:00
+    Author     : Daniel Sánchez González
+*/
+
+
+body,div, h1, h2, h3, h4, h5, h6, html, 
+li, table, ul, p{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    font-size: 100%;
+    vertical-align: baseline;
+}
+
+
+.p1 {
+    background-color: #65accc;
+}
+
+.p2 {
+    background-color: #b3d27b;
+}
+.p3 {
+    background-color: #65accc;
+}
+
+
+div h1 {
+    background-color: #bee3f9;
+    padding-left: 10%;
+    padding-right: 10%;
+    margin-right: 80%;
+    font-size: 3em;
+}
+h2 {
+    background-color: #bee3f9;
+    margin-left: 20%;
+    padding-left: 10%;
+    padding-right: 10%;
+    margin-right: 80%; 
+    font-size: 2.5em;
+}
+div h3 {
+    background-color: #bee3f9;
+    margin-left: 40%;
+    padding-left: 10%;
+    padding-right: 10%;
+    margin-right:40%;
+    font-size: 2em;
+}
+h4 {
+    background-color: #bee3f9;
+    padding-left: 10%;
+    padding-right: 10%;
+    margin-left: 60%;
+    margin-right: 20%;
+    font-size: 1.5em;
+}
+div h5 {
+    background-color: #bee3f9;
+    margin-left: 80%;
+    padding-left: 10%;
+    padding-right: 10%;
+    font-size: 1em;
+    margin-bottom: 20px;
+}
+
+div * p {
+    background-color: #d27b8c;
+}
+
+#parraf1, #parraf3, #parraf5, #parraf7, #parraf9 {
+   background-color: #d27b8c;
+}
+
+p.p1 {
+    background-color: #e4f09a;
+}
+
+div #divP1 p.p1{
+   background-color: #bee3f9;
+}
+
+#parraf9 {
+    margin-bottom: 20px;
+}
+
+tr:nth-child(2n+1) {
+    background-color: #bee3f9;
+}
+tr:nth-child(2n) {
+    background-color: #e4f09a;
+}
+p {background: #387bff}
+p span {background-color: chartreuse}

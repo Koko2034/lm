@@ -1,0 +1,31 @@
+Error Mal Formado
+
+En la linera 114 se ha borrado el tag <cdgoTarifa>GL011</cdgoTarifa>, por lo que el XML no esta bien formado, ya que ese tag esta puesto como necesari en el DTD
+
+
+Mensaje de Error de Altova
+
+File trenes.xml is not valid.
+	Content model of element 'tarifas' disallows element 'descTarifa' at this position.
+		Error location: trenes / getInformacionTrenesReturn / infoTrenIda / clases / ocupaciones / tarifas / descTarifa
+		Details
+			VC: Element Valid: Content model of element 'tarifas' disallows element 'descTarifa' at this position.
+
+
+
+
+
+
+
+Error Validacion
+
+En la linea 2871 se ha modificado el nombre del Tag, por lo que la validacion sintactica del Tag no concuerda con su Tag de cierre, produciendo un error de validación.
+
+
+Mensaje de Error de Altova
+
+File trenes.xml is not well-formed.
+	End tag must not have name 'cdgoTarifa'
+		Reason: its name must match start tag 'cdgoTarfa'
+		Details
+			WFC: Element Type Match: Name 'cdgoTarifa' of end tag does not match name 'cdgoTarfa' of its start tag

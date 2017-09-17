@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Examen</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="../js/ajaxCG.js"></script>
+</head>
+<style>
+    #selBebida,#cantidad,#butsumar,#butPedir{
+        width: 20%;
+        float:left;
+    }
+    #divMostrar,#divCarrito{
+        float:left;
+        width: 50%;
+    }
+
+    </style>
+<body>
+    <div class="container">
+  
+  <div id="divPedido">
+  <select class="form-control" class="form-control" id="selBebida">
+            </select>
+<input type="number" class="form-control" class="form-control" id="cantidad"/>
+<button type="button" class="form-control" class="form-control" id="butsumar">Añadir</button>
+<button type="button" class="form-control" class="form-control" id="butPedir">Pedir</button>
+</div>
+<div id="divMostrar">
+    <p>Bebidas disponibles</p>
+  <table class="table" id="tabla">
+  </table>
+</div>
+<div id="divCarrito">
+    <p>Carrito de bebidas</p>
+     <table class="table" id="tablaCarrito">
+         <thead><tr><th>nombre</th><th>precio</th><th>cantidad</th></tr></thead><tbody id="intCarrito"></tbody>
+  </table>
+</div>
+</div>
+</body>
+<script>
+    var aBebidas={};
+    var aCarrito={};
+    var categorias=[];
+    window.onload = () => {
+		let xmlhttp = new XMLHttpRequest();
+		xmlhttp.open('GET', 'bebidas.xml', false)
+		xmlhttp.send();
+		xmlDoc = xmlhttp.responseXML;
+		let nodos = {};
+		nodos = xmlDoc.evaluate("//bebida", xmlDoc, null, XPathResult.ANY_TYPE, null);
+		let thisNode = nodos.iterateNext();
+		while (thisNode) {
+			let id = thisNode.getAttribute('id');
+			aBebidas[id]=Object.create(Object.prototype);
+            for(let i=0; i<thisNode.children.length;i++){
+               aBebidas[id][thisNode.children[i].nodeName] = thisNode.children[i].textContent;
+            }
+			thisNode = nodos.iterateNext();
+		}
+        showContent();
+        
+	}
+    function showContent(){
+        let html='<thead><tr><th>nombre</th><th>precio</th><th>stock</th><th>tipo</th></tr></thead><tbody>';
+         let selectBebida = window.document.getElementById("selBebida");
+         let i=0;
+        for(k in aBebidas){
+            html+='<tr><td>'+aBebidas[k].nombre+'</td><td>'+aBebidas[k].precio+'</td><td>'+aBebidas[k].stock+'</td><td>'+aBebidas[k].tipo+'</td></tr>';
+            selectBebida.options[i] = new Option(aBebidas[k].nombre, k, "defaultSelected");
+            i++;
+        }
+        html+='</tbody>';
+        window.document.getElementById('tabla').innerHTML= html;
+    }
+    butsumar.onclick = function () {
+		let vino = window.document.getElementById('selBebida').value;
+        let cantidad = window.document.getElementById('cantidad').value;
+        if (!(vino in categorias)) {
+                categorias[vino] = 1;
+            aCarrito[vino]=   Object.create(Object.prototype);
+            aCarrito[vino].nombre= aBebidas[vino].nombre;
+            aCarrito[vino].precio = aBebidas[vino].precio;
+            aCarrito[vino].cantidad = parseInt(cantidad);
+            }else{
+                aCarrito[vino].cantidad += parseInt(cantidad);
+            }
+            let html="";
+            window.document.getElementById('intCarrito').innerHTML ="";
+        for(k in aCarrito){
+            html+='<tr><td>'+aCarrito[k].nombre+'</td><td>'+aCarrito[k].precio+'</td><td>'+aCarrito[k].cantidad+'</td></tr>';
+        }
+        window.document.getElementById('intCarrito').innerHTML +=html;
+        
+	}
+
+    butPedir.onclick = function () {
+         var datos = JSON.stringify(aCarrito);
+		ajax({
+			type: 'POST',
+			url: 'examen.php',
+			data: {
+				check: "givePedido",
+				datos: datos
+			},
+			parse: true
+		}).then((data) => {
+			console.log(data);
+			
+
+		}).catch((error) => {
+            
+			console.log(error);
+		});
+        
+	}
+    
+    </script>
+</html>

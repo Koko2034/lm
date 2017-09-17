@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Inner vs Append</title>
+    <style>
+        body {
+            margin: 0 auto;
+        }
+        
+        header {
+            background: #f7901e no-repeat;
+            height: 40px;
+            font-family: Sansation;
+            font-weight: bold;
+            font-size: 21px;
+            width: 100%;
+            padding-left: 50px;
+            line-height: 2;
+            text-align: center;
+        }
+        
+        #secLeft,
+        #secRight,
+        #secTimeAppend,
+        #secTimeInner {
+            width: 50%;
+            float: left;
+            text-align: center;
+            font-weight: bold;
+        }
+        
+        #secTimeAppend,
+        #secTimeInner {
+            margin: 0 auto;
+            padding: 10px 0px 10px 0px;
+            background: rgba(247, 144, 30, 0.6);
+        }
+        
+        article {
+            width: 100px;
+            height: 100px;
+            float: left;
+            border: solid 1px;
+        }
+        
+        input[type="text"] {
+            width: 30px;
+        }
+        
+        button {
+            background-color: indianred;
+            border: none;
+            color: white;
+            padding: 5px 12px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <label for="txtArticles"> Número de divs
+            <input id="txtArticles" type="text">
+            </label>
+        <label for="chkColor"> Colores aleatorios
+            <input type="checkbox" id="chkColor">
+            </label>
+        <label for="txtHeight">Alto 
+                <input type="text" id="txtHeight">
+            </label>
+        <button id="butGenerate">Generar</button>
+    </header>
+    <section id="divContainerTimes">
+        <section id="secTimeAppend"></section>
+        <section id="secTimeInner"></section>
+    </section>
+    <section id="secLeft"></section>
+    <section id="secRight"></section>
+</body>
+<script>
+    butGenerate.onclick = function () {
+        append();
+        inner();
+    }
+
+    function append() {
+        secLeft.innerHTML = "";
+        var start = new Date().getTime();
+        let newArticle = "";
+        for (let k = 0; k < txtArticles.value; k++) {
+            newArticle = document.createElement("article");
+            if (chkColor.checked) {
+                newArticle.setAttribute('style', 'background-color:' + getRandomColor() + ";height:" + txtHeight.value +
+                    "px");
+            } else {
+                newArticle.setAttribute("style", "background-color:red;height:" + txtHeight.value + "px");
+            }
+            newArticle.setAttribute("id", k);
+            secLeft.appendChild(newArticle);
+        }
+        var end = new Date().getTime();
+        secTimeAppend.innerHTML = "Tiempo Append: " + (end - start) + "ms";
+    }
+
+    function inner() {
+        let start = new Date().getTime();
+        let newArticle = "";
+        for (let k = 0; k < txtArticles.value; k++) {
+            if (chkColor.checked) {
+                newArticle += '<article id="' + k + '" style="background-color:' + getRandomColor() + ';height:' +
+                    txtHeight.value + 'px"></article>';
+            } else {
+                newArticle += '<article id="' + k + '" style="background-color:red;height:' + txtHeight.value +
+                    'px"></article>';
+            }
+        }
+        secRight.innerHTML = newArticle;
+        let end = new Date().getTime();
+        secTimeInner.innerHTML = "Tiempo Inner: " + (end - start) + "ms";
+
+    }
+
+    function getRandomColor() {
+        let letters = '0123456789ABCDEF';
+        let color = '#';
+        for (let i = 0; i < 6; i++) {
+            color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+    }
+</script>
+
+</html>

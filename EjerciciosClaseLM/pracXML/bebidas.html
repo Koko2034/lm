@@ -1,0 +1,370 @@
+<html>
+
+<head>
+    <title>Compra vinos</title>
+    <meta charset="UTF-8">
+    <script src="cookies.js"></script>
+    <style>
+        #divMostrarCarrito {
+            text-align: center;
+        }        
+        div {
+            font-family: Arial;
+        }        
+        .divProducto,
+        .divProductoAdd {
+            text-align: center;
+            word-wrap: break-word;
+            float: left;
+            margin: 15px;
+            margin-top: 20px;
+            min-height: 300px;
+            max-width: 230px;
+            z-index: 100;
+            position: relative;
+            min-width: 230px;
+            border: 1px solid black;
+            background: white;
+        }
+        
+        label {
+            display: inline-block;
+            width: 6em;
+            font-family: Arial;
+            font-size: 15px;
+            text-align: center;
+        }
+        
+        button {
+            width: 40px;
+            height: 40px;
+            background: url('fotoscarrito/add.png');
+            background-repeat: no-repeat;
+            cursor: pointer;
+            position: absolute;
+            z-index: 95;
+            right: 0px;
+            bottom: 0px;
+            border: transparent;
+        }        
+        .butQuitar {
+            background: url('fotoscarrito/quitar.png');
+            background-repeat: no-repeat;
+        }
+        #divRelleno {
+            position: relative;
+            float: left;
+            left: 0.50%;
+            width: 50.00%;
+            min-width: 200px;
+        }
+        #divCarrito {
+            position: relative;
+            float: left;
+            background: rgba(0, 0, 0, 0.5);
+            left: 1.50%;
+            width: 50.00%;
+            /*min-width: 30%;*/
+        }
+        body {
+            border-width: 0px;
+            padding: 0px;
+            margin: 0px;
+            font-size: 90%;
+            background: url('http://www.sororitylyfe.com/wp-content/uploads/2015/12/160734_59488_469_wine_tasting-710x434.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            min-width: 500px;
+        }
+        .divDatos {
+            float: left;
+            text-align: center;
+            word-wrap: break-word;
+            width: 32.10%;
+            max-width: 32.10%;
+            height: 50px;
+            font-size: 12px;
+            color: black;
+        }
+        .divProducto div img,
+        .divProductoAdd div img {
+            position: relative;
+            width: 100%;
+            height: 250px;
+        }
+        .divProducto #divNombre,
+        .divProductoAdd #divNombre {
+            position: relative;
+            width: 100%;
+            height: 30px;
+            margin: 0px;
+            padding: 0px;
+            max-width: 100%;
+            background: black;
+            color: white;
+        }
+        
+        .divProducto #divMaridaje,
+        .divProductoAdd #divMaridaje {
+            width: 100%;
+            height: 30px;
+            margin: 0px;
+            padding: 0px;
+            max-width: 100%;
+            background: black;
+            color: white;
+        }
+        
+        .divImg {
+            float: left;
+            position: relative;
+            z-index: 97
+        }
+        
+        .divStock,
+        #divUnidades {
+            background: lightgrey;
+            border-left: solid 1px;
+            border-right: solid 1px;
+        }
+        
+        #divMaridajes {
+            display: block;
+            /*  width: 40%;*/
+            background: #2C1112;
+            color: white;
+            padding: 15px;
+        }
+        
+        header {
+            margin-top: -30px;
+            text-align: center;
+            text-shadow: 1px 0 0 red, -1px 0 0 red, 0 1px 0 red, 0 -1px 0 red, 1px 1px red, -1px -1px 0 red, 1px -1px 0 red, -1px 1px 0 red;
+            background: black;
+            font-size: 20px;
+        }
+        
+        input[type="radio"] {
+            display: none;
+            padding: 20px;
+            margin: 5px;
+            font-family: Arial;
+            font-size: 16px;
+            background-color: #ddd;
+            width: 100px;
+            border: solid 1px red;
+        }
+        
+        input[type="radio"]:checked+label {
+            background-color: white;
+            border: 2px solid black;
+            border-radius: 100px 100px 100px 100px;
+            font-weight: bold;
+            color: black;
+        }
+        
+        input[type="radio"]+label {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Vino conmigo</h1>
+    </header>
+    <div id="divMaridajes">
+    </div>
+    <div id="divRelleno"></div>
+    <div id="divCarrito"> </div>
+</body>
+<script>
+    var xmlDoc;
+    var aDatos = {};
+    var stockOriginal = [];
+    var maridajes = [];
+    if (docCookies.hasItem('carritoBebidas')) {
+        var aCarrito = JSON.parse(docCookies.getItem('carritoBebidas'));
+        muestraCarrito();
+    } else {
+        var aCarrito = {};
+    }
+
+    window.onload = function () {
+        let xmlhttp = new XMLHttpRequest();
+        xmlhttp.open('GET', 'bebidas.xml', false);
+        xmlhttp.send();
+        xmlDoc = xmlhttp.responseXML;
+        generateContent();
+    }
+
+    function generateContent() {
+        let nodos = {};
+        nodos = xmlDoc.evaluate("//bebida", xmlDoc, null, XPathResult.ANY_TYPE, null);
+        let thisNode = nodos.iterateNext();
+
+        while (thisNode) {
+            id = thisNode.getAttribute('id');
+            aDatos[id] = Object.create(Object.prototype);
+            for (let i = 0; i < thisNode.children.length; i++){
+			aDatos[id][thisNode.children[i].nodeName] = thisNode.children[
+                i].textContent;
+				}
+            aDatos[id].foto = aDatos[id].foto.replace("'", "");
+            stockOriginal[id] = aDatos[id].stock;
+            thisNode = nodos.iterateNext();			
+        }
+        validateStock();
+        showContent();
+        butAdd();
+        validateMaridaje();
+        maridajesRadio();
+        disableBuy();
+    }
+
+    function validateStock() {
+        for (let i in aCarrito) aDatos[i].stock = parseInt(aDatos[i].stock) - aCarrito[i].unidades;
+    }
+
+    function showContent() {
+        let html = "";
+        for (id in aDatos) {
+            html += '<div class="divProducto" data-maridaje="' + aDatos[id].maridaje + '">';
+            html += "<div class='divImg'><img src='fotosbebidas/" + aDatos[id].foto + ".jpg'/>";
+            html += "<button type='button' value='" + id + "' id='but" + id +
+                "'> </button>";
+            html += "</div> ";
+            html += '<div class="divDatos" id="divNombre"> ' + aDatos[id].nombre + '</div>';
+            html += '<div class="divDatos"> <strong>Tipo: </strong> ' + aDatos[id].tipo + '</div>';
+            html += '<div id="' + id + '" class="divDatos divStock"> <strong>Stock: </strong> ' + aDatos[id].stock +
+                '</div>';
+            html += '<div class="divDatos"> <strong>Precio:  ' + aDatos[id].precio + '</strong></div>';
+            html += '<div id="divMaridaje" class="divDatos"> <strong>Maridaje: </strong> ' + aDatos[id].maridaje +
+                '</div>';
+            html += '</div>';
+        }
+        window.document.getElementById('divRelleno').innerHTML = html;
+    }
+
+    function butAdd() {
+        for (i in aDatos) {
+            let myElements = window.document.getElementById("but" + i);
+            myElements.addEventListener("click", function () {
+                carrito(this.value, this.id);
+            });
+        }
+    }
+
+    function validateMaridaje() {
+        let aNoRepeat = {};
+        for (id in aDatos) {
+            let aux = aDatos[id].maridaje.split(",");
+            for (i in aux) {
+                if (!(aux[i] in aNoRepeat)) {
+                    maridajes.push(aux[i]);
+                    aNoRepeat[aux[i]] = 1;
+                }
+            }
+        }
+    }
+
+    function maridajesRadio() {
+        let html = "";
+        maridajes.push("todos");
+        for (i in maridajes) {
+            html += '<input type="radio" onchange="changeMaridaje(this.id)" name="maridajes" id="' + maridajes[i] +
+                '">';
+            html += "<label for='" + maridajes[i] + "'>" + maridajes[i].charAt(0).toUpperCase() + maridajes[i].substring(
+                1, maridajes[i].length) + "</label>";
+        }
+        window.document.getElementById('divMaridajes').innerHTML = html;
+        //Selecciona a todos por defecto
+        window.document.getElementById(maridajes[maridajes.length - 1]).checked = true;
+    }
+
+    var changeMaridaje = function (id) {
+        let inpCheck = window.document.querySelector('input[type="radio"]:checked').id;
+        let divs = window.document.querySelectorAll('.divProducto');
+        for (let i = 0; i < divs.length; i++) {
+            if (divs[i].attributes[1].value.includes(inpCheck)) divs[i].style.display = "block";
+            else if (inpCheck == "todos") divs[i].style.display = "block";
+            else divs[i].style.display = "none";
+        }
+    }
+
+
+    var carrito = function (value, id) {
+        let stock = --aDatos[value].stock;
+        window.document.getElementById(value).innerHTML = "<strong>Stock: </strong>" + stock;
+        if (value in aCarrito) {
+            aCarrito[value].unidades++;
+            aCarrito[value].precio += parseFloat(aDatos[value].precio);
+        } else {
+            aCarrito[value] = Object.create(Object.prototype);
+            aCarrito[value].foto = aDatos[value].foto;
+            aCarrito[value].nombre = aDatos[value].nombre;
+            aCarrito[value].tipo = aDatos[value].tipo;
+            aCarrito[value].unidades = 1;
+            aCarrito[value].stock = aDatos[value].stock;
+            aCarrito[value].precio = parseFloat(aDatos[value].precio.replace(".", "").replace(",", "."));
+            aCarrito[value].maridaje = aDatos[value].maridaje;
+        }
+        if (aCarrito[value].unidades > aCarrito[value].stock) {
+		let buttonDisabled = window.document.getElementById(id);
+            buttonDisabled.style.background = "url('fotoscarrito/delete.png') no-repeat";
+            buttonDisabled.disabled = true;
+            buttonDisabled.style.cursor = "not-allowed";
+        }
+        muestraCarrito();
+        butLess();
+    }
+
+
+    function muestraCarrito() {
+        var html = '';
+        for (var k in aCarrito) {
+            html += '<div id="div' + k + '" class="divProductoAdd" >';
+            html += "<div class='divImg'><img src='fotosbebidas/" + aCarrito[k].foto + ".jpg'/>";
+            html += "<button type='button' value='" + k +
+                "' class='butQuitar' id='butQ" + k + "'> </button></div> ";
+            html += '<div class="divDatos" id="divNombre"> ' + aCarrito[k].nombre + '</div>';
+            html += '<div class="divDatos"> <strong>Tipo: </strong> ' + aCarrito[k].tipo + '</div>';
+            html += '<div id="divUnidades" class="divDatos"> <strong>Unidades: </strong> ' + aCarrito[k].unidades +
+                '</div>';
+            html += '<div class="divDatos"> <strong>Precio:  ' + aCarrito[k].precio + ' €</strong></div>';
+            html += '<div id="divMaridaje" class="divDatos"> <strong>Maridaje: </strong> ' + aCarrito[k].maridaje +
+                '</div>';
+            html += '</div>';
+        }
+        window.document.getElementById('divCarrito').innerHTML = html;
+        docCookies.setItem('carritoBebidas', JSON.stringify(aCarrito), Infinity);
+    }
+
+
+    function butLess() {
+        for (i in aCarrito) {
+            let myElements = window.document.getElementById("butQ" + i);
+            myElements.addEventListener("click", function () {
+                quitarCarrito(this.value);
+            });
+        }
+    }
+
+    var quitarCarrito = function (value) {
+        delete aCarrito[value];
+        var elem = window.document.getElementById("div" + value);
+        elem.parentElement.removeChild(elem);
+        let stock = stockOriginal[value];
+        window.document.getElementById(value).innerHTML = "<strong>Stock: </strong>" + stock;
+        window.document.getElementById("but" + value).style.background = "url('fotoscarrito/add.png') no-repeat";
+        window.document.getElementById("but" + value).disabled = false;
+        window.document.getElementById("but" + value).style.cursor = "pointer";
+        aDatos[value].stock = stockOriginal[value];
+        docCookies.setItem('carritoBebidas', JSON.stringify(aCarrito), Infinity);
+    }
+
+</script>
+
+</html>

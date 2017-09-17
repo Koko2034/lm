@@ -1,0 +1,30 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+ <head>
+  <title>Index of /ajax</title>
+ </head>
+ <body>
+<h1>Index of /ajax</h1>
+  <table>
+   <tr><th valign="top"><img src="/icons/blank.gif" alt="[ICO]"></th><th><a href="?C=N;O=D">Name</a></th><th><a href="?C=M;O=A">Last modified</a></th><th><a href="?C=S;O=A">Size</a></th><th><a href="?C=D;O=A">Description</a></th></tr>
+   <tr><th colspan="5"><hr></th></tr>
+<tr><td valign="top"><img src="/icons/back.gif" alt="[PARENTDIR]"></td><td><a href="/">Parent Directory</a></td><td>&nbsp;</td><td align="right">  - </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/folder.gif" alt="[DIR]"></td><td><a href="ajax/">ajax/</a></td><td align="right">2017-04-19 19:56  </td><td align="right">  - </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/compressed.gif" alt="[   ]"></td><td><a href="ajax2.zip">ajax2.zip</a></td><td align="right">2017-04-19 19:37  </td><td align="right"> 11K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="buildReserve.php">buildReserve.php</a></td><td align="right">2017-04-20 00:57  </td><td align="right">2.4K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="creaJSON.php">creaJSON.php</a></td><td align="right">2017-04-19 19:42  </td><td align="right">706 </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/folder.gif" alt="[DIR]"></td><td><a href="datas/">datas/</a></td><td align="right">2017-04-19 19:42  </td><td align="right">  - </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/text.gif" alt="[TXT]"></td><td><a href="genAttCiudades.html">genAttCiudades.html</a></td><td align="right">2017-04-19 19:42  </td><td align="right">1.0K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/text.gif" alt="[TXT]"></td><td><a href="genCiudadesCortas.html">genCiudadesCortas.html</a></td><td align="right">2017-04-19 19:42  </td><td align="right">3.0K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="generaCiudades.class.php">generaCiudades.class.php</a></td><td align="right">2017-04-19 19:42  </td><td align="right">2.7K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="generaCiudades.php">generaCiudades.php</a></td><td align="right">2017-04-19 19:42  </td><td align="right">878 </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="getAttPalabras.php">getAttPalabras.php</a></td><td align="right">2017-04-19 19:42  </td><td align="right">194 </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="manipulaHotel.php">manipulaHotel.php</a></td><td align="right">2017-04-19 19:42  </td><td align="right">753 </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/text.gif" alt="[TXT]"></td><td><a href="ofertasHoy.html">ofertasHoy.html</a></td><td align="right">2017-04-20 00:59  </td><td align="right"> 15K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="ofertasHoy.php">ofertasHoy.php</a></td><td align="right">2017-04-19 19:42  </td><td align="right">1.6K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/text.gif" alt="[TXT]"></td><td><a href="sonido.html">sonido.html</a></td><td align="right">2017-04-19 19:42  </td><td align="right">1.5K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="sonido.php">sonido.php</a></td><td align="right">2017-04-19 19:42  </td><td align="right">290 </td><td>&nbsp;</td></tr>
+   <tr><th colspan="5"><hr></th></tr>
+</table>
+<address>Apache/2.4.18 (Ubuntu) Server at 213.32.71.33 Port 80</address>
+</body></html>

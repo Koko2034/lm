@@ -1,0 +1,58 @@
+<html>
+    <head>
+        <title>Planetas</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            img {position: absolute}
+        </style>
+    </head>
+    <body>
+        <img id="imgTierra" src="earth.png" width="100"/>
+        <img id="imgSaturno" src="saturn.png" width="100"/>
+        <img id="imgPlaneta" src="planet.jpg" width="100"/>
+    </body>
+    <script>
+        var x = 0;
+        var inc = 10;
+        var w = window,
+                d = document,
+                e = d.documentElement,
+                g = d.getElementsByTagName('body')[0],
+                anchoMax = w.innerWidth || e.clientWidth || g.clientWidth,
+                altoMax = w.innerHeight || e.clientHeight || g.clientHeight;
+        function alturaAleatoria(idImagen, max) {
+            var img = document.getElementById(idImagen);
+            var height = img.clientHeight;
+            max = max - height;
+            return parseInt(Math.random() * max);
+        }
+        function desplazaA(id) {
+            x += inc;
+            if ((x * inc) >= anchoMax) {
+                x = 0;
+                var l = parseInt(Math.random() * 200);
+            } else {
+                var l = parseInt(window.document.getElementById(id).style.left) + x;
+            }
+            window.document.getElementById(id).style.left = l;
+        }
+        window.document.getElementById('imgTierra').style.top = alturaAleatoria('imgTierra', altoMax);
+        window.document.getElementById('imgSaturno').style.top = alturaAleatoria('imgSaturno', altoMax);
+        window.document.getElementById('imgPlaneta').style.top = alturaAleatoria('imgPlaneta', altoMax);
+        window.document.getElementById('imgTierra').style.left = parseInt(Math.random() * 200);
+        window.document.getElementById('imgSaturno').style.left = parseInt(Math.random() * 200);
+        window.document.getElementById('imgPlaneta').style.left = parseInt(Math.random() * 200);
+
+        window.setInterval(function () {
+            desplazaA('imgTierra');
+        }, parseInt(Math.random() * 200));
+        window.setInterval(function () {
+            desplazaA('imgSaturno');
+        }, parseInt(Math.random() * 200));
+        window.setInterval(function () {
+            desplazaA('imgPlaneta');
+        }, parseInt(Math.random() * 200));
+    </script>
+
+</html>

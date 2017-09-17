@@ -1,0 +1,286 @@
+<html>
+    <head>
+        <title>Juego adivinar la palabra</title>
+        <link href="https://fonts.googleapis.com/css?family=Lora|Poppins" rel="stylesheet">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style type="text/css">
+            body{
+                background:   #f5f5f5;
+            }
+            header{
+                background-color: #d3e3ee;
+                margin-bottom: 55px;
+            }
+
+            h1 {
+                color: #0e0e0e;
+                font-family: 'Lora', serif;
+                font-size: 48px;
+                letter-spacing: -1px;
+                text-align: center;
+                text-decoration: none; 
+                text-shadow: 1px 1px #fff, 0 0 #0e0e0e, 2px 3px 1px #e3e3e3; 
+                text-transform: none; 
+                word-spacing: -2px;
+                padding : 15px;
+                border: solid 1.5px black;
+            }
+            #divJuego{
+                display:inline-block;
+                margin-top: 5%;
+            }
+            #divComprobar{
+                margin-top:10%;
+            }
+            .divLetras{
+                float:left;
+            }
+            #divResult{
+                text-align: center;
+            }
+            p{
+                font-family: 'Poppins', sans-serif;
+                font-size: 24px;
+            }
+            button { /* clase general */
+                display: inline-block;
+                border: 1px solid #dedede;
+                border-radius: 3px;
+                color: #555;
+                font: bold 12px/12px HelveticaNeue, Arial;
+                padding: 8px 11px;
+                text-decoration: none;
+                background: #f5f5f5;
+                border-color: #dedede #d8d8d8 #d3d3d3;
+                box-shadow: 0 1px 1px #eaeaea, inset 0 1px 0 #fbfbfb;
+                color: #555;
+                text-shadow: 0 1px 0 #fff;
+                background: -moz-linear-gradient(top,  #f9f9f9, #f0f0f0);
+                background: -webkit-linear-gradient(top,  #f9f9f9, #f0f0f0);
+                background: o-linear-gradient(top,  #f9f9f9, #f0f0f0);
+                background: ms-linear-gradient(top,  #f9f9f9, #f0f0f0);
+                background: linear-gradient(top,  #f9f9f9, #f0f0f0);
+                filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#f9f9f9', endColorstr='#f0f0f0');
+            }
+            button:hover{
+                background: #f4f4f4;
+                border-color: #c7c7c7 #c3c3c3 #bebebe;
+                box-shadow: 0 1px 1px #ebebeb, inset 0 1px 0 #f3f3f3;
+                text-shadow: 0 1px 0 #fdfdfd;
+                background: -moz-linear-gradient(top,  #efefef, #f8f8f8);
+                background: -webkit-linear-gradient(top,  #efefef, #f8f8f8);
+                background: -o-linear-gradient(top,  #efefef, #f8f8f8);
+                background: -ms-linear-gradient(top,  #efefef, #f8f8f8);
+                background: linear-gradient(top,  #efefef, #f8f8f8);
+                filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#efefef', endColorstr='#f8f8f8');
+            }
+            button:disabled{
+                background: #f8f8f8;
+                color: #d8d8d8;
+                cursor: not-allowed;
+            }
+            #butReset{
+                margin-left: 50px;
+            }
+            input {
+                display: block;
+            }
+            label {
+                margin: 3px;
+                margin-left: 50px;
+                float: left;
+                width: 200px;
+            }
+            input[type="text"]{
+                -webkit-border-radius: 5px;
+                -moz-border-radius: 5px;
+                border-radius: 5px;
+                -webkit-box-shadow: inset 2px 2px 3px rgba(0, 0, 0, 0.2);
+                -moz-box-shadow: inset 2px 2px 3px rgba(0, 0, 0, 0.2);
+                box-shadow: inset 2px 2px 3px rgba(0, 0, 0, 0.2);
+                padding: 5px;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>Adivina la palabra</h1>
+        </header>
+        <div id="divMenu">
+            <label><input id="txtPattern" type="text" oninput="getWord()" list="wordList" placeholder="Patron..."></label>
+            <div id="divSuggests"><datalist id="wordList"></datalist></div>
+        </div>
+        <div id="divButton">
+            <button type="button" onclick="selectPalabras()" id="butPlay">JUGAR</button>
+        </div>
+        <div id="divJuego">
+
+        </div>
+        <div id="divComprobar">
+
+        </div>
+        <div id="divResult">
+
+        </div>
+    </body>
+    <script>
+        let trainWords = {};
+        let palabra;
+        let palabraCheck;
+        let w = window,
+                d = document,
+                e = d.documentElement,
+                g = d.getElementsByTagName('body')[0],
+                anchoMax = w.innerWidth || e.clientWidth || g.clientWidth,
+                altoMax = w.innerHeight || e.clientHeight || g.clientHeight;
+        window.onload = function () {
+            let xmlhttp = new XMLHttpRequest();
+            xmlhttp.open('GET', '../xml/PALABRAS.xml', false);
+            xmlhttp.send();
+            xmlDoc = xmlhttp.responseXML;
+            if (window.document.getElementById('txtPattern').value === "") {
+                window.document.getElementById("butPlay").disabled = true;
+            }
+        };
+
+        function getWord() {
+            nodos = {};
+            trainWords = [];
+            let number;
+            let pattern = window.document.getElementById('txtPattern').value;
+            if (pattern === "") {
+                window.document.getElementById('butPlay').disabled = true;
+            } else {
+                window.document.getElementById('butPlay').disabled = false;
+                number = xmlDoc.evaluate("count(//ROW[starts-with(@PALABRA, '" + pattern + "')])", xmlDoc, null, XPathResult.ANY_TYPE, null);
+                number = parseInt((number.numberValue / 15) + 1);
+                if (number > 1) {
+                    nodos = xmlDoc.evaluate("//ROW[starts-with(@PALABRA, '" + pattern + "')][position()mod " + number + "=1]", xmlDoc, null, XPathResult.ANY_TYPE, null);
+                    fillObject(nodos, thisNode);
+                } else {
+                    nodos = xmlDoc.evaluate("//ROW[starts-with(@PALABRA, '" + pattern + "')]", xmlDoc, null, XPathResult.ANY_TYPE, null);
+                    fillObject(nodos, thisNode);
+                }
+            }
+            showContent();
+        }
+        function fillObject(nodos, thisNode) {
+            thisNode = nodos.iterateNext();
+            while (thisNode) {
+                let id = thisNode.getAttribute('ID');
+                trainWords[id] = Object.create(Object.prototype);
+                trainWords[id].word = thisNode.getAttribute('PALABRA');
+                thisNode = nodos.iterateNext();
+            }
+
+        }
+        function showContent() {
+            let html = "";
+            for (k in trainWords) {
+                html += '<option value="' + trainWords[k].word + '"/>';
+            }
+            window.document.getElementById('wordList').innerHTML = html;
+        }
+        function selectPalabras() {
+            let html = "";
+            palabra = window.document.getElementById('txtPattern').value;
+            window.document.getElementById('txtPattern').value = "";
+            let widthDiv = parseInt(anchoMax / palabra.length) - 5;
+            for (let i = 0; i < palabra.length; i++) {
+                let letra = palabra.charAt(i);
+                html += "<div width='" + widthDiv + "' height='" + widthDiv + "' class='divLetras'><svg width='78px' height='78px' xmlns='http://www.w3.org/2000/svg' xmlns:svg='http://www.w3.org/2000/svg'><g>";
+                html += "<text xml:space='preserve' text-anchor='middle' font-family='serif' font-size='72' id='svg_" + i + "' y='50' x='39' stroke-width='0' stroke='#000000' fill='#000000'>" + letra + "</text>";
+                html += "</g></svg></div>";
+                window.document.getElementById('divJuego').innerHTML = html;
+            }
+            rotateSVG();
+            setTimeout(showInputs, 3000);
+        }
+        function rotateSVG() {
+            let color;
+            let angle = 1;
+            let wait;
+            if (palabra.length > 10) {
+                wait = 25;
+            } else if (palabra.length > 5) {
+                wait = 15;
+            } else {
+                wait = 0;
+            }
+            for (let i = 0; i < palabra.length; i++) {
+                color = getRandomColor();
+                window.document.getElementById("svg_" + i).setAttribute("fill", color);
+                interval(function () {
+                    angle++;
+                    window.document.getElementById("svg_" + i).setAttribute("transform", "rotate(" + angle + " 39 39)");
+                }, wait, 3000);
+
+            }
+        }
+        function getRandomColor() {
+            var letters = '0123456789ABCDEF';
+            var color = '#';
+            for (var i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+        function interval(func, wait, times) {
+            let interv = function (w, t) {
+                return function () {
+                    if (typeof t === "undefined" || t-- > 0) {
+                        setTimeout(interv, w);
+                        try {
+                            func.call(null);
+                        } catch (e) {
+                            t = 0;
+                        }
+                    }
+                };
+            }(wait, times);
+
+            setTimeout(interv, wait);
+        }
+        function showInputs() {
+            window.document.getElementById('butPlay').disabled = true;
+            window.document.getElementById('divJuego').innerHTML = "";
+            let html = "";
+            html += "<label><input type='text' id='txtCheck' oninput='checkInput()' placeholder='Escribe la palabra...'></label>";
+            html += "<button type'button' id='butCheck' onclick='check()'>Comprobar</button>";
+            html += "<button type'button' id='butReset' onclick='reset()' style='cursor: pointer;'>Volver a jugar</button>";
+            window.document.getElementById('divComprobar').innerHTML = html;
+            window.document.getElementById('butReset').style.display = 'none';
+            window.document.getElementById('butCheck').disabled = true;
+        }
+        function checkInput() {
+            let pattern = window.document.getElementById('txtCheck').value;
+            if (pattern === "") {
+                window.document.getElementById('butCheck').disabled = true;
+            } else {
+                window.document.getElementById('butCheck').disabled = false;
+            }
+        }
+        function check() {
+            let palabraChek = window.document.getElementById('txtCheck').value;
+            let html = "";
+            if (palabra === palabraChek) {
+                html += "<div><p id='parResult'>¡HAS ACERTADO!</p></div>";
+                window.document.getElementById('divResult').innerHTML = html;
+                window.document.getElementById("parResult").style.color = '#0099ff';
+            } else {
+                html += "<div><p id='parResult'>¡HAS FALLADO!</p></div>";
+                window.document.getElementById('divResult').innerHTML = html;
+                window.document.getElementById("parResult").style.color = 'red';
+            }
+            window.document.getElementById('butReset').style.display = 'inline-block';
+        }
+        function reset() {
+            window.document.getElementById('divComprobar').innerHTML = "";
+            window.document.getElementById('divResult').innerHTML = "";
+            window.document.getElementById('txtPattern').value = "";
+        }
+
+
+    </script>
+</html>

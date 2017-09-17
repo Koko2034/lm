@@ -1,0 +1,427 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE MalagaCF SYSTEM "C:\Users\Fcabrera\Documents\curso1617\xml\PlantillaCF.dtd">
+<MalagaCF>
+	<Jugador dorsal="1">
+		<Nombre><![CDATA[ Idriss Carlos Kameni ]]></Nombre>
+		<Posicion><![CDATA[ Portero ]]></Posicion>
+		<Nacionalidad><![CDATA[ Camerunés ]]></Nacionalidad>
+		<Nacionalidad><![CDATA[ Francés ]]></Nacionalidad>
+		<FechaNacimiento><![CDATA[ 18/02/1984 (31 años) ]]></FechaNacimiento>
+		<Altura><![CDATA[ 186 cmts ]]></Altura>
+		<Peso><![CDATA[ 86 Kgs ]]></Peso>
+		<PiernaHabil><![CDATA[ Diestro ]]></PiernaHabil>
+		<Debut><![CDATA[ 25/03/2012 :: RCD Espanyol, 1 - Málaga CF, 2 ]]></Debut>
+		<Estadisticas>
+			<Partidos>26</Partidos>
+			<Minutos>2449</Minutos>
+			<Paradas>30</Paradas>
+		</Estadisticas>
+		<Tarjetas>
+			<Amarillas>2</Amarillas>
+			<Rojas>0</Rojas>
+		</Tarjetas>
+	</Jugador>
+	<Jugador dorsal="13">
+		<Nombre><![CDATA[ Francisco Guillermo Ochoa Magaña ]]></Nombre>
+		<Posicion><![CDATA[ Portero ]]></Posicion>
+		<LugarNacimiento><![CDATA[ Guadalajara, Jalisco ]]></LugarNacimiento>
+		<FechaNacimiento><![CDATA[ 13/07/1985 (29 años) ]]></FechaNacimiento>
+		<Altura><![CDATA[ 185 cmts ]]></Altura>
+		<Peso><![CDATA[ 78 Kgs ]]></Peso>
+		<PiernaHabil><![CDATA[ Diestro ]]></PiernaHabil>
+		<Estadisticas>
+			<Partidos>6</Partidos>
+			<Minutos>540</Minutos>
+			<Paradas>6</Paradas>
+		</Estadisticas>
+		<Tarjetas>
+			<Amarillas>0</Amarillas>
+			<Rojas>0</Rojas>
+		</Tarjetas>
+	</Jugador>
+	<Jugador dorsal="3">
+		<Nombre><![CDATA[ Weligton Robson Pena de Oliveira ]]></Nombre>
+		<Posicion><![CDATA[ Defensa central ]]></Posicion>
+		<LugarNacimiento><![CDATA[ Fernandópolis, Brasil ]]></LugarNacimiento>
+		<FechaNacimiento><![CDATA[ 26/08/1979 (35 años) ]]></FechaNacimiento>
+		<Altura><![CDATA[ 186 cmts ]]></Altura>
+		<Peso><![CDATA[ 71 Kgs ]]></Peso>
+		<PiernaHabil><![CDATA[ Zurdo ]]></PiernaHabil>
+		<Debut><![CDATA[ 26/08/2017 :: Málaga CF, 3 - Salamanca, 0]]></Debut>
+		<Estadisticas>
+			<Partidos>24</Partidos>
+			<Minutos>2197</Minutos>
+			<Goles>0</Goles>
+		</Estadisticas>
+		<Tarjetas>
+			<Amarillas>12</Amarillas>
+			<Rojas>2</Rojas>
+		</Tarjetas>
+	</Jugador>
+	<Jugador dorsal="4">
+		<Nombre><![CDATA[ Flavio Nunes Ferreira ]]></Nombre>
+		<Posicion><![CDATA[ Defensa central ]]></Posicion>
+		<LugarNacimiento><![CDATA[ Nogueira do Cravo, Portugal ]]></LugarNacimiento>
+		<FechaNacimiento><![CDATA[ 19/10/1991 (23 años) ]]></FechaNacimiento>
+		<Altura><![CDATA[ 180 cmts ]]></Altura>
+		<Peso><![CDATA[ 75 Kgs ]]></Peso>
+		<PiernaHabil><![CDATA[ Diestro ]]></PiernaHabil>
+		<Debut><![CDATA[ 14/01/2012 :: Levante UD, 1 - Málaga CF, 0]]></Debut>
+		<Estadisticas>
+			<Partidos>16</Partidos>
+			<Minutos>1396</Minutos>
+			<Goles>0</Goles>
+		</Estadisticas>
+		<Tarjetas>
+			<Amarillas>6</Amarillas>
+			<Rojas>0</Rojas>
+		</Tarjetas>
+	</Jugador>
+	<Jugador dorsal="15">
+		<Nombre><![CDATA[ Marcos Alberto Angeleri ]]></Nombre>
+		<Posicion><![CDATA[ Defensa central ]]></Posicion>
+		<Nacionalidad><![CDATA[ Argentino ]]></Nacionalidad>
+		<Nacionalidad><![CDATA[ Italiano ]]></Nacionalidad>
+		<FechaNacimiento><![CDATA[ 07/04/1983 (31 años) ]]></FechaNacimiento>
+		<Altura><![CDATA[ 182 cmts ]]></Altura>
+		<Peso><![CDATA[ 76 Kgs ]]></Peso>
+		<PiernaHabil><![CDATA[ Diestro ]]></PiernaHabil>
+		<Debut><![CDATA[ 17/08/2013 :: Valencia CF, 1 - Málaga CF, 0]]></Debut>
+		<Estadisticas>
+			<Partidos>20</Partidos>
+			<Minutos>1742</Minutos>
+			<Goles>0</Goles>
+		</Estadisticas>
+		<Tarjetas>
+			<Amarillas>3</Amarillas>
+			<Rojas>1</Rojas>
+		</Tarjetas>
+	</Jugador>
+	<Jugador dorsal="18">
+		<Nombre><![CDATA[ Roberto José Rosales Altuve ]]></Nombre>
+		<Posicion><![CDATA[ Lateral Derecho ]]></Posicion>
+		<LugarNacimiento><![CDATA[ Caracas, Venezuela ]]></LugarNacimiento>
+		<FechaNacimiento><![CDATA[ 20/11/1988 (26 años) ]]></FechaNacimiento>
+		<Altura><![CDATA[ 174 cmts ]]></Altura>
+		<Peso><![CDATA[ 70 Kgs ]]></Peso>
+		<PiernaHabil><![CDATA[ Diestro ]]></PiernaHabil>
+		<Debut><![CDATA[ 17/08/2013 :: Málaga CF, 1 - Athletic Club, 0 ]]></Debut>
+		<Estadisticas>
+			<Partidos>30</Partidos>
+			<Minutos>2785</Minutos>
+			<Goles>0</Goles>
+		</Estadisticas>
+		<Tarjetas>
+			<Amarillas>8</Amarillas>
+			<Rojas>0</Rojas>
+		</Tarjetas>
+	</Jugador>
+	<Jugador dorsal="19">
+		<Nombre><![CDATA[ Arthur Boka ]]></Nombre>
+		<Posicion><![CDATA[ Lateral izquierdo ]]></Posicion>
+		<LugarNacimiento><![CDATA[ Abiyá, Costal de Marfil ]]></LugarNacimiento>
+		<FechaNacimiento><![CDATA[ 02/04/1983 (31 años) ]]></FechaNacimiento>
+		<Altura><![CDATA[ 166 cmts ]]></Altura>
+		<Peso><![CDATA[ 65 Kgs ]]></Peso>
+		<PiernaHabil><![CDATA[ Zurdo ]]></PiernaHabil>
+		<Debut><![CDATA[ 28/08/2014 :: Valencia CF, 3 - Málaga CF, 0 ]]></Debut>
+		<Estadisticas>
+			<Partidos>18</Partidos>
+			<Minutos>1356</Minutos>
+			<Goles>0</Goles>
+		</Estadisticas>
+		<Tarjetas>
+			<Amarillas>1</Amarillas>
+			<Rojas>0</Rojas>
+		</Tarjetas>
+	</Jugador>
+	<Jugador dorsal="21">
+		<Nombre><![CDATA[ Sergio Sanchez Ortega ]]></Nombre>
+		<Posicion><![CDATA[ Lateral Derecho ]]></Posicion>
+		<Posicion><![CDATA[ Defensa Central ]]></Posicion>
+		<LugarNacimiento><![CDATA[ Barcelona, España ]]></LugarNacimiento>
+		<FechaNacimiento><![CDATA[ 03/04/1986 (28 años) ]]></FechaNacimiento>
+		<Altura><![CDATA[ 185 cmts ]]></Altura>
+		<Peso><![CDATA[ 76 Kgs ]]></Peso>
+		<PiernaHabil><![CDATA[ Diestro ]]></PiernaHabil>
+		<Debut><![CDATA[ 28/08/2014 :: Real Zaragoza, 0 - Málaga CF, 0 ]]></Debut>
+		<Estadisticas>
+			<Partidos>28</Partidos>
+			<Minutos>2524</Minutos>
+			<Goles>1</Goles>
+		</Estadisticas>
+		<Tarjetas>
+			<Amarillas>14</Amarillas>
+			<Rojas>1</Rojas>
+		</Tarjetas>
+	</Jugador>
+	<Jugador dorsal="23">
+		<Nombre><![CDATA[ Miguel Torres Gómez ]]></Nombre>
+		<Posicion><![CDATA[ Lateral Derecho ]]></Posicion>
+		<Posicion><![CDATA[ Defensa Central ]]></Posicion>
+		<Posicion><![CDATA[ Lateral Izquierdo ]]></Posicion>
+		<LugarNacimiento><![CDATA[ Madrid, España ]]></LugarNacimiento>
+		<FechaNacimiento><![CDATA[ 28/01/1986 (29 años) ]]></FechaNacimiento>
+		<Altura><![CDATA[ 184 cmts ]]></Altura>
+		<Peso><![CDATA[ 74 Kgs ]]></Peso>
+		<PiernaHabil><![CDATA[ Diestro ]]></PiernaHabil>
+		<Debut><![CDATA[ 28/08/2014 :: Málaga CF, 0 - FC Barcelona, 0 ]]></Debut>
+		<Estadisticas>
+			<Partidos>16</Partidos>
+			<Minutos>1247</Minutos>
+			<Goles>0</Goles>
+		</Estadisticas>
+		<Tarjetas>
+			<Amarillas>4</Amarillas>
+			<Rojas>0</Rojas>
+		</Tarjetas>
+	</Jugador>
+	<Jugador dorsal="6">
+		<Nombre><![CDATA[ Ignacio Camacho Barnola ]]></Nombre>
+		<Posicion><![CDATA[ Mediocentro defensivo ]]></Posicion>
+		<LugarNacimiento><![CDATA[ Zaragoza, España ]]></LugarNacimiento>
+		<FechaNacimiento><![CDATA[ 04/05/1990 (24 años) ]]></FechaNacimiento>
+		<Altura><![CDATA[ 182 cmts ]]></Altura>
+		<Peso><![CDATA[ 75 Kgs ]]></Peso>
+		<PiernaHabil><![CDATA[ Diestro ]]></PiernaHabil>
+		<Debut><![CDATA[ 25/01/2011 :: Málaga CF, 0 -  Sevilla FC, 3 ]]></Debut>
+		<Estadisticas>
+			<Partidos>25</Partidos>
+			<Minutos>2245</Minutos>
+			<Goles>4</Goles>
+		</Estadisticas>
+		<Tarjetas>
+			<Amarillas>12</Amarillas>
+			<Rojas>0</Rojas>
+		</Tarjetas>
+	</Jugador>
+	<Jugador dorsal="12">
+		<Nombre><![CDATA[ Fernando Damián Tissone ]]></Nombre>
+		<Posicion><![CDATA[ Mediocentro defensivo ]]></Posicion>
+		<Nacionalidad><![CDATA[ Argentino ]]></Nacionalidad>
+		<Nacionalidad><![CDATA[ Italiano ]]></Nacionalidad>
+		<FechaNacimiento><![CDATA[ 24/07/1986 (28 años) ]]></FechaNacimiento>
+		<Altura><![CDATA[ 180 cmts ]]></Altura>
+		<Peso><![CDATA[ 77 Kgs ]]></Peso>
+		<PiernaHabil><![CDATA[ Diestro ]]></PiernaHabil>
+		<Debut><![CDATA[ 17/08/2013 :: Valencia CF, 3 - Málaga CF, 0 ]]></Debut>
+		<Estadisticas>
+			<Partidos>2</Partidos>
+			<Minutos>40</Minutos>
+			<Goles>0</Goles>
+		</Estadisticas>
+		<Tarjetas>
+			<Amarillas>0</Amarillas>
+			<Rojas>0</Rojas>
+		</Tarjetas>
+	</Jugador>
+	<Jugador dorsal="16">
+		<Nombre><![CDATA[ José Luis García del Pozo | Recio ]]></Nombre>
+		<Posicion><![CDATA[ Mediocentro defensivo ]]></Posicion>
+		<LugarNacimiento><![CDATA[ Málaga, España ]]></LugarNacimiento>
+		<FechaNacimiento><![CDATA[ 11/01/1991 (24 años) ]]></FechaNacimiento>
+		<Altura><![CDATA[ 183 cmts ]]></Altura>
+		<Peso><![CDATA[ 74 Kgs ]]></Peso>
+		<PiernaHabil><![CDATA[ Diestro ]]></PiernaHabil>
+		<Debut><![CDATA[ 11/11/2010 :: Málaga CF, 3 -  Hércules FC, 2 ]]></Debut>
+		<Estadisticas>
+			<Partidos>26</Partidos>
+			<Minutos>1390</Minutos>
+			<Goles>2</Goles>
+		</Estadisticas>
+		<Tarjetas>
+			<Amarillas>8</Amarillas>
+			<Rojas>0</Rojas>
+		</Tarjetas>
+	</Jugador>
+	<Jugador dorsal="17">
+		<Nombre><![CDATA[ Sergio Paulo Barbosa Valente | Duda ]]></Nombre>
+		<Posicion><![CDATA[ Interior Izquierda ]]></Posicion>
+		<LugarNacimiento><![CDATA[ Oporto, Portugal ]]></LugarNacimiento>
+		<FechaNacimiento><![CDATA[ 27/06/1980 (34 años) ]]></FechaNacimiento>
+		<Altura><![CDATA[ 175 cmts ]]></Altura>
+		<Peso><![CDATA[ 71 Kgs ]]></Peso>
+		<PiernaHabil><![CDATA[ Zurdo ]]></PiernaHabil>
+		<Debut><![CDATA[ 29/09/2001 :: Málaga CF, 1 -  Atlhetic Club, 2 ]]></Debut>
+		<Estadisticas>
+			<Partidos>18</Partidos>
+			<Minutos>695</Minutos>
+			<Goles>1</Goles>
+		</Estadisticas>
+		<Tarjetas>
+			<Amarillas>4</Amarillas>
+			<Rojas>1</Rojas>
+		</Tarjetas>
+	</Jugador>
+	<Jugador dorsal="22">
+		<Nombre><![CDATA[ Luis Alberto Romero Alconchel ]]></Nombre>
+		<Posicion><![CDATA[ Extremo ambas bandas ]]></Posicion>
+		<LugarNacimiento><![CDATA[ Cádiz, España ]]></LugarNacimiento>
+		<FechaNacimiento><![CDATA[ 28/09/1992 (22 años) ]]></FechaNacimiento>
+		<Altura><![CDATA[ 182 cmts ]]></Altura>
+		<Peso><![CDATA[ 72 Kgs ]]></Peso>
+		<PiernaHabil><![CDATA[ Diestro ]]></PiernaHabil>
+		<Debut><![CDATA[ 23/08/2014 :: Málaga CF, 1 -  Atlhetic Club, 0 ]]></Debut>
+		<Estadisticas>
+			<Partidos>19</Partidos>
+			<Minutos>848</Minutos>
+			<Goles>2</Goles>
+		</Estadisticas>
+		<Tarjetas>
+			<Amarillas>1</Amarillas>
+			<Rojas>0</Rojas>
+		</Tarjetas>
+	</Jugador>
+	<Jugador dorsal="28">
+		<Nombre><![CDATA[ Juan Pablo Añor Acosta | Juanpi ]]></Nombre>
+		<Posicion><![CDATA[ Mediocentro denfensivo ]]></Posicion>
+		<LugarNacimiento><![CDATA[ Caracas, Venezuela ]]></LugarNacimiento>
+		<FechaNacimiento><![CDATA[ 24/01/1994 (21 años) ]]></FechaNacimiento>
+		<Altura><![CDATA[ 171 cmts ]]></Altura>
+		<Peso><![CDATA[ 65 Kgs ]]></Peso>
+		<PiernaHabil><![CDATA[ Zurdo ]]></PiernaHabil>
+		<Debut><![CDATA[ 29/08/2014 :: Valencia CF, 3 - Málaga CF, 0 ]]></Debut>
+		<Estadisticas>
+			<Partidos>10</Partidos>
+			<Minutos>559</Minutos>
+			<Goles>1</Goles>
+		</Estadisticas>
+		<Tarjetas>
+			<Amarillas>0</Amarillas>
+			<Rojas>0</Rojas>
+		</Tarjetas>
+	</Jugador>
+	<Jugador dorsal="30">
+		<Nombre><![CDATA[ Sergi Darder Moll ]]></Nombre>
+		<Posicion><![CDATA[ Mediocentro denfensivo ]]></Posicion>
+		<LugarNacimiento><![CDATA[ Mallorca, España ]]></LugarNacimiento>
+		<FechaNacimiento><![CDATA[ 22/12/1993 (21 años) ]]></FechaNacimiento>
+		<Altura><![CDATA[ 180 cmts ]]></Altura>
+		<Peso><![CDATA[ 80 Kgs ]]></Peso>
+		<PiernaHabil><![CDATA[ Diestro ]]></PiernaHabil>
+		<Debut><![CDATA[ 17/08/2013 :: Valencia CF, 1 - Málaga CF, 0 ]]></Debut>
+		<Estadisticas>
+			<Partidos>27</Partidos>
+			<Minutos>2062</Minutos>
+			<Goles>3</Goles>
+		</Estadisticas>
+		<Tarjetas>
+			<Amarillas>8</Amarillas>
+			<Rojas>1</Rojas>
+		</Tarjetas>
+	</Jugador>
+	<Jugador dorsal="2">
+		<Nombre><![CDATA[ Nordin Amrabat ]]></Nombre>
+		<Posicion><![CDATA[ Extremo ambas bandas ]]></Posicion>
+		<Nacionalidad><![CDATA[ Marroquí ]]></Nacionalidad>
+		<Nacionalidad><![CDATA[ Holandés ]]></Nacionalidad>
+		<FechaNacimiento><![CDATA[ 31/03/1987 (27 años) ]]></FechaNacimiento>
+		<Altura><![CDATA[ 178 cmts ]]></Altura>
+		<Peso><![CDATA[ 77 Kgs ]]></Peso>
+		<PiernaHabil><![CDATA[ Diestro ]]></PiernaHabil>
+		<Debut><![CDATA[ 01/02/2014 :: Málaga CF, 3 -  Sevilla FC, 2 ]]></Debut>
+		<Estadisticas>
+			<Partidos>23</Partidos>
+			<Minutos>1449</Minutos>
+			<Goles>5</Goles>
+		</Estadisticas>
+		<Tarjetas>
+			<Amarillas>6</Amarillas>
+			<Rojas>0</Rojas>
+		</Tarjetas>
+	</Jugador>
+	<Jugador dorsal="7">
+		<Nombre><![CDATA[ Samuel García Sánchez ]]></Nombre>
+		<Posicion><![CDATA[ Extremo derecho ]]></Posicion>
+		<LugarNacimiento><![CDATA[ Málaga, España ]]></LugarNacimiento>
+		<FechaNacimiento><![CDATA[ 13/07/1990 (24 años) ]]></FechaNacimiento>
+		<Altura><![CDATA[ 179 cmts ]]></Altura>
+		<Peso><![CDATA[ 73 Kgs ]]></Peso>
+		<PiernaHabil><![CDATA[ Diestro ]]></PiernaHabil>
+		<Debut><![CDATA[ 17/08/2013 :: Valencia CF, 1 - Málaga CF, 0 ]]></Debut>
+		<Estadisticas>
+			<Partidos>27</Partidos>
+			<Minutos>1793</Minutos>
+			<Goles>4</Goles>
+		</Estadisticas>
+		<Tarjetas>
+			<Amarillas>9</Amarillas>
+			<Rojas>1</Rojas>
+		</Tarjetas>
+	</Jugador>
+	<Jugador dorsal="9">
+		<Nombre><![CDATA[ Javier Guerra Rodríguez ]]></Nombre>
+		<Posicion><![CDATA[ Delantero Centro ]]></Posicion>
+		<LugarNacimiento><![CDATA[ Málaga, España ]]></LugarNacimiento>
+		<FechaNacimiento><![CDATA[ 15/03/1982 (32 años) ]]></FechaNacimiento>
+		<Altura><![CDATA[ 179 cmts ]]></Altura>
+		<Peso><![CDATA[ 77 Kgs ]]></Peso>
+		<PiernaHabil><![CDATA[ Diestro ]]></PiernaHabil>
+		<Debut><![CDATA[ 25/01/2015 :: Athletic Club, 1 - Málaga CF, 1  ]]></Debut>
+		<Estadisticas>
+			<Partidos>11</Partidos>
+			<Minutos>527</Minutos>
+			<Goles>1</Goles>
+		</Estadisticas>
+		<Tarjetas>
+			<Amarillas>0</Amarillas>
+			<Rojas>0</Rojas>
+		</Tarjetas>
+	</Jugador>
+	<Jugador dorsal="10">
+		<Nombre><![CDATA[ Ricardo Jorge Luz Horta ]]></Nombre>
+		<Posicion><![CDATA[ Extremo izquierdo ]]></Posicion>
+		<LugarNacimiento><![CDATA[ Sobreda, Portugal ]]></LugarNacimiento>
+		<FechaNacimiento><![CDATA[ 15/09/1994 (20 años) ]]></FechaNacimiento>
+		<Altura><![CDATA[ 173 cmts ]]></Altura>
+		<Peso><![CDATA[ 73 Kgs ]]></Peso>
+		<PiernaHabil><![CDATA[ Diestro ]]></PiernaHabil>
+		<Estadisticas>
+			<Partidos>29</Partidos>
+			<Minutos>1751</Minutos>
+			<Goles>3</Goles>
+		</Estadisticas>
+		<Tarjetas>
+			<Amarillas>3</Amarillas>
+			<Rojas>0</Rojas>
+		</Tarjetas>
+	</Jugador>
+	<Jugador dorsal="11">
+		<Nombre><![CDATA[ Juan Miguel Jiménez López | Juanmi ]]></Nombre>
+		<Posicion><![CDATA[ MediaPunta, 2 punta ]]></Posicion>
+		<LugarNacimiento><![CDATA[ Málaga, España ]]></LugarNacimiento>
+		<FechaNacimiento><![CDATA[ 20/05/1993 (21 años) ]]></FechaNacimiento>
+		<Altura><![CDATA[ 170 cmts ]]></Altura>
+		<Peso><![CDATA[ 70 Kgs ]]></Peso>
+		<PiernaHabil><![CDATA[ Diestro ]]></PiernaHabil>
+		<Debut><![CDATA[ 13/01/2010 :: Getafe CF, 5 - Málaga CF, 1  ]]></Debut>
+		<Estadisticas>
+			<Partidos>24</Partidos>
+			<Minutos>1223</Minutos>
+			<Goles>5</Goles>
+		</Estadisticas>
+		<Tarjetas>
+			<Amarillas>4</Amarillas>
+			<Rojas>0</Rojas>
+		</Tarjetas>
+	</Jugador>
+	<Jugador dorsal="29">
+		<Nombre><![CDATA[ Samuel Castillejo ]]></Nombre>
+		<Posicion><![CDATA[ MediaPunta, 2 punta ]]></Posicion>
+		<LugarNacimiento><![CDATA[ Málaga, España ]]></LugarNacimiento>
+		<FechaNacimiento><![CDATA[ 14/08/1995 (20 años) ]]></FechaNacimiento>
+		<Altura><![CDATA[ 179 cmts ]]></Altura>
+		<Peso><![CDATA[ 61 Kgs ]]></Peso>
+		<PiernaHabil><![CDATA[ Diestro ]]></PiernaHabil>
+		<Debut><![CDATA[ 14/08/2015 :: Valencia CF, 3 - Málaga CF, 0  ]]></Debut>
+		<Estadisticas>
+			<Partidos>29</Partidos>
+			<Minutos>1926</Minutos>
+			<Goles>1</Goles>
+		</Estadisticas>
+		<Tarjetas>
+			<Amarillas>4</Amarillas>
+			<Rojas>0</Rojas>
+		</Tarjetas>
+	</Jugador>
+</MalagaCF>

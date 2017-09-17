@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DatosFederales>
+	<Sospechosos ficha="AKK901" estado="NV">
+		<Nombre>Eric Flanagan</Nombre>
+		<Sexo>Varón</Sexo>
+		<Altura>180</Altura>
+		<Peso>85</Peso>
+		<FechaNacimiento>1952/03/18</FechaNacimiento>
+		<Delito>Asesinato</Delito>
+		<Observaciones><![CDATA[Buscado por las autoridades por asesinato en atraco en banco]]></Observaciones>
+		<Foto>eric-flanagan</Foto>
+	</Sospechosos>
+	<Sospechosos ficha="LLF455" estado="TX">
+		<Nombre>Jhon Carpenter</Nombre>
+		<Sexo>Varón</Sexo>
+		<Altura>172</Altura>
+		<Peso>78</Peso>
+		<FechaNacimiento>1968/10/03</FechaNacimiento>
+		<Delito>Asesinato</Delito>
+		<Observaciones><![CDATA[Sospechoso del asesinato de varias prostitutas en el área de El Paso en el bienio 2005-2006]]></Observaciones>
+		<Foto>jhon-carpenter</Foto>
+	</Sospechosos>
+	<Sospechosos ficha="LLJ466" estado="LA">
+		<Nombre>Malcon Mann</Nombre>
+		<Sexo>Varón</Sexo>
+		<Altura>178</Altura>
+		<Peso>85</Peso>
+		<FechaNacimiento>1972/02/15</FechaNacimiento>
+		<Delito>Pedarastia</Delito>
+		<Observaciones><![CDATA[Acusado de la distribución de pornografía infantil]]></Observaciones>
+		<Foto>malcon-mann</Foto>
+	</Sospechosos>
+	<Sospechosos ficha="LLC223" estado="NM">
+		<Nombre>Panchi Martínez Arévalo</Nombre>
+		<Sexo>Varón</Sexo>
+		<Altura>168</Altura>
+		<Peso>78</Peso>
+		<FechaNacimiento>1978/11/06</FechaNacimiento>
+		<Delito>Inmigración</Delito>
+		<Observaciones><![CDATA[Líder de una red de inmigración ilegal]]></Observaciones>
+		<Foto>panchi-martinez</Foto>
+	</Sospechosos>
+	<Sospechosos ficha="GVS453" estado="NY">
+		<Nombre>Oslvado Nácar White</Nombre>
+		<Sexo>Varón</Sexo>
+		<Altura>171</Altura>
+		<Peso>92</Peso>
+		<FechaNacimiento>1968/05/12</FechaNacimiento>
+		<Delito>Salud Pública</Delito>
+		<Observaciones><![CDATA[Importación de material de engorde animal con toxinas]]></Observaciones>
+		<Foto>oslvado-nacar</Foto>
+	</Sospechosos>
+	<Sospechosos ficha="YYT543" estado="UT">
+		<Nombre>Punch Mazzi</Nombre>
+		<Sexo>Varón</Sexo>
+		<Altura>191</Altura>
+		<Peso>92</Peso>
+		<FechaNacimiento>1988/08/04</FechaNacimiento>
+		<Delito>Estafa</Delito>
+		<Observaciones><![CDATA[Líder de organización de fraude en apuestas deportivas]]></Observaciones>
+		<Foto>punch-mazzi</Foto>
+	</Sospechosos>
+	<Sospechosos ficha="LPO765" estado="FL">
+		<Nombre>Chuki Mirror</Nombre>
+		<Sexo>Mujer</Sexo>
+		<Altura>170</Altura>
+		<Peso>65</Peso>
+		<FechaNacimiento>1975/11/14</FechaNacimiento>
+		<Delito>Robo a mano armada</Delito>
+		<Observaciones><![CDATA[Atracatos e intentos de asesinato en varias farmacias del centro]]></Observaciones>
+		<Foto>chuki-mirror</Foto>
+	</Sospechosos>
+	<Sospechosos ficha="HHG580" estado="NY">
+		<Nombre>David Norris</Nombre>
+		<Sexo>Mujer</Sexo>
+		<Altura>187</Altura>
+		<Peso>85</Peso>
+		<FechaNacimiento>1980/02/24</FechaNacimiento>
+		<Delito>Robo a mano armada</Delito>
+		<Observaciones><![CDATA[Participación en varios atracos a farmacias y entidades bancarias]]></Observaciones>
+		<Foto>david-norris</Foto>
+	</Sospechosos>
+</DatosFederales>

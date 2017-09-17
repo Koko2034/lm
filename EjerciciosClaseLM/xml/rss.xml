@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:media="http://search.yahoo.com/mrss/">
+	<channel>
+		<title><![CDATA[BBC Mundo - Noticias]]></title>
+		<description><![CDATA[BBC Mundo - Noticias]]></description>
+		<link>http://www.bbcmundo.com</link>
+		<image>
+			<url>http://www.bbc.co.uk/mundo/images/gel/rss_logo.gif</url>
+			<title>BBC Mundo - Noticias</title>
+			<link>http://www.bbcmundo.com</link>
+		</image>
+		<generator>RSS for Node</generator>
+		<lastBuildDate>Thu, 03 Nov 2016 10:52:26 GMT</lastBuildDate>
+		<copyright><![CDATA[Derechos Reservados de la British Broadcasting Corporation (Corporación Británica de Radiodifusión) ]]></copyright>
+		<language><![CDATA[es]]></language>
+		<managingEditor><![CDATA[escribanos@bbc.co.uk]]></managingEditor>
+		<ttl>15</ttl>
+		<item>
+			<title><![CDATA[3 problemas que enfrenta Hillary Clinton a menos de una semana de las elecciones en EE.UU.]]></title>
+			<description><![CDATA[La decisión del FBI de reabrir una investigación sobre sus correos electrónicos está lejos de ser la única dificultad de la candidata demócrata para asegurar su victoria ante Donald Trump, que recupera oxígeno de cara a las presidenciales del próximo martes.]]></description>
+			<link>http://www.bbc.com/mundo/noticias-internacional-37855985</link>
+			<guid isPermaLink="true">http://www.bbc.com/mundo/noticias-internacional-37855985</guid>
+			<pubDate>Thu, 03 Nov 2016 03:40:50 GMT</pubDate>
+			<media:thumbnail width="976" height="549" url="http://c.files.bbci.co.uk/6A11/production/_92235172_clintonafp.jpg"/>
+		</item>
+		<item>
+			<title><![CDATA[Gran parte del muro que Trump propone entre la frontera entre México y EE.UU. ya existe y tiene 1.050 km]]></title>
+			<description><![CDATA[El candidato republicano Donald Trump ha repetido una y otra vez que construirá un muro en la frontera sur de EE.UU. con México. Pero esta frontera ya está separada por vallas. Te contamos cómo son.]]></description>
+			<link>http://www.bbc.com/mundo/media-37850439</link>
+			<guid isPermaLink="true">http://www.bbc.com/mundo/media-37850439</guid>
+			<pubDate>Wed, 02 Nov 2016 22:29:20 GMT</pubDate>
+			<media:thumbnail width="976" height="549" url="http://c.files.bbci.co.uk/7173/production/_92234092_portada_2.jpg"/>
+		</item>
+		<item>
+			<title><![CDATA[El extraordinario mapa que muestra al mundo como es realmente]]></title>
+			<description><![CDATA[Un arquitecto japonés usó técnicas de origami para crear un nuevo mapa que refleja fielmente las proporciones entre países. El mapa tradicional usado en escuelas muestra áreas en forma totalmente distorsionada.]]></description>
+			<link>http://www.bbc.com/mundo/noticias-37849281</link>
+			<guid isPermaLink="true">http://www.bbc.com/mundo/noticias-37849281</guid>
+			<pubDate>Wed, 02 Nov 2016 13:21:13 GMT</pubDate>
+			<media:thumbnail width="976" height="549" url="http://c.files.bbci.co.uk/CE92/production/_92228825_mapa_jjj.jpg"/>
+		</item>
+		<item>
+			<title><![CDATA[El fin de la maldición de la cabra Billy: los Cachorros de Chicago ganan la Serie Mundial de béisbol contra los Indios de Cleveland]]></title>
+			<description><![CDATA[Después de 108 años sin alcanzar la gloria deportiva, el equipo de Chicago reescribió su historia al ganarle a los Indios de Cleveland y conquistar el título más preciado del béisbol. La final, de un dramatismo digno de una película, da un cierre al famoso maleficio de la cabra Billy.]]></description>
+			<link>http://www.bbc.com/mundo/deportes-37847700</link>
+			<guid isPermaLink="true">http://www.bbc.com/mundo/deportes-37847700</guid>
+			<pubDate>Wed, 02 Nov 2016 19:41:44 GMT</pubDate>
+			<media:thumbnail width="549" height="309" url="http://c.files.bbci.co.uk/8F91/production/_92235763_3c0d886f-2c21-4a26-b21c-f84033582134.jpg"/>
+		</item>
+		<item>
+			<title><![CDATA[Arrestan a un sospechoso de matar a tiros a dos policías en EE.UU. en ataques "al estilo emboscada"]]></title>
+			<description><![CDATA[Los ataques, separados, ocurrieron en la ciudad de Des Moines, Iowa. La policía detuvo a Scott Michael Greene, sospechoso de los asesinatos.]]></description>
+			<link>http://www.bbc.com/mundo/noticias-internacional-37849110</link>
+			<guid isPermaLink="true">http://www.bbc.com/mundo/noticias-internacional-37849110</guid>
+			<pubDate>Wed, 02 Nov 2016 15:34:04 GMT</pubDate>
+			<media:thumbnail width="976" height="549" url="http://c.files.bbci.co.uk/12EF0/production/_92225577_hi036186045.jpg"/>
+		</item>
+		<item>
+			<title><![CDATA[Estado Islámico dice que no se retirará de Mosul]]></title>
+			<description><![CDATA[La organización divulga un audio que atribuyen a su máximo líder, Abu Bakr al-Baghdadi, de quien se decía había muerto hace un año.]]></description>
+			<link>http://www.bbc.com/mundo/noticias-internacional-37857708</link>
+			<guid isPermaLink="true">http://www.bbc.com/mundo/noticias-internacional-37857708</guid>
+			<pubDate>Thu, 03 Nov 2016 08:22:41 GMT</pubDate>
+			<media:thumbnail width="976" height="549" url="http://c.files.bbci.co.uk/12EFB/production/_92236577_baghdadi.jpg"/>
+		</item>
+		<item>
+			<title><![CDATA[Exclusivo de la BBC: el tenso y violento momento en que las tropas iraquíes entran a recuperar Mosul de manos de Estado Islámico]]></title>
+			<description><![CDATA[La BBC es el primer medio que reportó el ingreso a la ciudad iraquí de Mosul desde la línea de fuego. Se espera que la batalla por la liberación de Mosul dure meses.]]></description>
+			<link>http://www.bbc.com/mundo/media-37850434</link>
+			<guid isPermaLink="true">http://www.bbc.com/mundo/media-37850434</guid>
+			<pubDate>Wed, 02 Nov 2016 13:01:59 GMT</pubDate>
+			<media:thumbnail width="976" height="549" url="http://c.files.bbci.co.uk/6F2E/production/_92226482_p04dyb2x.jpg"/>
+		</item>
+		<item>
+			<title><![CDATA[La extraña y misteriosa luz verde que atravesó el cielo de Japón]]></title>
+			<description><![CDATA[Una luz verde pudo verse el lunes cruzando el cielo en el este de Japón. Creen que pudo ser un meteorito más brillante de lo normal, conocido como "bola de fuego".]]></description>
+			<link>http://www.bbc.com/mundo/media-37853754</link>
+			<guid isPermaLink="true">http://www.bbc.com/mundo/media-37853754</guid>
+			<pubDate>Wed, 02 Nov 2016 16:52:06 GMT</pubDate>
+			<media:thumbnail width="976" height="549" url="http://c.files.bbci.co.uk/1598E/production/_92226488_p04dz4lc.jpg"/>
+		</item>
+		<item>
+			<title><![CDATA[¿Qué hace esta mujer para sentirse joven a sus 105 años?]]></title>
+			<description><![CDATA[Tiene la agilidad de una mujer por lo menos 50 años más joven. En parte dice, su estado se debe a la genética, pero también, a su estilo de vida.]]></description>
+			<link>http://www.bbc.com/mundo/media-37835362</link>
+			<guid isPermaLink="true">http://www.bbc.com/mundo/media-37835362</guid>
+			<pubDate>Wed, 02 Nov 2016 12:31:50 GMT</pubDate>
+			<media:thumbnail width="976" height="549" url="http://c.files.bbci.co.uk/5064/production/_92208502_p04dw25d.jpg"/>
+		</item>
+		<item>
+			<title><![CDATA["Puso cámaras en toda la casa y me grabó desnuda”: cómo fui humillada y extorsionada por mi propio marido]]></title>
+			<description><![CDATA["Ahora debes comprar tu honor". Este es el mensaje que Samah recibió de su marido luego que descubriera que la había estado grabando con cámaras escondidas en toda la casa. Después de pedirle un chantaje, el hombre publicó los videos y los compartió entre sus amigos. Samah perdió su trabajo y hasta contempló el suicidio.]]></description>
+			<link>http://www.bbc.com/mundo/media-37835357</link>
+			<guid isPermaLink="true">http://www.bbc.com/mundo/media-37835357</guid>
+			<pubDate>Tue, 01 Nov 2016 11:31:05 GMT</pubDate>
+			<media:thumbnail width="976" height="549" url="http://c.files.bbci.co.uk/15D88/production/_92208498_p04dtqh4.jpg"/>
+		</item>
+		<item>
+			<title><![CDATA[La misteriosa desaparición de Raoul Wallenberg, el "Schindler" sueco que fue declarado muerto 71 años después]]></title>
+			<description><![CDATA[Wallenberg rescató a miles de judíos de los nazis y desapareció en Hungría en 1945, aunque no fue declarado oficialmente muerto por Suecia hasta ahora. Aquí te contamos su historia.]]></description>
+			<link>http://www.bbc.com/mundo/noticias-37853716</link>
+			<guid isPermaLink="true">http://www.bbc.com/mundo/noticias-37853716</guid>
+			<pubDate>Wed, 02 Nov 2016 22:14:06 GMT</pubDate>
+			<media:thumbnail width="976" height="549" url="http://c.files.bbci.co.uk/10B3D/production/_92231486_swallenbergafp.jpg"/>
+		</item>
+		<item>
+			<title><![CDATA[El reconocido exorcista de Roma que no encuentra sucesores]]></title>
+			<description><![CDATA[El padre Vincenzo Taraborelli es uno de los exorcistas que más personas "poseídas" atiende, pero a los 79 años dice que es cada vez más difícil encontrar jóvenes que quieran reemplazarlo en su profesión.]]></description>
+			<link>http://www.bbc.com/mundo/noticias-37841120</link>
+			<guid isPermaLink="true">http://www.bbc.com/mundo/noticias-37841120</guid>
+			<pubDate>Tue, 01 Nov 2016 23:50:22 GMT</pubDate>
+			<media:thumbnail width="976" height="549" url="http://c.files.bbci.co.uk/444D/production/_91958471_b4cca8b6-d082-4d16-a30c-a0df273b03c3.jpg"/>
+		</item>
+		<item>
+			<title><![CDATA[Las mujeres pioneras de las primeras transmisiones de TV de la BBC hace 80 años]]></title>
+			<description><![CDATA[El 2 de noviembre de 1936, la BBC transmitió los primeros programas regulares a través del nuevo y experimental medio de la televisión, con un plantel que incluía casi el mismo número de mujeres que de hombres.]]></description>
+			<link>http://www.bbc.com/mundo/noticias-37846395</link>
+			<guid isPermaLink="true">http://www.bbc.com/mundo/noticias-37846395</guid>
+			<pubDate>Wed, 02 Nov 2016 23:17:38 GMT</pubDate>
+			<media:thumbnail width="976" height="549" url="http://c.files.bbci.co.uk/2D47/production/_92219511_elizabethcowell.jpg"/>
+		</item>
+		<item>
+			<title><![CDATA[5 cosas que quizás no sabías (o habías olvidado) del Día de Muertos en México]]></title>
+			<description><![CDATA[Este 1 y 2 de noviembre millones de mexicanos celebran una peculiar tradición con la que honran a los difuntos. ¿Cada cuánto llegan las ánimas? ¿Por qué se utiliza una flor en particular?¿Qué tiene que ver Diego Rivera con La Catrina? BBC Mundo te cuenta algunos aspectos de este festejo que quizá no recuerdes.]]></description>
+			<link>http://www.bbc.com/mundo/noticias-america-latina-37831454</link>
+			<guid isPermaLink="true">http://www.bbc.com/mundo/noticias-america-latina-37831454</guid>
+			<pubDate>Tue, 01 Nov 2016 16:35:42 GMT</pubDate>
+			<media:thumbnail width="2048" height="1152" url="http://c.files.bbci.co.uk/3BEC/production/_92204351_gettyimages-458303002.jpg"/>
+		</item>
+		<item>
+			<title><![CDATA[Facebook bloquea polémico plan de seguros que ofrece descuentos según los posts de los usuarios]]></title>
+			<description><![CDATA[La aseguradora británica Admiral quería el permiso de los conductores para acceder a sus posts y "me gusta" en Facebook y a partir de ellos juzgar cuán seguros son al volante para establecer descuentos en el coste de la póliza. A la red social no le gustó.]]></description>
+			<link>http://www.bbc.com/mundo/noticias-37849136</link>
+			<guid isPermaLink="true">http://www.bbc.com/mundo/noticias-37849136</guid>
+			<pubDate>Thu, 03 Nov 2016 01:18:11 GMT</pubDate>
+			<media:thumbnail width="976" height="549" url="http://c.files.bbci.co.uk/055C/production/_92127310_driver_think.jpg"/>
+		</item>
+		<item>
+			<title><![CDATA[Las hermosas y raras fotografías tomadas en Shanghái hace casi dos siglos]]></title>
+			<description><![CDATA[William Saunders fue el primero en producir fotografías coloreadas a mano en China. El ingeniero y fotógrafo inglés estableció su estudio en Shanghái a mediados del siglo XIX. Estas imágenes muestran con delicadeza los interiores de la ciudad, sus habitantes y sus costumbres.]]></description>
+			<link>http://www.bbc.com/mundo/noticias-37837956</link>
+			<guid isPermaLink="true">http://www.bbc.com/mundo/noticias-37837956</guid>
+			<pubDate>Tue, 01 Nov 2016 19:26:06 GMT</pubDate>
+			<media:thumbnail width="976" height="549" url="http://c.files.bbci.co.uk/54CF/production/_92211712_7intinerantbarbers.jpg"/>
+		</item>
+		<item>
+			<title><![CDATA[Corte Suprema de Reino Unido dice que gobierno no puede activar sin el Parlamento el artículo 50 para iniciar salida de la UE]]></title>
+			<description><![CDATA[El máximo tribunal dictamina que el gobierno no puede decidir por sí mismo la salida de la Unión Europea. La primera ministra Theresa May había dicho lo contrario.]]></description>
+			<link>http://www.bbc.com/mundo/noticias-internacional-37859804</link>
+			<guid isPermaLink="true">http://www.bbc.com/mundo/noticias-internacional-37859804</guid>
+			<pubDate>Thu, 03 Nov 2016 10:36:19 GMT</pubDate>
+			<media:thumbnail width="976" height="549" url="http://c.files.bbci.co.uk/138DD/production/_92239008_ultimahora.jpg"/>
+		</item>
+		<item>
+			<title><![CDATA["No voto con mi vagina": por qué la actriz Susan Sarandon no apoya a Hillary Clinton frente a Donald Trump en las elecciones de Estados Unidos]]></title>
+			<description><![CDATA[La actriz ganadora del premio Oscar y activista no está de acuerdo con la idea de que es importante votar por Hillary Clinton para asegurar la llegada de una mujer a la presidencia de Estados Unidos o para evitar que gane los comicios el republicano Donald Trump.]]></description>
+			<link>http://www.bbc.com/mundo/noticias-internacional-37855984</link>
+			<guid isPermaLink="true">http://www.bbc.com/mundo/noticias-internacional-37855984</guid>
+			<pubDate>Thu, 03 Nov 2016 00:48:54 GMT</pubDate>
+			<media:thumbnail width="976" height="549" url="http://c.files.bbci.co.uk/AE63/production/_92234644_84a1ffb4-9ca9-4bc8-aa28-efe7367455cc.jpg"/>
+		</item>
+		<item>
+			<title><![CDATA[Elecciones en Estados Unidos: los cinco grupos que decidirán quién será el próximo presidente]]></title>
+			<description><![CDATA[Cuando quedan menos de dos semanas para las elecciones presidenciales en Estados Unidos, algunos sectores del electorado tienen más peso a la hora de decidir hacia dónde se inclina la balanza. Te contamos cuáles son.]]></description>
+			<link>http://www.bbc.com/mundo/noticias-internacional-37757556</link>
+			<guid isPermaLink="true">http://www.bbc.com/mundo/noticias-internacional-37757556</guid>
+			<pubDate>Wed, 02 Nov 2016 17:15:53 GMT</pubDate>
+			<media:thumbnail width="976" height="549" url="http://c.files.bbci.co.uk/B24F/production/_92074654_trumpyclintonafp.jpg"/>
+		</item>
+		<item>
+			<title><![CDATA[El video sexual por el que el luchador Hulk Hogan será indemnizado por Gawker con US$31 millones]]></title>
+			<description><![CDATA[La publicación de un video sexual le costó al difunto sitio de noticias estadounidense Gawker nada más y nada menos que US$31 millones. El luchador profesional Hulk Hogan había demandado a esa página de internet por hacer pública la grabación, en la que aparecía él.]]></description>
+			<link>http://www.bbc.com/mundo/noticias-37855261</link>
+			<guid isPermaLink="true">http://www.bbc.com/mundo/noticias-37855261</guid>
+			<pubDate>Wed, 02 Nov 2016 23:46:56 GMT</pubDate>
+			<media:thumbnail width="976" height="549" url="http://c.files.bbci.co.uk/11B7E/production/_88847527_1a3c460b-b7c0-43b5-a19f-d6b5c82fcfee.jpg"/>
+		</item>
+		<item>
+			<title><![CDATA[Cuánto aumentó la deuda de Argentina desde que Mauricio Macri asumió la presidencia y por qué puede convertirse en su talón de Aquiles]]></title>
+			<description><![CDATA[Aunque el gobierno de Mauricio Macri ha tratado de resolver varios problemas que afectan a la economía argentina, muchos economistas -y no sólo de la oposición- se muestran preocupados por el endeudamiento del país, que puede traer problemas a mediano y largo plazo.]]></description>
+			<link>http://www.bbc.com/mundo/noticias-america-latina-37792062</link>
+			<guid isPermaLink="true">http://www.bbc.com/mundo/noticias-america-latina-37792062</guid>
+			<pubDate>Tue, 01 Nov 2016 04:55:40 GMT</pubDate>
+			<media:thumbnail width="976" height="549" url="http://c.files.bbci.co.uk/4309/production/_92116171_gettyimages-501326256.jpg"/>
+		</item>
+		<item>
+			<title><![CDATA["He cometido un crimen por el que merezco morir": el escándalo de Choi Soon-sil, la misteriosa amiga de la presidenta de Corea del Sur]]></title>
+			<description><![CDATA[A Choi Soon-sil le dicen la "Rasputina surcoreana" y la acusan de tráfico de influencias e injerencia indebida en los asuntos de Estado. Te contamos quién es y cómo acabó envuelta en un escándalo nacional.]]></description>
+			<link>http://www.bbc.com/mundo/noticias-internacional-37834057</link>
+			<guid isPermaLink="true">http://www.bbc.com/mundo/noticias-internacional-37834057</guid>
+			<pubDate>Wed, 02 Nov 2016 06:14:40 GMT</pubDate>
+			<media:thumbnail width="976" height="549" url="http://c.files.bbci.co.uk/691F/production/_92211962_hi036164487.jpg"/>
+		</item>
+		<item>
+			<title><![CDATA[Los algoritmos ocultos que funcionan como “armas de destrucción matemática”]]></title>
+			<description><![CDATA[Controlan nuestras vidas de muchas formas pero la mayoría no sabemos cómo funcionan. Son modelos matemáticos opacos y destructivos que, según la exanalista de Wall Street Cathy O'Neil, fomentan la desigualdad en el mundo.]]></description>
+			<link>http://www.bbc.com/mundo/noticias-37837377</link>
+			<guid isPermaLink="true">http://www.bbc.com/mundo/noticias-37837377</guid>
+			<pubDate>Tue, 01 Nov 2016 21:37:17 GMT</pubDate>
+			<media:thumbnail width="976" height="549" url="http://c.files.bbci.co.uk/DC83/production/_92215465_thinkstockphotos-501221160.jpg"/>
+		</item>
+		<item>
+			<title><![CDATA[México: el ingenioso niño que vende empanadas en Acapulco que le dijo 'no, gracias' al multimillonario Carlos Slim]]></title>
+			<description><![CDATA[Francisco Orihuela recorre las playas del popular balneario mexicano con una charola de empanadas que vende con un exitoso estilo. Su talento para convencer a sus clientes llamó la atención de una de las empresas más grandes de México, pero él les dijo que no.]]></description>
+			<link>http://www.bbc.com/mundo/noticias-america-latina-37808971</link>
+			<guid isPermaLink="true">http://www.bbc.com/mundo/noticias-america-latina-37808971</guid>
+			<pubDate>Sat, 29 Oct 2016 04:13:26 GMT</pubDate>
+			<media:thumbnail width="976" height="549" url="http://c.files.bbci.co.uk/1023A/production/_92160166_07a7911e-1299-4d2c-97d4-17de56c98055.jpg"/>
+		</item>
+		<item>
+			<title><![CDATA[La brillante científica de 13 años que descubrió cómo generar energía limpia por apenas US$5]]></title>
+			<description><![CDATA[Maanasa Mendu ha desarrollado un aparato que permite convertir energía vibratoria en energía renovable de forma sencilla y económica. De paso se ganó un importante premio. La joven le contó a la BBC cómo se le ocurrió la idea.]]></description>
+			<link>http://www.bbc.com/mundo/noticias-37798983</link>
+			<guid isPermaLink="true">http://www.bbc.com/mundo/noticias-37798983</guid>
+			<pubDate>Fri, 28 Oct 2016 13:28:33 GMT</pubDate>
+			<media:thumbnail width="976" height="549" url="http://c.files.bbci.co.uk/087C/production/_92127120_5806bde7b25e6.image.jpg"/>
+		</item>
+		<item>
+			<title><![CDATA[La fascinante historia de por qué el norte queda arriba en los mapas]]></title>
+			<description><![CDATA[Solo hace unos pocos siglos se empezó a considerar que el norte queda en la parte superior de los mapas. ¿Cuándo nos pusimos todos de acuerdo? ¿Y qué nos dice esto sobre la historia de la humanidad?]]></description>
+			<link>http://www.bbc.com/mundo/vert-fut-36632096</link>
+			<guid isPermaLink="true">http://www.bbc.com/mundo/vert-fut-36632096</guid>
+			<pubDate>Sun, 23 Oct 2016 08:32:15 GMT</pubDate>
+			<media:thumbnail width="976" height="549" url="http://c.files.bbci.co.uk/14D1F/production/_90097258_2c2850c9-af78-472a-bde3-6a326d13e5f4.jpg"/>
+		</item>
+		<item>
+			<title><![CDATA[El día en el que Maduro estrenó un programa de salsa y la tensión política en Venezuela se rebajó]]></title>
+			<description><![CDATA[El inicio oficial de la Navidad en Venezuela trajo regalos en el marco del diálogo auspiciado por el Vaticano: a la liberación de algunos opositores presos se sumó el aplazamiento del "juicio político" a Maduro y la suspensión de la marcha al palacio de Miraflores.]]></description>
+			<link>http://www.bbc.com/mundo/noticias-america-latina-37842982</link>
+			<guid isPermaLink="true">http://www.bbc.com/mundo/noticias-america-latina-37842982</guid>
+			<pubDate>Tue, 01 Nov 2016 22:58:14 GMT</pubDate>
+			<media:thumbnail width="976" height="549" url="http://c.files.bbci.co.uk/A46B/production/_92219024_maduroafp.jpg"/>
+		</item>
+		<item>
+			<title><![CDATA[Elecciones en EE.UU.: los estados donde los electores arrepentidos pueden cambiar el sentido de su voto anticipado]]></title>
+			<description><![CDATA[El sistema electoral estadounidense permite que los votantes emitan su sufragio antes del día de la elección. Para quienes ya lo hicieron, algunas leyes estatales permiten corregir una boleta antes o el día de la votación.]]></description>
+			<link>http://www.bbc.com/mundo/noticias-internacional-37855259</link>
+			<guid isPermaLink="true">http://www.bbc.com/mundo/noticias-internacional-37855259</guid>
+			<pubDate>Wed, 02 Nov 2016 21:00:28 GMT</pubDate>
+			<media:thumbnail width="976" height="549" url="http://c.files.bbci.co.uk/170E1/production/_92233449_c6cab9ea-4389-43e8-884c-9d84ada57da1.jpg"/>
+		</item>
+		<item>
+			<title><![CDATA[Cómo las empresas se aprovechan de los compradores que consumen por internet a altas horas de la noche]]></title>
+			<description><![CDATA[Realizan sus compras a altas horas de la noche, motivados por impulsos que son incapaces de controlar. Y las grandes empresas, dicen los especialistas, se aprovechan de estos consumidores nocturnos, que a menudo sufren de ansiedad y otros problemas mentales.]]></description>
+			<link>http://www.bbc.com/mundo/noticias-37850716</link>
+			<guid isPermaLink="true">http://www.bbc.com/mundo/noticias-37850716</guid>
+			<pubDate>Wed, 02 Nov 2016 19:59:40 GMT</pubDate>
+			<media:thumbnail width="976" height="549" url="http://c.files.bbci.co.uk/F5C1/production/_92231926_gettyimages-526533165.jpg"/>
+		</item>
+		<item>
+			<title><![CDATA[El cirujano pionero y los conejillos de Indias que cambiaron la cirugía plástica durante la Segunda Guerra Mundial]]></title>
+			<description><![CDATA[Las quemaduras que se empezaron a presentar durante el conflicto no se habían visto hasta el momento. Estaban ocasionadas por la explosión de los tanques de combustible de los aviones. Las operaciones experimentales que realizó un médico le cambiaron la vida a muchos.]]></description>
+			<link>http://www.bbc.com/mundo/noticias-37850623</link>
+			<guid isPermaLink="true">http://www.bbc.com/mundo/noticias-37850623</guid>
+			<pubDate>Wed, 02 Nov 2016 18:22:33 GMT</pubDate>
+			<media:thumbnail width="976" height="549" url="http://c.files.bbci.co.uk/A84A/production/_92228034_archijoven.jpg"/>
+		</item>
+		<item>
+			<title><![CDATA[Bombas de tiempo en los Andes: los 25 lagos glaciares que podrían causar "inundaciones catastróficas" en Bolivia]]></title>
+			<description><![CDATA[Los glaciares bolivianos se redujeron en un 43% desde los 80. Un equipo liderado por un glaciólogo británico identificó por primera vez los lagos que podrían desbordarse con graves consecuencias para poblaciones locales.]]></description>
+			<link>http://www.bbc.com/mundo/noticias-37837389</link>
+			<guid isPermaLink="true">http://www.bbc.com/mundo/noticias-37837389</guid>
+			<pubDate>Tue, 01 Nov 2016 19:47:36 GMT</pubDate>
+			<media:thumbnail width="976" height="549" url="http://c.files.bbci.co.uk/B7DF/production/_92217074_glaciar1.jpg"/>
+		</item>
+		<item>
+			<title><![CDATA[La desesperada búsqueda de la cama de Van Gogh]]></title>
+			<description><![CDATA[Un experto en la vida y obra del gran artista holandés cree que la cama que aparece en el famoso lienzo "El dormitorio", pintado en 1888, pudo haber sobrevivido y que se encuentra en la localidad de Boxmeer.]]></description>
+			<link>http://www.bbc.com/mundo/noticias-37846391</link>
+			<guid isPermaLink="true">http://www.bbc.com/mundo/noticias-37846391</guid>
+			<pubDate>Wed, 02 Nov 2016 18:40:12 GMT</pubDate>
+			<media:thumbnail width="976" height="549" url="http://c.files.bbci.co.uk/E940/production/_92221795_gettyimages-179404162.jpg"/>
+		</item>
+		<item>
+			<title><![CDATA[Los millones de euros falsos que buceadores de la policía encontraron escondidos en un embalse]]></title>
+			<description><![CDATA[La policía de Bulgaria descubre unos 13 millones de euros en billetes falsos que iban a entrar en circulación de forma "inminente". Uno de los falsificadores confesó el plan e indicó dónde estaban escondidos los billetes.]]></description>
+			<link>http://www.bbc.com/mundo/noticias-37849130</link>
+			<guid isPermaLink="true">http://www.bbc.com/mundo/noticias-37849130</guid>
+			<pubDate>Wed, 02 Nov 2016 12:49:52 GMT</pubDate>
+			<media:thumbnail width="976" height="549" url="http://c.files.bbci.co.uk/133FA/production/_92224887_eurosreu.jpg"/>
+		</item>
+		<item>
+			<title><![CDATA[La desesperación de Igor Akinfeev, el portero que ostenta el peor récord de la Liga de Campeones]]></title>
+			<description><![CDATA[La lucha de goles entre Lionel Messi y Cristiano Ronaldo suele opacar otras marcas individuales que se logran en la Champions, pero hay una en particular que está acaparando la atención en el fútbol europeo.]]></description>
+			<link>http://www.bbc.com/mundo/deportes-37847697</link>
+			<guid isPermaLink="true">http://www.bbc.com/mundo/deportes-37847697</guid>
+			<pubDate>Wed, 02 Nov 2016 14:04:16 GMT</pubDate>
+			<media:thumbnail width="2048" height="1152" url="http://c.files.bbci.co.uk/17220/production/_92225749_hi035558208.jpg"/>
+		</item>
+		<item>
+			<title><![CDATA[La colorida selección del festival de fotografía de Lagos sobre la identidad africana]]></title>
+			<description><![CDATA[Estas son algunas de las mejores fotos del festival fotográfico de la ciudad Lagos, Nigeria, que logró traer a reconocidos fotógrafos alrededor del propio continente para retratar el tema de identidad en África.]]></description>
+			<link>http://www.bbc.com/mundo/noticias-37849534</link>
+			<guid isPermaLink="true">http://www.bbc.com/mundo/noticias-37849534</guid>
+			<pubDate>Wed, 02 Nov 2016 20:17:15 GMT</pubDate>
+			<media:thumbnail width="976" height="549" url="http://c.files.bbci.co.uk/5E6B/production/_92217142_1dcfde34811873.56ded6678b709.jpg"/>
+		</item>
+		<item>
+			<title><![CDATA[Nosotros proponemos el tema, tú mandas las fotos]]></title>
+			<description><![CDATA[Esta semana nuestro desafío fotográfico es sobre las SOMBRAS. Aquí tienes una selección de las fotos que enviaron los lectores de la BBC en inglés para que te inspires y te animes a compartir las tuyas.]]></description>
+			<link>http://www.bbc.com/mundo/noticias-37799951</link>
+			<guid isPermaLink="true">http://www.bbc.com/mundo/noticias-37799951</guid>
+			<pubDate>Sun, 30 Oct 2016 13:56:33 GMT</pubDate>
+			<media:thumbnail width="1000" height="562" url="http://c.files.bbci.co.uk/47E1/production/_92110481_814626.jpg"/>
+		</item>
+		<item>
+			<title><![CDATA[El mágico otoño de Gales que la revista Lonely Planet recomienda conocer]]></title>
+			<description><![CDATA[El Parque Nacional de Snowdonia en un extremo de Gran Bretaña, es un cuadro vivo que refleja los colores dramáticos de la temporada de decadencia y renovación.]]></description>
+			<link>http://www.bbc.com/mundo/noticias-37799381</link>
+			<guid isPermaLink="true">http://www.bbc.com/mundo/noticias-37799381</guid>
+			<pubDate>Sat, 29 Oct 2016 17:52:13 GMT</pubDate>
+			<media:thumbnail width="1280" height="720" url="http://c.files.bbci.co.uk/15534/production/_91984378_993380a5-97f9-4c11-96a6-5e39ba9ade4a.jpg"/>
+		</item>
+		<item>
+			<title><![CDATA[Tus fotos: cuando la luz se hace esquiva]]></title>
+			<description><![CDATA[Esta semana el reto a nuestros lectores fue "Oscuridad". La respuesta fue enorme. Esto es tan solo una selección de las muchas fotos que nos llegaron, vía correo electrónico y por Instagram.]]></description>
+			<link>http://www.bbc.com/mundo/noticias-37802185</link>
+			<guid isPermaLink="true">http://www.bbc.com/mundo/noticias-37802185</guid>
+			<pubDate>Fri, 28 Oct 2016 13:05:28 GMT</pubDate>
+			<media:thumbnail width="976" height="549" url="http://c.files.bbci.co.uk/10DDA/production/_92128096_o_11.jpg"/>
+		</item>
+		<item>
+			<title><![CDATA[Letizia Battaglia, la mujer que fotografió como nadie la violencia de la mafia en Italia]]></title>
+			<description><![CDATA[La fotógrafa italiana Letizia Battaglia capturó como nadie el aumento de la violencia mafiosa que se vivió en Sicilia entre la década de 1970 y la de 1990. Compartió con la BBC sus imágenes. Y sus recuerdos.]]></description>
+			<link>http://www.bbc.com/mundo/noticias-internacional-37787784</link>
+			<guid isPermaLink="true">http://www.bbc.com/mundo/noticias-internacional-37787784</guid>
+			<pubDate>Thu, 27 Oct 2016 13:20:06 GMT</pubDate>
+			<media:thumbnail width="976" height="549" url="http://c.files.bbci.co.uk/113D9/production/_92071607_lb_16.jpg"/>
+		</item>
+		<item>
+			<title><![CDATA[Los mejores lugares para viajar en 2017 según Lonely Planet (los latinoamericanos te pueden sorprender)]]></title>
+			<description><![CDATA[La popular guía de viajeros incluyó a varios destinos latinoamericanos en su lista de "lo mejor en viajes" para 2017. ¿Adivinas cuáles son?]]></description>
+			<link>http://www.bbc.com/mundo/noticias-america-latina-37777005</link>
+			<guid isPermaLink="true">http://www.bbc.com/mundo/noticias-america-latina-37777005</guid>
+			<pubDate>Wed, 26 Oct 2016 12:45:10 GMT</pubDate>
+			<media:thumbnail width="976" height="549" url="http://c.files.bbci.co.uk/11FCF/production/_92097637_gettyimages-157174652.jpg"/>
+		</item>
+		<item>
+			<title><![CDATA[Las imágenes más provocadoras creadas durante la campaña electoral en Estados Unidos]]></title>
+			<description><![CDATA[Esculturas, instalaciones, grafitis y pinturas que recrean la imagen de los candidatos presidenciales estadounidenses sorprenden a los aficionados que caminan por las calles de Estados Unidos. Mientras tanto, otras obras de arte igualmente transgresoras acumulan miles de “me gusta” en las redes sociales.]]></description>
+			<link>http://www.bbc.com/mundo/noticias-37766258</link>
+			<guid isPermaLink="true">http://www.bbc.com/mundo/noticias-37766258</guid>
+			<pubDate>Wed, 26 Oct 2016 20:23:31 GMT</pubDate>
+			<media:thumbnail width="976" height="549" url="http://c.files.bbci.co.uk/DE9D/production/_92098965_rapetrump_re.jpg"/>
+		</item>
+		<item>
+			<title><![CDATA[La original mirada de Londres de quienes duermen en sus calles]]></title>
+			<description><![CDATA[Pocos pueden decir que conocen una ciudad como quienes han hecho de sus calles un refugio. La organización Cafe Art entregó 105 cámaras desechables a personas sin techo. Sus fotos muestran detalles cotidianos que muchas veces pasan inadvertidos.]]></description>
+			<link>http://www.bbc.com/mundo/noticias-37632658</link>
+			<guid isPermaLink="true">http://www.bbc.com/mundo/noticias-37632658</guid>
+			<pubDate>Tue, 25 Oct 2016 10:54:44 GMT</pubDate>
+			<media:thumbnail width="976" height="549" url="http://c.files.bbci.co.uk/B5F2/production/_91887564_mediaitem91884728.jpg"/>
+		</item>
+		<item>
+			<title><![CDATA[Liberan a miles de tortugas Taricaya en Perú para salvar a la especie]]></title>
+			<description><![CDATA[En esta nueva serie, los periodistas de la BBC te ayudan a practicar inglés con los titulares de las noticias de la semana. Mira el video y aprende nuevo vocabulario.]]></description>
+			<link>http://www.bbc.com/mundo/aprenda-ingles-37853759</link>
+			<guid isPermaLink="true">http://www.bbc.com/mundo/aprenda-ingles-37853759</guid>
+			<pubDate>Wed, 02 Nov 2016 17:44:41 GMT</pubDate>
+			<media:thumbnail width="976" height="549" url="http://c.files.bbci.co.uk/112B3/production/_92232307_p04dz9fm.jpg"/>
+		</item>
+	</channel>
+</rss>

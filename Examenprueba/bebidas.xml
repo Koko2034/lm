@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bebidas>
+   <bebida id="bull-01">
+     <nombre>Albet i Noya Dolç Adrià 2007</nombre>
+     <precio>22,14 €</precio>
+     <stock>24</stock>
+     <tipo>Tinto</tipo>
+     <foto>Albet2007</foto>
+     <maridaje>quesos,dulces</maridaje>
+   </bebida>
+   <bebida id="bull-02">
+     <nombre>Niepoort 30 Years Old</nombre>
+     <precio>125,31 €</precio>
+     <stock>7</stock>
+     <tipo>Tinto</tipo>
+     <foto>Niepoort30</foto>
+     <maridaje>carnes,frutos secos,quesos</maridaje>
+   </bebida>
+   <bebida id="bull-03">
+     <nombre>Niepoort Junior Tinto</nombre>
+     <precio>14,44 €</precio>
+     <stock>12</stock>
+     <tipo>Tinto</tipo>
+     <foto>Niepoortjunior</foto>
+     <maridaje>carnes,quesos</maridaje>
+   </bebida>
+   <bebida id="bull-04">
+     <nombre>Alvaro Palacios L'Ermita 1995</nombre>
+     <precio>6.315,00 €</precio>
+     <stock>8</stock>
+     <tipo>Tinto</tipo>
+     <foto>L'Ermita1995</foto>
+     <maridaje>quesos</maridaje>
+   </bebida>
+   <bebida id="bull-05">
+     <nombre>Vino Château Mouton Rothschild 1er Grand Cru 2010</nombre>
+     <precio>1.489,25 €</precio>
+     <stock>12</stock>
+     <tipo>Tinto</tipo>
+     <foto>ChâteauMouton2010</foto>
+     <maridaje>carnes</maridaje>
+   </bebida>
+   <bebida id="bull-06">
+     <nombre>Marqués de Riscal Reserva 2011</nombre>
+     <precio>13,25 €</precio>
+     <stock>24</stock>
+     <tipo>Tinto</tipo>
+     <foto>marquesderiscal2011</foto>
+     <maridaje>carnes</maridaje>
+   </bebida>
+   <bebida id="bull-07">
+     <nombre>Gramona Sauvignon Blanc 2012</nombre>
+     <precio>15,39 €</precio>
+     <stock>9</stock>
+     <tipo>Blanco</tipo>
+     <foto>SauvignonBlanc2012</foto>
+     <maridaje>pescados</maridaje>
+   </bebida>
+   <bebida id="bull-08">
+     <nombre>Monte Blanco Verdejo 2012</nombre>
+     <precio>6,08 €</precio>
+     <stock>24</stock>
+     <tipo>Blanco</tipo>
+     <foto>verdejo2012</foto>
+     <maridaje>pescados</maridaje>
+   </bebida>
+   <bebida id="bull-09">
+     <nombre>Tio Pepe</nombre>
+     <precio>5,94 €</precio>
+     <stock>82</stock>
+     <tipo>Blanco</tipo>
+     <foto>tiopepe</foto>
+     <maridaje>pescados,aperitivos</maridaje>
+   </bebida>
+   <bebida id="bull-10">
+     <nombre>Protocolo Blanco 2013</nombre>
+     <precio>2,80 €</precio>
+     <stock>45</stock>
+     <tipo>Blanco</tipo>
+     <foto>protocolo2013</foto>
+     <maridaje>pescados,verduras</maridaje>
+   </bebida>
+ </bebidas>

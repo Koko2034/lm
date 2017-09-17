@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Geocoding service</title>
+        <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+        <meta charset="utf-8">
+        <script src="../js/ajaxCG.js"></script>
+        <style>
+
+            #map {
+                height: 100%;
+            }
+
+            html,
+            body {
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+
+            #floating-panel {
+                position: absolute;
+                top: 10px;
+                left: 25%;
+                z-index: 5;
+                background-color: #fff;
+                padding: 5px;
+                border: 1px solid #999;
+                text-align: center;
+                font-family: 'Roboto', 'sans-serif';
+                line-height: 30px;
+                padding-left: 10px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id="floating-panel">
+            <input id="address" type="textbox">
+            <input id="submit" type="button" value="Geocode">
+        </div>
+        <div id="map"></div>
+
+        <script>
+            function initMap() {
+                var map = new google.maps.Map(document.getElementById('map'), {
+                    zoom: 8,
+                    center: {
+                        lat: -4.640704099999994,
+                        lng: 36.71666099999999
+                    }
+                });
+                var geocoder = new google.maps.Geocoder();
+
+                document.getElementById('submit').addEventListener('click', function () {
+                    geocodeAddress(geocoder, map);
+                });
+            }
+
+            function geocodeAddress(geocoder, resultsMap) {
+                var address = document.getElementById('address').value;
+                geocoder.geocode({
+                    'address': address
+                }, function (results, status) {
+                    if (status === 'OK') {
+                        resultsMap.setCenter(results[0].geometry.location);
+                        console.log(results);
+
+                        callPHP(results[0].geometry.location.lat(), results[0].geometry.location.lng(), getPostalCode(results), results[0].formatted_address, "prueba","nada");
+                        var marker = new google.maps.Marker({
+                            map: resultsMap,
+                            position: results[0].geometry.location
+                        });
+                    } else {
+                        alert('Geocode was not successful for the following reason: ' + status);
+                    }
+                });
+            }
+            function callPHP(lat, lon, cpostal, lugar,foto, observaciones) {
+                ajax({
+                    type: 'POST',
+                    url: 'lugaresInt.php',
+                    data:{
+                        check:"location",
+                        latitud:lat,
+                        longitud:lon,
+                        cpostal:cpostal,
+                        lugar:lugar,
+                        foto:foto,
+                        observaciones:observaciones
+                    },
+                    parse: true
+                }).then((data) => {
+                    console.log(data);
+                }).catch((error) => {
+                    console.log(error);
+                });
+            }
+            function getPostalCode(results) {
+                for (i = 0; i < results.length; i++) {
+                    for (var j = 0; j < results[i].address_components.length; j++) {
+                        for (var k = 0; k < results[i].address_components[j].types.length; k++) {
+                            if (results[i].address_components[j].types[k] == "postal_code") {
+                                return results[i].address_components[j].short_name;
+                            }
+                        }
+                    }
+                }
+            }
+        </script>
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBTfrjlwEZXvjqyb2KqkUUq32b0bAO_fno&callback=initMap">
+        </script>
+    </body>
+
+</html>

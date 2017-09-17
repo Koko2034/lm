@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div id="divAgudeza">TODO write content</div>
+    </body>
+    <script>
+        var words = ["Perro", "Gato", "Oso", "Panda", "Avispa", "Agudeza", "Dios", "Animal", "Verbo", "Palabra", "Coche"];
+        var word1, word2;
+        var palabra = "";
+        var cont = words.length;
+        var wordRandom = [];
+        var numPalabras = 2;
+        window.onload = function () {
+            var random = [];
+            let i = 0;
+            do {
+                let ale = parseInt(Math.random() * words.length);
+                let key = words[ale];
+                if (!random[key]) {
+                    random[key] = 1;
+                    i++;
+                }
+            } while (i < numPalabras);
+            let str = '';
+            for (var k in random) {
+                str += "<div>" + k + "</div>";
+            }
+            document.getElementById('divAgudeza').style = "backgroud-color:red";
+            document.getElementById('divAgudeza').innerHTML = str;
+            console.log(random);
+        }
+
+    </script>
+</html>

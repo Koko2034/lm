@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2011 rel. 2 (http://www.altova.com) by TeaM DJiNN (TeaM DJiNN) -->
+<coches xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="pedidosFabValidador.xsd">
+	<coche modelo="FORD FIESTA">
+		<carroceria puertas="3"/>
+		<configuracion color="verde" tapiceria="Tela negra" fumador="true"/>
+		<motor motorizacion="1.25 Duratec 82cv 5 Velocidades"/>
+		<extras sensorAparcamiento="true" gps="false"/>
+		<precio>11000.50</precio>
+	</coche>
+	<coche modelo="FORD FOCUS">
+		<carroceria puertas="5"/>
+		<configuracion color="azul" tapiceria="Cuero" fumador="false"/>
+		<motor motorizacion="1.5 TDCi 75cv 5 Velocidades"/>
+		<extras sensorAparcamiento="true" gps="true"/>
+		<precio>19000</precio>
+	</coche>
+	<coche modelo="FORD MONDEO">
+		<carroceria puertas="5"/>
+		<configuracion color="blanco" tapiceria="Tela negra" fumador="true"/>
+		<motor motorizacion="2.0 TDCi 150cv (110 kW) Manual"/>
+		<precio>23000</precio>
+	</coche>
+	<coche modelo="FORD MUSTANG">
+		<carroceria puertas="3"/>
+		<configuracion color="rojo" tapiceria="Cuero Premium Negro" fumador="false"/>
+		<motor motorizacion="2.3 EcoBoost 314cv (230 kW) Automático"/>
+		<extras sensorAparcamiento="true" gps="true"/>
+		<precio>47000</precio>
+	</coche>
+	<coche modelo="FORD VIGNALE">
+		<carroceria puertas="5"/>
+		<configuracion color="verde" tapiceria="Cuero" fumador="true"/>
+		<motor motorizacion="2.0 TDCi 4x4 210cv (154 kW) PowerShift"/>
+		<extras sensorAparcamiento="false" gps="true"/>
+		<precio>17000</precio>
+	</coche>
+</coches>

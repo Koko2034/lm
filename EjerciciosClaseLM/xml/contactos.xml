@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<contactos xsi:schemaLocation="http://www.example.com/contactos validadorContactos.xsd" xmlns="http://www.example.com/contactos" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<contacto>
+		<persona idioma="ES" edad="20"> 
+			<nombre>José</nombre>
+			<apellido1>Pérez</apellido1>
+			<apellido2>García</apellido2>
+		</persona>
+		<localización>
+			<dirección>Ciudad Intermedia, España</dirección>
+			<latitud>34.031892</latitud>
+			<longitud>3.207642</longitud>
+		</localización>
+		<teléfono>955-123-456</teléfono>
+		<descripción>José es el director de <em>una sucursal</em>.<br/>José es <strong> buena persona </strong>
+		</descripción>
+	</contacto>
+	<contacto>
+		<persona idioma="EN" edad="19">
+			<nombre>Antonio</nombre>
+			<apellido1>Pérez</apellido1>
+			<apellido2>Gutiérrez</apellido2>
+		</persona>
+		<localización>
+			<dirección>Mordor, España</dirección>
+		</localización>
+		<teléfono>956-654-321</teléfono>
+		<descripción>Antonio es el apoderado de <em>una sucursal</em>.<br/> A Antonio <strong> le gusta su trabajo </strong>
+		</descripción>
+	</contacto>
+		<contacto>
+		<persona idioma="IT" edad="39">
+			<nombre>Luis</nombre>
+			<apellido1>Pérez</apellido1>
+		</persona>
+		<localización>
+			<dirección>Insula Barataria, España</dirección>
+		</localización>
+		<teléfono>921-654-459</teléfono>
+		<descripción>Antonio es el apoderado de <em>una sucursal</em>.<br/> A Antonio <strong> le gusta su trabajo </strong>
+		</descripción>
+	</contacto>
+</contactos>

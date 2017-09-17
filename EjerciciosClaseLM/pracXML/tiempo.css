@@ -1,0 +1,57 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 16-nov-2016, 18:05:43
+    Author     : m4lk4v
+*/
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:700');
+
+
+
+.day {
+    display: inline-block;
+    background-color: #5180C5;
+    border-right: 1px solid white;
+    padding-bottom: 20px;
+    color: white;
+}
+
+
+.hDay {
+    display: inline-block;
+    font-family: 'Open Sans', sans-serif, monospace;
+    padding-left: 38%;
+    padding-top: 1em;
+    color: white;
+}
+
+/* #headerDay3{
+    margin-left: -4px;
+} */
+
+.imagen{
+    vertical-align: middle;
+    padding-left: 25%;
+    margin: 0;
+    padding-top: 1em;
+    background-color: #5180C5;
+    padding-bottom: 1em;
+
+
+}
+
+span{
+    display: block;
+    padding-left: 5%;
+}
+
+#day1,#day2,#day3{
+    float: left;
+}
+
+#day3{
+    min-height: 674px;
+}

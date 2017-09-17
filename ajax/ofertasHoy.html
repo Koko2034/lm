@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>ofertasHoy</title>
+        <style>
+            * {
+                margin: 0 auto;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                box-sizing: border-box;
+            }
+
+            body {
+                background: url("http://enjoybeach-hotel-samui.com/wp-content/uploads/2013/04/Koh_Samui_Web_Background1.jpg") no-repeat fixed center;
+                background-size: cover;
+            }
+
+            .content {
+                width: 90%;
+            }
+
+            .column {
+                display: flex;
+                flex-flow: row wrap;
+                justify-content: space-around;
+                margin: 0;
+            }
+
+            .columnRight {
+                min-width: 300px;
+                margin: 20px 0;
+                width: 40%;
+            }
+
+            .columnLeft {
+                min-width: 300px;
+                margin: 20px 0;
+                width: 55%;
+            }
+
+            header {
+                padding: 20px;
+                text-align: center;
+                background: #000080;
+                color: white;
+                font-weight: bold;
+            }
+            /*        formulario */
+
+            form {
+                background: rgba(0, 0, 0, 0.6);
+                padding: 20px;
+                width: 100%;
+                min-width: 300px;
+            }
+
+            .contenform {
+                min-width: 150px;
+                padding: 10px;
+                display: flex;
+                flex-flow: row wrap;
+                align-content: space-between;
+            }
+
+            fieldset {
+                background: #fff;
+            }
+
+            h2 {
+                width: 100%;
+            }
+
+            .columnLeft h2 {
+                border: 1px solid #cecece;
+                background: rgba(0, 0, 0, 0.6);
+                color: #fff;
+                padding: 20px;
+                margin-bottom: 5px;
+            }
+
+            .columnLeft h2 p {
+                display: inline;
+                font-size: .5em;
+            }
+
+            .contenform input,
+            .contenform button {
+                padding: .4em;
+                margin-bottom: 20px;
+                width: 100%;
+            }
+
+            .contenform h2 {
+                text-align: center;
+                margin: 0 0 10px 0;
+            }
+
+            .contenform label {
+                min-width: 70px;
+                width: 20%;
+            }
+
+            .contenform input,
+            select {
+                padding: .2em;
+                width: 75%;
+                margin-bottom: 10px;
+            }
+
+            .contenform input:focus {
+                border: 1px solid #0000ff;
+            }
+
+            button {
+                padding: 10px;
+                background: #007fff;
+                color: #fff;
+                border: none;
+            }
+
+            button:hover {
+                background: #000fff;
+                cursor: pointer;
+            }
+
+            #xmlHotel {
+                border: 1px solid #cecece;
+                padding: 0;
+                background: #367bfd;
+                padding: 5px;
+                height: 450px;
+                overflow: scroll;
+            }
+
+            .divNameHotel {
+                text-align: center;
+                padding: 15px;
+                color: #fff;
+                font-weight: bold;
+                background: #367bfd;
+            }
+
+            .divHotel {
+                border-bottom: solid 2px #01258d;
+                width: 100%;
+                margin-bottom: 10px;
+                background: #fff;
+                display: flex;
+                flex-flow: row wrap;
+            }
+
+            .divNameHotel {
+                width: 100%;
+            }
+
+            .divprecio,
+            .divplazas,
+            .divDate {
+                width: 30%;
+                text-align: center;
+            }
+
+            .divNameHotel:hover {
+                cursor: pointer;
+                background: #01258d;
+                color: #fff;
+                border-bottom: solid 2px #fff;
+            }
+
+            .divHotel div {
+                padding: 10px;
+                font-weight: bold
+            }
+
+            .divDate {
+                color: #ae6500;
+                text-align: center;
+            }
+            /*RESERVAS*/
+
+            .reserveDone {
+                margin: 20px 0;
+                border: 1px solid #cecece;
+                padding: 30px;
+                width: 100%;
+                min-width: 300px;
+                background: #fff;
+                display: flex;
+                flex-flow: row wrap;
+                justify-content: space-between;
+            }
+
+            .precioReserve,
+            .dateReserve,
+            .nameReserve,
+            .plazaReserve,
+            .divTitle {
+                padding: 10px;
+                text-align: center;
+            }
+
+            .dateReserve,
+            .plazaReserve,
+            .precioReserve,
+            .divTitle {
+                width: 20%;
+            }
+
+            .nameReserve {
+                width: 35%;
+            }
+
+            .divTitle {
+                font-family: Georgia, 'Times New Roman', Times, serif;
+                font-weight: bold;
+                border-bottom: 3px solid #cecece;
+            }
+
+            .sumaTotal {
+                background: #ffffff;
+                color: black;
+                padding: 10px;
+                border-top: 2px solid #000;
+                width: 100%;
+                margin: 10px;
+                text-align: right;
+                font-weight: bold;
+            }
+
+            input[type=number]::-webkit-outer-spin-button,
+            input[type=number]::-webkit-inner-spin-button {
+                -webkit-appearance: none;
+                margin: 0;
+            }
+
+            input[type=number] {
+                -moz-appearance: textfield;
+            }
+            /*aviso*/
+
+            #divAvisoTrue,
+            #divAvisoFalse,
+            #divAvisoImcomplete {
+                border: 1px solid #cecece;
+                padding: 15px;
+                border-radius: 5px;
+                display: none;
+                margin: 3px;
+            }
+
+            #divAvisoTrue {
+                color: #1e520d;
+                background: #c9efb6;
+            }
+
+            #divAvisoFalse,
+            #divAvisoImcomplete {
+                background: #dcc6ca;
+                color: #e01c1c;
+            }
+        </style>
+        <link rel="stylesheet" href="../css/jquery-ui.css">
+        <script src="../js/ajaxCG.js"></script>
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    </head>
+
+    <body>
+        <div class="content">
+            <header>OfertasHoy</header>
+            <div class="column">
+                <div class="columnLeft">
+                    <h2>Listado de hoteles
+                        <p>(Haga click para abrir las fechas del hotel)</p>
+                    </h2>
+                    <div id="divAvisoTrue">¡Reserva realizada correctamente!</div>
+                    <div id="divAvisoFalse">Error: No se pudo hacer la reserva, probablemente no queden plazas!!</div>
+                    <div id="divAvisoImcomplete">Error: el formulario está imcompleto!</div>
+                    <div id="xmlHotel">
+                    </div>
+                </div>
+                <div class="columnRight">
+                    <form>
+                        <fieldset>
+                            <div class="contenform">
+                                <h2>Reservas :</h2>
+                                <label for="txtHotel">Hotel</label>
+                                <select id="selectHotel"></select>
+                                <label for="txtFecha">Fecha</label>
+                                <input readonly="readonly" type="text" name="txtFecha" id="datepicker">
+                                <label for="txtPrecio">Precio</label>
+                                <input type="number" name="txtPrecio" id="txtPrecio" readonly="readonly">
+                                <label for="txtPlazas">Plazas</label>
+                                <input type="number" name="txtPlazas" placeholder="Escriba el número de plazas" id="txtPlazas">
+                                <button type="button" id="reservePlaza">Reservar</button>
+                            </div>
+                        </fieldset>
+                    </form>
+                    <div class="reserveDone">
+                        <div class="divTitle">Añade tu compra...
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script>
+        var aHoteles = {};
+        var aReserve = {};
+        var precio;
+        var rec = 1;
+        window.addEventListener("load", getXML());
+        function getXML() {
+            ajax({
+                type: 'POST',
+                url: 'ofertasHoy.php',
+                parse: true
+            }).then((data) => {
+                aHoteles = data.hoteles;
+                showContent();
+                setHotelReserve();
+                setDate(data.fechaMin, data.fechaMax);
+            }).catch((error) => {
+                console.log(error);
+            });
+        }
+        showContent = () => {
+            let html = "";
+            let id = "";
+            for (let i = 0; i < aHoteles.length; i++) {
+                html += "<div class='divHotel'>";
+                html += "<div id='" + aHoteles[i].id + "' class='divNameHotel'>" + aHoteles[i].nombre + "</div>";
+                for(j in aHoteles[i].ofertas){
+                    html += "<div class='divDate'>" + aHoteles[i].ofertas[j].fecha + "</div>";
+                    html += "<div class='divplazas'>Plazas: " + aHoteles[i].ofertas[j].plazas +
+                            "</div>";
+                    html += "<div class='divprecio'>Precio: " + aHoteles[i].ofertas[j].precio +
+                            "</div>";
+                }
+                html += "</div>";
+            }
+
+            xmlHotel.innerHTML = html;
+        }
+        setHotelReserve = () => {
+            let html = "<option value=''>seleccione hotel...</option>";
+            for (let i = 0; i < aHoteles.length; i++) {
+                html += "<option value='" + aHoteles[i].nombre + "'>" + aHoteles[i].nombre + "</option>";
+            }
+            selectHotel.innerHTML = html;
+        }
+        setDate = (fechaMenor, fechaMayor) => {
+            $('#datepicker').datepicker({
+                dateFormat: "yy-mm-dd",
+                minDate: fechaMenor,
+                maxDate: fechaMayor,
+                firstDay: 1,
+                onSelect: getPrecio,
+            });
+        }
+        reservePlaza.addEventListener('click', () => {
+            let idHotel = parseInt(selectHotel.options.selectedIndex) - 1;
+            if (datepicker.value != "" && txtPlazas.value != "") {
+                console.log(idHotel+ " " + selectHotel.value + " " + datepicker.value + " " + txtPrecio.value + " "+ txtPlazas.value + " " + rec);
+                ajax({
+                    type: 'POST',
+                    url: 'buildReserve.php',
+                    data: {
+                        id: idHotel,
+                        nombre: selectHotel.value,
+                        date: datepicker.value,
+                        precio: txtPrecio.value,
+                        plazas: txtPlazas.value,
+                        contador: rec
+                    },
+                    parse: true
+                }).then((data) => {
+                    rec++;
+                    console.log(data.reserva);
+                    if(data.reserva){
+                       
+                        getXML();
+                        setReserve();
+                        showReserve();
+                        divAvisoTrue.style.display = "block";
+                        setTimeout(function () {
+                            divAvisoTrue.style.display = "none";
+                        }, 3000);
+                    } else {
+
+                        divAvisoFalse.style.display = "block";
+                        setTimeout(function () {
+                            divAvisoFalse.style.display = "none";
+                        }, 3000);
+                    
+                    }
+                    
+
+                }).catch((error) => {
+                    console.log(error);
+                });
+            } else {
+                divAvisoImcomplete.style.display = 'block';
+                setTimeout(function () {
+                    divAvisoImcomplete.style.display = "none";
+                }, 3000);
+            }
+        });
+        setReserve = () => {
+            let idHotel = parseInt(selectHotel.options.selectedIndex) -1;
+            if (idHotel in aReserve) {
+                if (aReserve[idHotel][datepicker.value] != null) {
+                    aReserve[idHotel][datepicker.value].plaza += parseInt(txtPlazas.value);
+                } else {
+                    aReserve[idHotel][datepicker.value] = Object.create(Object.prototype);
+                    aReserve[idHotel][datepicker.value].plaza = parseInt(txtPlazas.value);
+                    aReserve[idHotel][datepicker.value].precio = txtPrecio.value;
+                }
+            } else {
+                aReserve[idHotel] = Object.create(Object.prototype);
+                aReserve[idHotel][datepicker.value] = Object.create(Object.prototype);
+                aReserve[idHotel][datepicker.value].plaza = parseInt(txtPlazas.value);
+                aReserve[idHotel][datepicker.value].precio = txtPrecio.value;
+            }
+        }
+        showReserve = () => {
+            let html = "<div class='nameReserve divTitle'>Hotel</div><div class='divTitle'>Fecha </div>";
+            html += "<div class='divTitle'>Plazas</div><div class='divTitle'>Precio Unidad</div>";
+            let sumaTotal = 0;
+            for (k in aReserve) {
+                for (i in aReserve[k]) {
+                    html += "<div class='nameReserve' >" + k + "</div>";
+                    html += "<div class='dateReserve' >" + i + "</div>";
+                    html += "<div class='plazaReserve'>" + aReserve[k][i].plaza + "</div>";
+                    html += "<div class='precioReserve'>" + aReserve[k][i].precio +
+                            " €</div>";
+                    sumaTotal += (aReserve[k][i].plaza * parseInt(aReserve[k][i].precio));
+                }
+            }
+            html += "<div class='sumaTotal'>Total: " + sumaTotal + "€</div>";
+            window.document.getElementsByClassName('reserveDone')[0].innerHTML = html;
+        }
+        selectHotel.addEventListener('change', () => {
+            getPrecio();
+        });
+        function getPrecio() {
+            let idHotel = parseInt(selectHotel.options.selectedIndex) - 1;
+            let fecha = datepicker.value;
+            if (idHotel != '' && fecha != '') {
+                txtPrecio.value = aHoteles[idHotel].ofertas[fecha].precio;
+            }
+        }
+
+    </script>
+
+</html>

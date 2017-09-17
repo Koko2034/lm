@@ -1,0 +1,210 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Licoreto</title>
+	<script src="../js/ajaxCG.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.0/themes/smoothness/jquery-ui.css">
+</head>
+
+<body>
+	<div class="container">
+		<div class="page-header">
+			<h1>PracFord</h1>
+			<h3>Camarero : <span id="nombreCamarero">Fernando</span></h2>
+		</div>
+		<div class="form-horizontal pull-left" style="width:40%;">
+			<form>
+				<div class="form-group">
+					<label class="control-label col-sm-2" for="sel2">Mesa:</label>
+					<div class="col-sm-10">
+						<select class="form-control" class="form-control" id="selMesa" oninput="changeMesa()">
+            </select>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label class="control-label col-sm-2" for="sel2">Productos:</label>
+					<div class="col-sm-10"><select class="form-control" class="form-control" id="selProductos" oninput="changeButtonAgregar()">
+            </select>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-sm-2" for="number">Cantidad:</label>
+					<div class="col-sm-10">
+						<input type="number" class="form-control" id="cantidad" placeholder="Introduzca una cantidad" onchange="changeButtonAgregar()">
+					</div>
+				</div>
+
+
+			</form>
+			<div class="form-group pull-right">
+				<div class="col-sm-10 pull-right">
+					<button class="btn btn-default pull-right" id="btnAgregar" disabled="true">Agregar</button>
+				</div>
+			</div>
+		</div>
+		<div class="panel panel-default pull-right" style="width:50%;">
+			<div class="panel-heading" id="divPadreComanda">Comanda</div>
+			<div class="panel-body" id="divComanda"></div>
+		</div>
+		<div class="form-group">
+			<div class="col-sm-10 pull-right">
+				<button class="btn btn-default pull-right" id="btnFactura" >Factura</button>
+				<button id="btnPedir"   >Pedir</button>
+			</div>
+		</div>
+	</div>
+</body>
+<script>
+	var comanda = {};
+	/*var productos=[];*/
+	window.onload = () => {
+		cargarProducto();
+		cargaMesa();
+		/* ajax({
+		     type: 'POST',
+		     url: 'controlSesion.php',
+		     parse: true
+		 }).then((data) => {
+		     if (data.status == "ok") {
+		         cargarProductos();
+		     } else {
+		         window.location.href = 'login.html';
+		     }
+
+		 }).catch((error) => {
+		     console.log(error);
+		 });*/
+	}
+
+	function cargaMesa() {
+		const numeroMesas = 20;
+		let selectMesa = window.document.getElementById("selMesa");
+		for (var i = 1; i <= numeroMesas; i++) {
+			selectMesa.options[i] = new Option(i, i, "defaultSelected");
+		}
+	}
+
+	function changeMesa() {
+		changeButtonAgregar();
+		comanda = {};
+		divComanda.innerHTML = "";
+	}
+
+
+
+	function changeButtonAgregar() {
+		let mesa = selMesa.options[selMesa.selectedIndex].textContent;
+		let producto = selProductos.options[selProductos.selectedIndex].textContent;
+		btnAgregar.disabled = (mesa != "" && producto != "" && cantidad.value != "") ? false : true;
+		btnFactura.disabled = (mesa != "") ? false : true;
+		//btnPedir.disabled = (divComanda.innerHTML != "") ? false : true;
+	}
+
+	function cargarProducto() {
+		let selecProductos = window.document.getElementById("selProductos");
+		let myOptions = "";
+		let xmlhttp = new XMLHttpRequest();
+		xmlhttp.open('GET', 'bebidas.xml', false)
+		xmlhttp.send();
+		xmlDoc = xmlhttp.responseXML;
+		let nodos = {};
+		nodos = xmlDoc.evaluate("//producto", xmlDoc, null, XPathResult.ANY_TYPE, null);
+		let thisNode = nodos.iterateNext();
+		while (thisNode) {
+			let nombreProducto = thisNode.getAttribute('NombreProducto');
+			let id = thisNode.getAttribute('idProducto');
+            let precio=thisNode.getAttribute('PrecioUnidad');
+			selecProductos.options[id] = new Option(nombreProducto, id, "defaultSelected");
+            selecProductos.options[id].dataset.precio=precio;
+			thisNode = nodos.iterateNext();
+		}
+	}
+
+
+	btnAgregar.onclick = function () {
+		let nombreProducto = selProductos.options[selProductos.selectedIndex].textContent;
+		let idProducto = selProductos.options[selProductos.selectedIndex].value;
+        let precio=selProductos.options[selProductos.selectedIndex].dataset.precio;
+        divPadreComanda.innerHTML="Comanda";
+        console.log(idProducto)
+		if (comanda[idProducto] == undefined) {
+			comanda[idProducto] = Object.create(Object.prototype);
+			comanda[idProducto].cantidad = parseInt(cantidad.value);
+			comanda[idProducto].nombreProducto = nombreProducto;
+            comanda[idProducto].precio = precio;
+		} else {
+			comanda[idProducto].cantidad += parseInt(cantidad.value);
+		}
+		showComanda();
+	}
+
+	btnPedir.onclick = function () {
+        var datos = JSON.stringify(comanda);
+		ajax({
+			type: 'POST',
+			url: 'pracFood.php',
+			data: {
+				check: "giveComanda",
+				mesa: selMesa.options[selMesa.selectedIndex].value,
+				nomCam: nombreCamarero.innerHTML,
+                comanda: datos
+				
+			},
+
+			parse: true,
+		}).then((data) => {
+			console.log(data);
+
+		}).catch((error) => {
+			console.log(error);
+		});
+	}
+
+	btnFactura.onclick = function () {
+        
+		ajax({
+			type: 'POST',
+			url: 'pracFood.php',
+			data: {
+				check: "giveFactura",
+				mesa: selMesa.options[selMesa.selectedIndex].value
+			},
+			parse: true
+		}).then((data) => {
+			console.log(data);
+			showFactura(data.factura);
+
+		}).catch((error) => {
+            
+			console.log(error);
+		});
+	}
+    function showFactura(data){
+        divPadreComanda.innerHTML="Comanda";
+        let html = '<table class="table"><thead><tr><th>Nombre</th><th>Cantidad</th><th>PrecioUni</th><th>preciTo</th></tr></thead><tbody>';
+		for (k in data) {
+			html += '<tr><td>' + data[k].nombreProducto + '</td><td>' + data[k].cantidad + '</td><td>' + data[k].precioUnitario + '</td><td>' + (data[k].cantidad)*(data[k].precioUnitario) + '</td><tr>';
+
+		}
+		html += '</tbody></table>';
+		divComanda.innerHTML = html;
+    }
+	function showComanda(data) {
+		let html = '<table class="table"><thead><tr><th>Nombre</th><th>Cantidad</th></tr></thead><tbody>';
+		for (k in comanda) {
+			html += '<tr><td>' + comanda[k].nombreProducto + '</td><td>' + comanda[k].cantidad + '</td><tr>';
+
+		}
+		html += '</tbody></table>';
+		divComanda.innerHTML = html;
+	}
+</script>
+
+</html>

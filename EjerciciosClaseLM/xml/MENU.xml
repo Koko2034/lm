@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MENU>
+<menu_desayuno>
+    <comida>
+        <nombre>>![CDATA[Café]]</nombre>
+        <precio>$2.60</precio>
+        <descripcion>>![CDATA[Café de cualquier clase]]</descripcion>
+        <calorias>650</calorias>
+    </comida>
+    <comida>
+        <nombre>Tortilla</nombre>
+        <precio>$10.00</precio>
+        <descripcion>Tortilla francesa</descripcion>
+        <calorias>809</calorias>
+    </comida>
+    <comida>
+        <nombre>Cereales</nombre>
+        <precio>$3.50</precio>
+        <descripcion>Cereales de chocolate con leche</descripcion>
+        <calorias>450</calorias>
+    </comida>
+    <comida>
+        <nombre>Tostadas</nombre>
+        <precio>$2.00</precio>
+        <descripcion>Tostadas con mantequilla</descripcion>
+        <calorias>900</calorias>
+    </comida>
+    <comida>
+        <nombre>Tortitas</nombre>
+        <precio>$5.00</precio>
+        <descripcion>Tortitas con nata</descripcion>
+        <calorias>1500</calorias>
+    </comida>    
+</menu_desayuno>
+<menu_almuerzo>
+    <comida>
+        <nombre>Espaguetis</nombre>
+        <precio>$12.00</precio>
+        <descripcion>Espaguetis con tomate casero</descripcion>
+        <calorias>650</calorias>
+    </comida>
+    <comida>
+        <nombre>>![CDATA[Albóndigas]]</nombre>
+        <precio>$15.00</precio>
+        <descripcion>>![CDATA[Albóndigas con salsa]]</descripcion>
+        <calorias>809</calorias>
+    </comida>
+    <comida>
+        <nombre>Puchero</nombre>
+        <precio>$2.00</precio>
+        <descripcion>Puchero casero</descripcion>
+        <calorias>450</calorias>
+    </comida>
+    <comida>
+        <nombre>>![CDATA[Lasaña]]</nombre>
+        <precio>$20.00</precio>
+        <descripcion>>![CDATA[Lasaña de carne]]</descripcion>
+        <calorias>900</calorias>
+    </comida>
+    <comida>
+        <nombre>Hamburguesa</nombre>
+        <precio>$8.00</precio>
+        <descripcion>>![CDATA[Hamburguesa común]]</descripcion>
+        <calorias>1500</calorias>
+    </comida>    
+</menu_almuerzo>
+<menu_cena>
+    <comida>
+        <nombre>Leche</nombre>
+        <precio>$1.00</precio>
+        <descripcion>Vaso de leche</descripcion>
+        <calorias>650</calorias>
+    </comida>
+    <comida>
+        <nombre>Tortilla</nombre>
+        <precio>$10.00</precio>
+        <descripcion>Tortilla francesa</descripcion>
+        <calorias>809</calorias>
+    </comida>
+    <comida>
+        <nombre>Bocadillos</nombre>
+        <precio>$3.50</precio>
+        <descripcion>Bocadillos de cualquier tipo</descripcion>
+        <calorias>780</calorias>
+    </comida>
+    <comida>
+        <nombre>Hot Dogs</nombre>
+        <precio>$2.00</precio>
+        <descripcion>Hot Dogs con salsa</descripcion>
+        <calorias>1300</calorias>
+    </comida>
+    <comida>
+        <nombre>Pizza</nombre>
+        <precio>$7.00</precio>
+        <descripcion>Pizza de cualquier tipo</descripcion>
+        <calorias>1500</calorias>
+    </comida>    
+</menu_cena>
+</MENU>

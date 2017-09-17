@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Agudeza</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            #contenido {
+                position:fixed;
+                font-size: 150%;
+            }
+            #Texto {
+
+            }
+        </style>
+    </head>
+    <body>
+        <div id="Texto"></div>
+    </body>
+    <script>
+        var w = window,
+                d = document,
+                e = d.documentElement,
+                g = d.getElementsByTagName('body')[0],
+                anchoMax = w.innerWidth || e.clientWidth || g.clientWidth,
+                altoMax = w.innerHeight || e.clientHeight || g.clientHeight;
+        var Palabra = ["Torremolinos", "Perro", "Gato", "Tenis", "Hola", "Real Madrid", "Isco"];
+        var index = Math.floor((Math.random() * Palabra.length));
+        var angle = 0;
+        var x = 0;
+        var y = 0;
+        var w = (anchoMax) / 2;
+        var h = (altoMax - 80) / 2;
+        var signo = 50;
+        Generar();
+        inicio();
+
+        function Generar() {
+            var html = "<div id='girar'><p class='palabra' id='contenido'>" + Palabra[index] + "</p></div>";
+            window.document.getElementById('Texto').innerHTML = html;
+        }
+        function inicio() {
+            setTimeout(giros);
+            setTimeout(pregunta, 10000);
+        }
+
+        function giros() {
+            if (window.document.getElementById('contenido')) {
+                var c = window.document.getElementById('contenido');
+                var t = window.document.getElementById('Texto');
+                x = w + w * Math.cos(angle * Math.PI / 180);
+                y = h + h * Math.sin(angle * Math.PI / 180);
+                c.style.left = x + 'px';
+                c.style.top = y + 'px';
+                angle++;
+                if (angle < 180) {
+                    t.style.fontSize = signo + "%";
+                    signo++;
+                } else {
+                    t.style.fontSize = signo + "%";
+                    signo--;
+                }
+                if (angle > 360) {
+                    angle = 0;
+                }
+                console.log(angle);
+                setTimeout(giros, 20);
+
+            }
+        }
+
+        function pregunta() {
+            document.getElementById("Texto").innerHTML = "<form><center><h2>Nombre de la palabra que has visto</h2>\n\
+            <input id='respuesta' type='text'><button onclick='enviar(respuesta.value)'>Comprobar</button></center></form>";
+        }
+
+        function enviar(respuesta) {
+            if (respuesta == Palabra[index]) {
+                alert("Enhorabuena, has acertado");
+            } else {
+                alert("Has fallado, vuelve a intertarlo");
+            }
+        }
+    </script>
+</html>

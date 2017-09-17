@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Captcha</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="captcha.css">
+    </head>
+
+    <body>
+        <div id="divMain">
+            <div id="divImages"></div>
+            <input type="text" id="comprobar">
+            <button type="button" id="check" value="Comprobar" onclick="checkCaptcha()">Comprobar</button>
+            <button type="button" id="generar" value="Generar otro captcha" onclick="getCaptcha()">Generar Otro Captcha</button>
+            <div id="divComprobar"></div>
+        </div>
+    </body>
+    <script>
+        var aCap = [];
+        var value = "";
+        var cont = 0;
+        var createImage = function (src, value, difficulty) {
+            var image = new Image();
+            image.src = src;
+            image.value = value;
+            image.difficulty = difficulty;
+            console.log(image);
+            return image;
+        };
+        window.onload = function () {
+            imgObjects();
+            getCaptcha();
+        };
+        function imgObjects() {
+            aCap.push(createImage("uno.jpg", "7", 15));
+            aCap.push(createImage("dos.jpg", "65", 7));
+            aCap.push(createImage("tres.jpg", "", 0));
+            aCap.push(createImage("cuatro.jpg", "", 0));
+            aCap.push(createImage("cinco.jpg", "32", 9));
+            aCap.push(createImage("seis.jpg", "45", 4));
+        }
+        function getCaptcha() {
+            reset();
+            var html = "";
+            var aValue = [];
+            var i = 0;
+            value = "";
+            var difficulty = 0;
+            while (i < 3) {
+                var random = parseInt(Math.random() * aCap.length);
+                if (!aValue[random]) {
+                    aValue[random] = 1;
+                    i++;
+                }
+            }
+            for (var k in aValue) {
+                html += '<img src=' + aCap[k].src + '></img>';
+                value += aCap[k].value;
+                difficulty += aCap[k].difficulty;
+
+            }
+            html += '<div><h3>La dificultad de este captcha es de ' + difficulty + ' puntos</h3></div>';
+            document.getElementById('divImages').innerHTML = html; // Sin JQuery
+        }
+        function checkCaptcha() {
+            var divComp = "";
+            var comprobar = document.getElementById('comprobar').value;
+            if (value == comprobar) {
+                cont = 0;
+                reset();
+                divComp = "<h1>Acertaste</h1>";
+                document.getElementById('divComprobar').style = "color:green";
+            } else if (cont < 2) {
+                reset();
+                getCaptcha();
+                divComp = "<h1>Fallaste, vuelve a intentarlo</h1>";
+                document.getElementById('divComprobar').style = "color:red";
+                cont++;
+            } else {
+                reset();
+                divComp = "<h1>Eres un robot</h1>";
+                document.getElementById('divComprobar').style = "color:red";
+                document.getElementById('check').disabled = true;
+                document.getElementById('check').style = "cursor:not-allowed;opacity:0.6";
+                document.getElementById('generar').disabled = true;
+                document.getElementById('generar').style = "cursor:not-allowed;opacity:0.6";
+                document.getElementById('comprobar').readOnly = true;
+            }
+            document.getElementById('divComprobar').innerHTML = divComp;
+        }
+        function reset() {
+            document.getElementById('comprobar').value = "";
+        }
+    </script>
+
+</html>

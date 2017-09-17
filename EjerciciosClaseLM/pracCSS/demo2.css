@@ -1,0 +1,61 @@
+* {
+    background-color: beige;
+}
+
+.list {
+    background-color: grey;
+}
+.fuerte {
+    font-family: 'Oswald', sans-serif;    
+}
+li,
+p {
+    background-color: green;
+}
+
+ul {
+    text-align: center;
+}
+
+#div div {
+    background-color: white;
+}
+
+div span {
+    background-color: black;
+    color: white;
+}
+
+span {
+    background-color: blue;
+}
+
+h1, h2, h3 {
+    text-align: center;
+}
+
+div ul li {
+    background-color: red;
+}
+
+body h1 {
+    background-color: brown;
+}
+
+p * a {
+    background-color: brown;
+}
+
+p > a > span {
+    background-color: yellow;
+}
+
+h1 + h2 {
+    /*solo se aplica al primer elemento h2*/
+    color: red
+}
+/* Se muestran de color azul todos los enlaces que tengan un atributo "class" con el valor "externo" */
+
+a[class="externo"] {
+    color: blue;
+}

@@ -1,0 +1,67 @@
+
+
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div id="divAgudeza"></div>
+        <div id="divButton"><input type="button" onclick='randomWords()' id='nextButton' value='Siguiente'></div>
+        <div id='divEnd'></div>
+    </body>
+    <script type="text/javascript">
+        var words = ["Perro", "Gato", "Oso", "Panda", "Avispa", "Agudeza", "Dios", "Animal", "Verbo", "Palabra", "Coche"];
+        window.onload = function () {
+            randomWords();
+        }
+        var usedWords = [];
+        var cont = 0;
+        function randomWords() {
+            var numPalabras = 2;
+            var random = [];
+            var i = 0;
+            do {
+                var ale = parseInt(Math.random() * words.length);
+                var key = words[ale];
+                while (usedWords[key]) {
+                    var ale = parseInt(Math.random() * words.length);
+                    var key = words[ale];
+                }
+                if (!random[key] && !usedWords[key]) {
+                    random[key] = 1;
+                    usedWords[key] = 1;
+                    cont++;
+                    i++;
+                }
+            } while (i < numPalabras && cont < words.length);
+            console.log(cont);
+            var str = '';
+            for (var k in random) {
+                str += "<div>" + k + "</div>";
+            }
+            document.getElementById('divAgudeza').style = "backgroud-color:red";
+            document.getElementById('divAgudeza').innerHTML = str;
+            if (cont === words.length) {
+                document.getElementById('nextButton').disabled = true;
+                document.getElementById('divEnd').innerHTML = '<input type="button" onclick="reset()" value="Reiniciar">'
+            }
+        }
+        function reset() {
+            cont = 0;
+            usedWords = [];
+            document.getElementById('divAgudeza').innerHTML = '';
+            document.getElementById('divEnd').innerHTML = '';
+            document.getElementById('nextButton').disabled = false;
+            randomWords();
+        }
+
+    </script>
+</html>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="carroceria">
+		<xs:complexType>
+			<xs:attribute name="puertas" use="required">
+				<xs:simpleType>
+					<xs:restriction base="xs:byte">
+						<xs:enumeration value="3"/>
+						<xs:enumeration value="5"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="configuracion">
+		<xs:complexType>
+			<xs:attribute name="tapiceria" use="optional" default="Tela negra">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="Cuero"/>
+						<xs:enumeration value="Cuero Premium Negro"/>
+						<xs:enumeration value="Cuero Premium Blanco"/>
+						<xs:enumeration value="Tela negra"/>
+						<xs:enumeration value="Tela blanca"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="fumador" type="xs:boolean" use="optional"/>
+			<xs:attribute name="color" use="required">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="30"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="motor">
+		<xs:complexType>
+			<xs:attribute name="motorizacion" use="required">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="1.25 Duratec 82cv 5 Velocidades"/>
+						<xs:enumeration value="1.5 TDCi 75cv 5 Velocidades"/>
+						<xs:enumeration value="2.0 TDCi 150cv (110 kW) Manual"/>
+						<xs:enumeration value="2.0 TDCi 4x4 210cv (154 kW) PowerShift"/>
+						<xs:enumeration value="2.3 EcoBoost 314cv (230 kW) Automático"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="extras">
+		<xs:complexType>
+			<xs:attribute name="sensorAparcamiento" type="xs:boolean" use="optional"/>
+			<xs:attribute name="gps" type="xs:boolean" use="optional"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="precio">
+		<xs:simpleType>
+			<xs:restriction base="xs:decimal">
+				<xs:minInclusive value="7000"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="coche">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="carroceria"/>
+				<xs:element ref="configuracion"/>
+				<xs:element ref="motor"/>
+				<xs:element ref="extras" minOccurs="0"/>
+				<xs:element ref="precio"/>
+			</xs:sequence>
+			<xs:attribute name="modelo" use="required">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="FORD FIESTA"/>
+						<xs:enumeration value="FORD FOCUS"/>
+						<xs:enumeration value="FORD MONDEO"/>
+						<xs:enumeration value="FORD MUSTANG"/>
+						<xs:enumeration value="FORD GALAXY"/>
+						<xs:enumeration value="FORD VIGNALE"/>
+						<xs:enumeration value="FORD COURIER"/>
+						<xs:enumeration value="FORD RANGER"/>
+						<xs:enumeration value="FORD SCOSPORT"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="coches">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="coche" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

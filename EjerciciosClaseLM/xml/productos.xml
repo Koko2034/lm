@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<productos xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="productosValidador.xsd">
+	<producto codigo="0" categoria="portatil">
+		<nombre>HP Stream 11r000n</nombre>
+		<descripcion> Portátil de 11.6" HD (Intel Celeron N3050, 2 GB de RAM, disco de 32 GB eMMC + 100 GB One Drive, Windows 10 x64</descripcion>
+		<precio>189</precio>
+		<stock>49</stock>
+	</producto>
+	<producto codigo="1" categoria="portatil">
+		<nombre>Lenovo Z51-70</nombre>
+		<descripcion> Lenovo Z51-70 - Portátil de 15.6 " Full HD (Intel i5-5200U, 12 GB de RAM, 1 TB de disco duro, gráfica AMD R9 M375 4 GB, Windows 8.1) plata - Teclado QWERTY Español</descripcion>
+		<precio>600</precio>
+		<stock>5</stock>
+	</producto>
+	<producto codigo="2" categoria="portatil">
+		<nombre>ASUS K541UV-XX335T</nombre>
+		<descripcion> Ordenador portátil de 15.6" HD (Intel Core i7-6500U, 4 GB de RAM, HDD de 1 TB, NVIDIA GeForce GT920M 2 GB, Windows 10 Original), negro chocolate - Teclado QWERTY Español</descripcion>
+		<precio>549</precio>
+		<stock>12</stock>
+	</producto>
+	<producto codigo="3" categoria="monitor">
+		<nombre>LG 22M47VQ-P</nombre>
+		<descripcion> Monitor LED de 21.5" (16:9, 1920 x 1080 pixeles, triple conectividad, división de pantalla en 4), color negro</descripcion>
+		<precio>109</precio>
+		<stock>9</stock>
+	</producto>
+	<producto codigo="4" categoria="monitor">
+		<nombre>Dell UltraSharp U2414H</nombre>
+		<descripcion>Monitor LED de 23.8" (1920 x 1080p, 250 cd/m2, IPS, 8 ms, HDMI, DisplayPort) color negro y plateado</descripcion>
+		<precio>240</precio>
+		<stock>11</stock>
+	</producto>
+	<producto codigo="5" categoria="monitor">
+		<nombre>Samsung C27F390FHU </nombre>
+		<descripcion>Full HD VA Negro - Monitor (1920 x 1080 Pixeles, LCD, Full HD, VA, 1280 x 720 (HD 720), 1920 x 1080 (HD 1080), 3000:1)</descripcion>
+		<precio>245</precio>
+		<stock>1</stock>
+	</producto>
+</productos>
